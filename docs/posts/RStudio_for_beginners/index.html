@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+<title>Pop_Ecol_KMUTT: Beginner session in R</title>
+
+
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2020-07-02"/>
+<meta property="article:created" itemprop="dateCreated" content="2020-07-02"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Pop_Ecol_KMUTT: Beginner session in R"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Pop_Ecol_KMUTT"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Pop_Ecol_KMUTT: Beginner session in R"/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Beginner session in R"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-02-2020"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["rplot.jpg","rplot.pdf","RStudio.jpg","RStudio_for_beginners_files/bowser-1.9.3/bowser.min.js","RStudio_for_beginners_files/distill-2.2.21/template.v2.js","RStudio_for_beginners_files/figure-html5/unnamed-chunk-32-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-33-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-34-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-35-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-36-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-37-1.png","RStudio_for_beginners_files/jquery-1.11.3/jquery.min.js","RStudio_for_beginners_files/webcomponents-2.0.0/webcomponents.js","RStudio2.jpg","RStudio3.jpg","RStudio4.jpg","RStudio5.jpg"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #455a64;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative;}
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+</style>
+
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for table of contents */
+
+.d-toc {
+  color: rgba(0,0,0,0.8);
+  font-size: 0.8em;
+  line-height: 1em;
+}
+
+.d-toc-header {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1.3em;
+}
+
+.d-toc a {
+  border-bottom: none;
+}
+
+.d-toc ul {
+  padding-left: 0;
+}
+
+.d-toc li>ul {
+  padding-top: 0.8em;
+  padding-left: 16px;
+  margin-bottom: 0.6em;
+}
+
+.d-toc ul,
+.d-toc li {
+  list-style-type: none;
+}
+
+.d-toc li {
+  margin-bottom: 0.9em;
+}
+
+.d-toc-separator {
+  margin-top: 20px;
+  margin-bottom: 2em;
+}
+
+.d-article-with-toc {
+  border-top: none;
+  padding-top: 0;
+}
+
+
+
+/* Tweak code blocks (note that this CSS is repeated above in an injection
+   into the d-code shadow dom) */
+
+d-code {
+  overflow-x: auto !important;
+}
+
+pre.d-code code.d-code {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+pre.text-output {
+
+  font-size: 12px;
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+@media(min-width: 768px) {
+
+d-code {
+  overflow-x: visible !important;
+}
+
+pre.d-code code.d-code  {
+    padding-left: 18px;
+    font-size: 14px;
+}
+pre.text-output {
+  font-size: 14px;
+}
+}
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // create d-bibliography
+  var bibliography = $('<d-bibliography></d-bibliography>');
+  $('#distill-bibliography').wrap(bibliography);
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace citations with <d-cite>
+  $('.citation').each(function(i, val) {
+    appendix = true;
+    var cites = $(this).attr('data-cites').split(" ");
+    var dt_cite = $('<d-cite></d-cite>');
+    dt_cite.attr('key', cites.join());
+    $(this).replaceWith(dt_cite);
+  });
+  // remove refs
+  $('#refs').remove();
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-toc a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // replace code blocks with d-code
+  $('pre>code').each(function(i, val) {
+    var code = $(this);
+    var pre = code.parent();
+    var clz = "";
+    var language = pre.attr('class');
+    if (language) {
+      // map unknown languages to "clike" (without this they just dissapear)
+      if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                               "javascript", "js", "julia", "lua", "markdown",
+                               "markup", "mathml", "python", "svg", "xml"]) == -1)
+        language = "clike";
+      language = ' language="' + language + '"';
+      var dt_code = $('<d-code block' + language + clz + '></d-code>');
+      dt_code.text(code.text());
+      pre.replaceWith(dt_code);
+    } else {
+      code.addClass('text-output').unwrap().changeElementType('pre');
+    }
+  });
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('d-code, pre.text-output, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // table of contents
+    if (have_authors) // adjust border if we are in authors
+      $('.d-toc').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+    $('d-code').each(function(i, val) {
+      var style = document.createElement('style');
+      style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                        '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+      if (this.shadowRoot)
+        this.shadowRoot.appendChild(style);
+    });
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-toc-header').remove();
+  $('.d-toc').remove();
+  $('.d-toc-separator').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Beginner session in R","authors":[],"publishedDate":"2020-07-02T00:00:00.000+02:00"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">Pop_Ecol_KMUTT</a>
+<a href="../../schedule.html">schedule</a>
+</div>
+<div class="nav-right">
+<a href="../../info.html">info</a>
+<a href="../../index.html">posts</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+slides
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="../../slides/what_is_pop_ecol/What-is-population-ecology.html">What is population ecology</a>
+</div>
+</div>
+<a href="../../about.html">about</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Beginner session in R</h1>
+
+</div>
+
+
+<div class="d-article">
+<h2 id="introduction-to-the-workshop">Introduction to the workshop</h2>
+<ul>
+<li><p>Who we are</p></li>
+<li><p>The aim of the session</p></li>
+<li><p>What the session involves</p></li>
+</ul>
+<h2 id="what-is-r">What is R?</h2>
+<ul>
+<li>R is free statistical program</li>
+<li>It uses a computer language called S</li>
+<li>You type in commands to get the computer to do things, rather than point and click like in programs like excel.</li>
+<li>It’s open sourced (anyone can make new packages to provide new functions)</li>
+<li>People have created packages to deal with lots of different problems/analyses.</li>
+<li>But, people might have written functions in different ways for different packages</li>
+</ul>
+<h2 id="what-does-r-look-like">What does R look like?</h2>
+<ul>
+<li><p>Two main programs:‘R’ and ‘Rstudio’.</p></li>
+<li><p>Rstudio is a more user-friendly environment.</p></li>
+<li><p>When you start Rstudio the screen is divided into 4 blocks/windows:</p></li>
+</ul>
+<h2 id="r-console">R console</h2>
+<p><img src="RStudio.jpg" /></p>
+<h2 id="how-r-works">How R works</h2>
+<ul>
+<li>The entities that R creates and manipulates are called objects. It stores these in the R environment.</li>
+<li>R recognises each object by the name is it’s given, which can be made up of alphabetic characters and numbers.</li>
+<li>R is case-sensitive so fish and Fish are two different objects.</li>
+<li>Few symbols are allowed apart from ’_’ and ‘.’</li>
+<li>Object names can’t start with a number of ’_’ and it’s advisable not to use ‘.’ either</li>
+</ul>
+<h2 id="how-r-works-2">How R works (2)</h2>
+<ul>
+<li>Avoid some single letter object names because R sometimes also uses them.</li>
+<li>Avoid object names that can be functions in R e.g. data.</li>
+<li>You can create objects using ‘&lt;-’ which is R’s version of ‘=’</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+mut &lt;- 3+ 4</code></pre>
+</div>
+<ul>
+<li>There are different data types in R and the type of data an object is can affect how R ‘deals’ with it.</li>
+</ul>
+<h2 id="data-types-in-r-vector">Data types in R: Vector</h2>
+<ul>
+<li>A collection of different elements which can hold different types of data</li>
+</ul>
+<h3 id="numeric-vector">Numeric vector</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+a &lt;- c(1,2,5.3,6,-2,4) 
+a</code></pre>
+<pre><code>
+[1]  1.0  2.0  5.3  6.0 -2.0  4.0</code></pre>
+<pre class="r"><code>
+str(a)</code></pre>
+<pre><code>
+ num [1:6] 1 2 5.3 6 -2 4</code></pre>
+</div>
+<h3 id="character-vector">Character vector</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+b &lt;- c(&quot;one&quot;,&quot;two&quot;,&quot;three&quot;) 
+b</code></pre>
+<pre><code>
+[1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot;</code></pre>
+<pre class="r"><code>
+str(b)</code></pre>
+<pre><code>
+ chr [1:3] &quot;one&quot; &quot;two&quot; &quot;three&quot;</code></pre>
+</div>
+<h3 id="logical-vector">Logical vector</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+c &lt;- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE) 
+c</code></pre>
+<pre><code>
+[1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE</code></pre>
+<pre class="r"><code>
+str(c)</code></pre>
+<pre><code>
+ logi [1:6] TRUE TRUE TRUE FALSE TRUE FALSE</code></pre>
+</div>
+<h2 id="data-types-in-r-matrix">Data types in R: Matrix</h2>
+<ul>
+<li>A vector with added dimensions (must have columns and rows). All columns must have the same mode and length</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+y&lt;-matrix(1:20, nrow=5,ncol=4)   # generates 5 x 4 numeric matrix 
+y</code></pre>
+<pre><code>
+     [,1] [,2] [,3] [,4]
+[1,]    1    6   11   16
+[2,]    2    7   12   17
+[3,]    3    8   13   18
+[4,]    4    9   14   19
+[5,]    5   10   15   20</code></pre>
+<pre class="r"><code>
+str(y)</code></pre>
+<pre><code>
+ int [1:5, 1:4] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+</div>
+<h2 id="data-types-in-r-matrix-2">Data types in R: Matrix (2)</h2>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+s_means = matrix(c(-14, -15.1, -11.03, 3.06, 7.05, 13.72), ncol=2, nrow=3)
+s_means</code></pre>
+<pre><code>
+       [,1]  [,2]
+[1,] -14.00  3.06
+[2,] -15.10  7.05
+[3,] -11.03 13.72</code></pre>
+<pre class="r"><code>
+str(s_means)</code></pre>
+<pre><code>
+ num [1:3, 1:2] -14 -15.1 -11.03 3.06 7.05 ...</code></pre>
+</div>
+<h2 id="data-types-in-r-data-frame">Data types in R: Data frame</h2>
+<ul>
+<li>They are more general than a matrix and can have columns which have different modes.</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+dat &lt;- data.frame(id = letters[1:3], x = 1:3, y = 4:6)
+dat</code></pre>
+<pre><code>
+  id x y
+1  a 1 4
+2  b 2 5
+3  c 3 6</code></pre>
+<pre class="r"><code>
+str(dat)</code></pre>
+<pre><code>
+&#39;data.frame&#39;:   3 obs. of  3 variables:
+ $ id: Factor w/ 3 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;: 1 2 3
+ $ x : int  1 2 3
+ $ y : int  4 5 6</code></pre>
+</div>
+<h2 id="data-types-in-r-list">Data types in R: List</h2>
+<p>An ordered collection of objects and they can have different modes in one list</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+w &lt;- list(name=&quot;Fred&quot;, mynumbers=a, mymatrix=y, age=5.3)
+str(w)</code></pre>
+<pre><code>
+List of 4
+ $ name     : chr &quot;Fred&quot;
+ $ mynumbers: num [1:6] 1 2 5.3 6 -2 4
+ $ mymatrix : int [1:5, 1:4] 1 2 3 4 5 6 7 8 9 10 ...
+ $ age      : num 5.3</code></pre>
+</div>
+<h2 id="data-types-in-r-factor">Data types in R: Factor</h2>
+<p>You can tell R that a variable is nominal (used for identification/labelling) by making it a factor.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+x &lt;- factor(c(&quot;yes&quot;, &quot;no&quot;, &quot;no&quot;, &quot;yes&quot;, &quot;yes&quot;))
+x</code></pre>
+<pre><code>
+[1] yes no  no  yes yes
+Levels: no yes</code></pre>
+<pre class="r"><code>
+str(x)</code></pre>
+<pre><code>
+ Factor w/ 2 levels &quot;no&quot;,&quot;yes&quot;: 2 1 1 2 2</code></pre>
+</div>
+<h2 id="basic-commands-in-r-e.g.-calculator">Basic commands in R e.g. calculator</h2>
+<p>Open up Rstudio.</p>
+<p>Have a look at the different windows in R and try to understand what each window is used for. If you don’t have the top left window (R script) then you can click on the button with the blank page with the green/white plus which brings up the menu as shown below and you can click on R script and it will open a new script.</p>
+<p><img src="RStudio2.jpg" /></p>
+<p>Once you are happy navigating the different windows, in the bottom left hand window (the console) try typing the following (in grey) and press enter after each line when you want an output. The output that should come up is shown in white boxes.</p>
+<p>You can use R as a simple calculator:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+3 + 4</code></pre>
+<pre><code>
+[1] 7</code></pre>
+</div>
+<p>Create an object called foo:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+foo&lt;- 3 + 4</code></pre>
+</div>
+<p>You should see this object appear under your ‘values’ tab in your environment. See what foo looks like:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+foo</code></pre>
+<pre><code>
+[1] 7</code></pre>
+</div>
+<p>Create another object called po:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+po&lt;- 8+ 5</code></pre>
+</div>
+<p>See what po looks like:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+po</code></pre>
+<pre><code>
+[1] 13</code></pre>
+</div>
+<p>Add foo and po together and create a new object, zu:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+zu&lt;- foo + po</code></pre>
+</div>
+<p>See what zu looks like:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+zu</code></pre>
+<pre><code>
+[1] 20</code></pre>
+</div>
+<p>See what the structure of zu looks like:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+str(zu)</code></pre>
+<pre><code>
+ num 20</code></pre>
+</div>
+<p>You can also overwrite objects:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+zu&lt;- &quot;hello&quot;</code></pre>
+</div>
+<p>Now see what zu looks like:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+str(zu)</code></pre>
+<pre><code>
+ chr &quot;hello&quot;</code></pre>
+</div>
+<h2 id="set-working-directory">Set working directory</h2>
+<p>If you want to import an excel file with your data in, rather than typing it in by hand or export an output to a folder, you need to tell R where to look. You do this by setting the working directory. But before you do this you need to create a new folder and download and save the example data file in this new folder.</p>
+<p>First of all create a new folder called ‘Rsession’ in your main drive (I call this H:, but it could be C: or any other letter!).</p>
+<p>There are two different ways to set the working directory:</p>
+<p>1.Use the main menu to navigate to the right folder</p>
+<p>On the rStudio main menu click on:</p>
+<p>Session &gt; Set Working Directory &gt; Choose Directory</p>
+<p><img src="RStudio3.jpg" /></p>
+<p>Navigate to the Rsession folder you have just created and click once on the folder so its highlighted in blue, then click on the ‘Select folder’ button.</p>
+<p>Note: Beware of double clicking on the folder because it will open the folder which you don’t won’t be able to find your data file.</p>
+<p>You can check you have the right folder set as your working directory by doing:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+getwd()</code></pre>
+</div>
+<p>You should see:“H:/Rsession”</p>
+<ol start="2" type="1">
+<li>You can tell R to set the working directory using the command setwd()</li>
+</ol>
+<p>On the top left hand window (in your Rscript) type:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+setwd(&#39;D:/Teaching_Fieldcourses&#39;)</code></pre>
+</div>
+<p>Be aware that you need to type the exact file path otherwise R won’t be able to understand it, if you want to know the file path you can also go to windows explorer, find your folder and click once on the file path bar on the top of the window and it will show the file path. Just be careful if you copy this you need to change the backslashes (‘') to forward slashes (’/’).</p>
+<h3 id="read-in-data">Read in data</h3>
+<p>Note: R likes using .csv files rather than normal excel spreadsheets (.xlsx files). So please save the files you want to import into R as .csv files.</p>
+<p>Also make sure they are tidy (e.g. data in two columns with no breaks, you can have titles for columns) and don’t have random plots, writing etc. otherwise R won’t know how to interpret it.</p>
+<p>We will practice loading data into R now. Let’s get a nice opensource data file from GitHub. You need to put in the following command to get the dataset:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;allisonhorst/palmerpenguins&quot;)
+library(palmerpenguins)</code></pre>
+</div>
+<p>Copy the following file into Excel:</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">species</th>
+<th style="text-align: left;">island</th>
+<th style="text-align: right;">bill_length_mm</th>
+<th style="text-align: right;">bill_depth_mm</th>
+<th style="text-align: right;">flipper_length_mm</th>
+<th style="text-align: right;">body_mass_g</th>
+<th style="text-align: left;">sex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">39.1</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">3750</td>
+<td style="text-align: left;">male</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">39.5</td>
+<td style="text-align: right;">17.4</td>
+<td style="text-align: right;">186</td>
+<td style="text-align: right;">3800</td>
+<td style="text-align: left;">female</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">40.3</td>
+<td style="text-align: right;">18.0</td>
+<td style="text-align: right;">195</td>
+<td style="text-align: right;">3250</td>
+<td style="text-align: left;">female</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">36.7</td>
+<td style="text-align: right;">19.3</td>
+<td style="text-align: right;">193</td>
+<td style="text-align: right;">3450</td>
+<td style="text-align: left;">female</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">39.3</td>
+<td style="text-align: right;">20.6</td>
+<td style="text-align: right;">190</td>
+<td style="text-align: right;">3650</td>
+<td style="text-align: left;">male</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">38.9</td>
+<td style="text-align: right;">17.8</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">3625</td>
+<td style="text-align: left;">female</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">39.2</td>
+<td style="text-align: right;">19.6</td>
+<td style="text-align: right;">195</td>
+<td style="text-align: right;">4675</td>
+<td style="text-align: left;">male</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">34.1</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">193</td>
+<td style="text-align: right;">3475</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">42.0</td>
+<td style="text-align: right;">20.2</td>
+<td style="text-align: right;">190</td>
+<td style="text-align: right;">4250</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Now save the file in the Rsession folder you created. Call it testdata and save it as type CSV (Comma delimited).</p>
+<p>To read in your file you use the function read.csv in R:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+mydata&lt;-read.csv(&quot;testdata.csv&quot;) 
+# here the file will be called mydata in R, and as the working directory will be the folder in which your data file is saved, R will find it there</code></pre>
+</div>
+<p>You can also save files back into your working directory with the function write.csv, if you have changed them in R:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+write.csv(mydata, &quot;testdatanew.csv&quot;) 
+# the first bit in the bracket is the name of the file in R, the second bit is the name of the new csv file you want to save</code></pre>
+</div>
+<h2 id="some-basic-outputs-from-a-dataset">Some basic outputs from a dataset</h2>
+<p>Apart from the str function, there are some other functions we can use to get an initial idea of our data. We can use the function mean to calculate the mean of some values:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+mean(c(5,7,9))</code></pre>
+<pre><code>
+[1] 7</code></pre>
+</div>
+<p>We can summarise each column. For continuous variables, this will show the minimum and maximum value, the quartiles and the mean. For nominal variables, it will show the different categories and a count of each one. We will use a built-in dataset called iris:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+penguins&lt;-palmerpenguins::penguins
+summary(penguins)</code></pre>
+<pre><code>
+      species          island    bill_length_mm  bill_depth_mm  
+ Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  
+ Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  
+ Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  
+                                 Mean   :43.92   Mean   :17.15  
+                                 3rd Qu.:48.50   3rd Qu.:18.70  
+                                 Max.   :59.60   Max.   :21.50  
+                                 NA&#39;s   :2       NA&#39;s   :2      
+ flipper_length_mm  body_mass_g       sex     
+ Min.   :172.0     Min.   :2700   female:165  
+ 1st Qu.:190.0     1st Qu.:3550   male  :168  
+ Median :197.0     Median :4050   NA&#39;s  : 11  
+ Mean   :200.9     Mean   :4202               
+ 3rd Qu.:213.0     3rd Qu.:4750               
+ Max.   :231.0     Max.   :6300               
+ NA&#39;s   :2         NA&#39;s   :2                  </code></pre>
+</div>
+<p>We can also get the summary for just one variable. We need to tell R in which dataset to look for it, and then add the column name after a dollar sign:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+summary(penguins$bill_depth_mm)</code></pre>
+<pre><code>
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+  13.10   15.60   17.30   17.15   18.70   21.50       2 </code></pre>
+<pre class="r"><code>
+mean(penguins$bill_depth_mm)</code></pre>
+<pre><code>
+[1] NA</code></pre>
+</div>
+<p>To get a better idea of your dataset, you can also use the head function, which will show the first 6 rows of the dataset, unless otherwise specified in the code:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+head(penguins)</code></pre>
+<pre><code>
+# A tibble: 6 x 7
+  species island bill_length_mm bill_depth_mm flipper_length_~
+  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
+1 Adelie  Torge~           39.1          18.7              181
+2 Adelie  Torge~           39.5          17.4              186
+3 Adelie  Torge~           40.3          18                195
+4 Adelie  Torge~           NA            NA                 NA
+5 Adelie  Torge~           36.7          19.3              193
+6 Adelie  Torge~           39.3          20.6              190
+# ... with 2 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;</code></pre>
+<pre class="r"><code>
+head(penguins, 10) </code></pre>
+<pre><code>
+# A tibble: 10 x 7
+   species island bill_length_mm bill_depth_mm flipper_length_~
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
+ 1 Adelie  Torge~           39.1          18.7              181
+ 2 Adelie  Torge~           39.5          17.4              186
+ 3 Adelie  Torge~           40.3          18                195
+ 4 Adelie  Torge~           NA            NA                 NA
+ 5 Adelie  Torge~           36.7          19.3              193
+ 6 Adelie  Torge~           39.3          20.6              190
+ 7 Adelie  Torge~           38.9          17.8              181
+ 8 Adelie  Torge~           39.2          19.6              195
+ 9 Adelie  Torge~           34.1          18.1              193
+10 Adelie  Torge~           42            20.2              190
+# ... with 2 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;</code></pre>
+<pre class="r"><code>
+# this will show the first 10 rows</code></pre>
+</div>
+<p>The same works for the last 6 rows with the tail function:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+tail(penguins)</code></pre>
+<pre><code>
+# A tibble: 6 x 7
+  species island bill_length_mm bill_depth_mm flipper_length_~
+  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
+1 Chinst~ Dream            45.7          17                195
+2 Chinst~ Dream            55.8          19.8              207
+3 Chinst~ Dream            43.5          18.1              202
+4 Chinst~ Dream            49.6          18.2              193
+5 Chinst~ Dream            50.8          19                210
+6 Chinst~ Dream            50.2          18.7              198
+# ... with 2 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;</code></pre>
+<pre class="r"><code>
+tail(penguins, 10)</code></pre>
+<pre><code>
+# A tibble: 10 x 7
+   species island bill_length_mm bill_depth_mm flipper_length_~
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
+ 1 Chinst~ Dream            50.2          18.8              202
+ 2 Chinst~ Dream            45.6          19.4              194
+ 3 Chinst~ Dream            51.9          19.5              206
+ 4 Chinst~ Dream            46.8          16.5              189
+ 5 Chinst~ Dream            45.7          17                195
+ 6 Chinst~ Dream            55.8          19.8              207
+ 7 Chinst~ Dream            43.5          18.1              202
+ 8 Chinst~ Dream            49.6          18.2              193
+ 9 Chinst~ Dream            50.8          19                210
+10 Chinst~ Dream            50.2          18.7              198
+# ... with 2 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;</code></pre>
+</div>
+<h2 id="changing-the-type-of-variable">Changing the type of variable</h2>
+<p>If variables are not in the right format, it can mess up our analysis or our plots, as R might deal differently with different types of variables. Sometimes R does not read the variables in the right way, or we need to change the variable type for some reason. Once we have checked whether our variables are in the correct format, we can change those that are not:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+penguins$species&lt;-as.character(penguins$species)
+
+# we can check what type of variable we have in different ways:
+str(penguins$species)</code></pre>
+<pre><code>
+ chr [1:344] &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; ...</code></pre>
+<pre class="r"><code>
+is.character(penguins$species)</code></pre>
+<pre><code>
+[1] TRUE</code></pre>
+</div>
+<p>In this case, species should really be a factor, so we will change it back to that:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+penguins$species&lt;-as.factor(penguins$species)</code></pre>
+</div>
+<p>In the same way, we can change variables to integers (as.integer) or continuous variables (as.numeric).</p>
+<h2 id="basic-plots">Basic plots</h2>
+<p>Now we have some idea of what our data are, we can start to make plots to see whether our variables interact in some way. The function is called plot and is very simple. If we have two continuous variables, we will get a scatter plot:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(x=penguins$bill_length_mm, y=penguins$bill_depth_mm)</code></pre>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-33-1.png" width="624" /></p>
+</div>
+<p>We can change axis labels by changing xlab and ylab in the brackets:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(x=iris$Sepal.Length, y=iris$Petal.Length, xlab=&quot;Sepal length&quot;, ylab=&quot;Petal length&quot;)</code></pre>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-34-1.png" width="624" /></p>
+</div>
+<p>We can change the colour of the circles depending on the species:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(x=penguins$bill_length_mm, y=penguins$bill_depth_mm, xlab=&quot;Bill length&quot;, ylab=&quot;Bill depth&quot;, col=penguins$species)</code></pre>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-35-1.png" width="624" /></p>
+</div>
+<p>If we have one ordinal variable (species) and one continuous variable (bill_length_mm), we will get a boxplot:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(x=penguins$species, y=penguins$bill_length_mm)</code></pre>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-36-1.png" width="624" /></p>
+</div>
+<p>We can also make histograms using the hist function:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+hist(penguins$bill_length_mm)</code></pre>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-37-1.png" width="624" /></p>
+</div>
+<p>We can completely customise the plots. The benefit of making plots in R is that we can use the same colours, font etc for all of them by just changing the variable names in our code. This means you can standardise how your plots will look in your final PhD thesis very easily.</p>
+<p>To save the plots, we need to set up the type of file first, run the plot commands, and then save it:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+jpeg(&#39;rplot.jpg&#39;)
+
+plot(x=penguins$species, y=penguins$bill_length_mm)
+
+dev.off()</code></pre>
+<pre><code>
+png 
+  2 </code></pre>
+</div>
+<p>The plots will be saved in the folder that you set in the working directory. We can also save plots as pdfs:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+pdf(&#39;rplot.pdf&#39;)
+
+plot(x=penguins$species, y=penguins$bill_length_mm)
+
+dev.off()</code></pre>
+<pre><code>
+png 
+  2 </code></pre>
+</div>
+<h2 id="how-to-install-and-load-packages">How to install and load packages</h2>
+<p>R has a huge library of additional packages. At some point you will most likely need to use some of these packages - they might be able to run some analyses which will save you from writing lots of code, contain some datasets that are of interest to you, or help with organising or displaying your data, for example. Some packages are very specific and will only be of interest to a few, whereas others are widely used. For a full list see <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html" class="uri">https://cran.r-project.org/web/packages/available_packages_by_name.html</a></p>
+<p>As with all programmes on your computer, you need to install a package the first time that you use it, and load it every following time. To install a package, you can either use the code</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+install.packages(&quot;dplyr&quot;) # in this case, we are installing a package called dplyr</code></pre>
+</div>
+<p>Or choose the package through the menu: Tools &gt; Install packages., then you can type the name of the package.</p>
+<p><img src="RStudio4.jpg" /></p>
+<p><img src="RStudio5.jpg" /></p>
+<p>Once you have installed your package, you can load it.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+library(dplyr)</code></pre>
+</div>
+<h4 id="every-time-you-start-r-you-will-have-to-load-the-package-again-if-you-want-to-use-a-function-in-that-package">Every time you start R, you will have to load the package again if you want to use a function in that package!</h4>
+<p>To find out about all the different functions in a package, you can usually find a detailed description of all functions in a package (called vignette) online, just google “R package packagename”. For dplyr, this will get you the following pdf: <a href="https://cran.r-project.org/web/packages/dplyr/dplyr.pdf" class="uri">https://cran.r-project.org/web/packages/dplyr/dplyr.pdf</a></p>
+<p>dplyr is a useful package for manipulating data. We will use a dataset called airquality for some basic functions with dplyr. Some of the easiest to use functions in the package are filter and select.</p>
+<p>filter will retain or remove rows in your dataset, according to conditions you set:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+temphigh&lt;-filter(airquality, Temp&gt;79) 
+# this creates a new dataset called temphigh, which are all values from dataset airquality where temperature is above 79
+
+templow&lt;-filter(airquality, Temp&lt;=79) 
+# this creates a new dataset called temphigh, which are all values from dataset airquality where temperature is below or at 79</code></pre>
+</div>
+<p>We can also examine rows that contain NA values, or exclude rows that contain NA values:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+summary(airquality) </code></pre>
+<pre><code>
+     Ozone           Solar.R           Wind             Temp      
+ Min.   :  1.00   Min.   :  7.0   Min.   : 1.700   Min.   :56.00  
+ 1st Qu.: 18.00   1st Qu.:115.8   1st Qu.: 7.400   1st Qu.:72.00  
+ Median : 31.50   Median :205.0   Median : 9.700   Median :79.00  
+ Mean   : 42.13   Mean   :185.9   Mean   : 9.958   Mean   :77.88  
+ 3rd Qu.: 63.25   3rd Qu.:258.8   3rd Qu.:11.500   3rd Qu.:85.00  
+ Max.   :168.00   Max.   :334.0   Max.   :20.700   Max.   :97.00  
+ NA&#39;s   :37       NA&#39;s   :7                                       
+     Month            Day      
+ Min.   :5.000   Min.   : 1.0  
+ 1st Qu.:6.000   1st Qu.: 8.0  
+ Median :7.000   Median :16.0  
+ Mean   :6.993   Mean   :15.8  
+ 3rd Qu.:8.000   3rd Qu.:23.0  
+ Max.   :9.000   Max.   :31.0  
+                               </code></pre>
+<pre class="r"><code>
+# Ozone contains 37 rows with NA values
+
+airqualityNA&lt;-filter(airquality, is.na(Ozone)) 
+# In this case we keep those rows where Ozone is NA
+
+summary(airqualityNA)</code></pre>
+<pre><code>
+     Ozone        Solar.R           Wind            Temp      
+ Min.   : NA   Min.   : 31.0   Min.   : 1.70   Min.   :56.00  
+ 1st Qu.: NA   1st Qu.:131.0   1st Qu.: 8.00   1st Qu.:75.00  
+ Median : NA   Median :194.0   Median : 9.70   Median :79.00  
+ Mean   :NaN   Mean   :189.5   Mean   :10.26   Mean   :77.92  
+ 3rd Qu.: NA   3rd Qu.:261.5   3rd Qu.:12.60   3rd Qu.:84.00  
+ Max.   : NA   Max.   :332.0   Max.   :16.60   Max.   :93.00  
+ NA&#39;s   :37    NA&#39;s   :2                                      
+     Month            Day       
+ Min.   :5.000   Min.   : 1.00  
+ 1st Qu.:6.000   1st Qu.:10.00  
+ Median :6.000   Median :15.00  
+ Mean   :6.351   Mean   :16.65  
+ 3rd Qu.:7.000   3rd Qu.:25.00  
+ Max.   :9.000   Max.   :30.00  
+                                </code></pre>
+<pre class="r"><code>
+airqualitynoNA&lt;-filter(airquality, !is.na(Ozone)) 
+# Often we might want to remove NAs from our dataset, not keep them - we do this by adding ! in front of is.na. Here we keep rows if Ozone is not NA
+
+summary(airqualitynoNA)</code></pre>
+<pre><code>
+     Ozone           Solar.R           Wind             Temp      
+ Min.   :  1.00   Min.   :  7.0   Min.   : 2.300   Min.   :57.00  
+ 1st Qu.: 18.00   1st Qu.:113.5   1st Qu.: 7.400   1st Qu.:71.00  
+ Median : 31.50   Median :207.0   Median : 9.700   Median :79.00  
+ Mean   : 42.13   Mean   :184.8   Mean   : 9.862   Mean   :77.87  
+ 3rd Qu.: 63.25   3rd Qu.:255.5   3rd Qu.:11.500   3rd Qu.:85.00  
+ Max.   :168.00   Max.   :334.0   Max.   :20.700   Max.   :97.00  
+                  NA&#39;s   :5                                       
+     Month            Day       
+ Min.   :5.000   Min.   : 1.00  
+ 1st Qu.:6.000   1st Qu.: 8.00  
+ Median :7.000   Median :16.00  
+ Mean   :7.198   Mean   :15.53  
+ 3rd Qu.:8.250   3rd Qu.:22.00  
+ Max.   :9.000   Max.   :31.00  
+                                </code></pre>
+</div>
+<p>The select function can be used to include or exclude columns from the dataset:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+airquality2&lt;-select(airquality, -Ozone) 
+# this will make a new dataset called airquality2, based on airquality, without the variable Ozone
+
+str(airquality2)</code></pre>
+<pre><code>
+&#39;data.frame&#39;:   153 obs. of  5 variables:
+ $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
+ $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
+ $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
+ $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
+ $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+<pre class="r"><code>
+airquality3&lt;-select(airquality, Ozone, Solar.R) 
+# this will make a new dataset called airquality3, based on airquality, with only the variables Ozone and Solar.R
+
+str(airquality3)</code></pre>
+<pre><code>
+&#39;data.frame&#39;:   153 obs. of  2 variables:
+ $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
+ $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...</code></pre>
+</div>
+<h2 id="saving-r-files">Saving R files</h2>
+<p>It is important to save your code - if you find a mistake in your dataset, or your supervisor wants you to run some analysis again, it will be much quicker to do if you have your code saved.</p>
+<p>It is up to you how you organise your code - for example, you could have a script for each chapter of your PhD. It is always a good idea to annotate what you do, so if you come back to your code at a later date you know what you were doing:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# if you add a hash, R won&#39;t read what you write after it until the next line. This way you can annotate your code</code></pre>
+</div>
+<p>To save your R script, go to File &gt; Save as. and then find the folder that you want to save your script in. You can also save your code in text files, but be careful with using Word: it formats some symbols in a way that R then cannot read!</p>
+<h2 id="solving-problems-in-r-help">Solving problems in R/ help</h2>
+<p>Sometimes it is difficult to know how exactly you need to write your code for a certain function, and you might get error messages. These can be difficult to interpret, especially if you are new to R. You can get more information on how to set up your code within a function by finding an R help file:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+?summary
+# this will tell you more about the summary function</code></pre>
+</div>
+<p>The help files are very useful, and the more you use R, the better you will understand them. Often it is easiest to look at the example code at the end.</p>
+<h2 id="useful-resources">Useful resources</h2>
+<h3 id="workshops">Workshops</h3>
+<p>Intermediate R session: We are running a session on 22nd November to introduce you to more advanced techniques in R such as Rmarkdown, for loops, if else statements and functions.</p>
+<p>Data visualization in R: We are running a session on 29th November to introduce you in more detail about how to display different types of variables, and more details about how to customise your plot using the ggplot2 package.</p>
+<h3 id="online">Online</h3>
+<p>There is lots of information online about all kinds of R related problems, tutorials and so on. Here are a few that are particularly useful if you are new to R:</p>
+<p>The book R for data science covers starting points on how to arrange your data, data visualisation, programming and model building in R.</p>
+<p>R bloggers - each post covers a topic with some example code. This can be handy if you have a specific R-related problem, want to know some basic information about a new package you are using, etc.</p>
+<p>www.swirlstats.com Learn R, in R - this is an interactive tool with different modules that teach R within an R package.</p>
+<p>stackoverflow - On this forum people can post R-related questions, and more experienced users help to find solutions. The examples provided in the questions need to be reproducible however. Often the questions you may have will already have been asked and answered on stackoverflow, so it is worth checking whether you can find a solution already.</p>
+<h3 id="checklist">Checklist</h3>
+<p>Other than those helpful resources here is a checklist of what to do if you are stuck with a problem in R:</p>
+<ul>
+<li><p>First of all don’t panic or get frustrated! Everyone will have a problem at some point in time if they are learning something new</p></li>
+<li><p>Have a sanity check and look for obvious wrong things e.g. spelling mistakes, an object isn’t in your data environment, you haven’t called library() before using a package.</p></li>
+<li><p>Google it! There is somewhat an art to wording your question in google to get the type of answers you are looking for but this will get better with practise. (And googling error messages never gets you very far). Chances are someone else will have definitely faced the same problem as you, even if it’s not exactly in the same format and the answer is somewhere on the internet.</p></li>
+<li><p>Can you find an example of what you want where it works? Even if it’s a simpler example understanding the basics of it might help you work out what’s wrong. Have a close look at that example, what exactly the data they used was, what format it was etc.</p></li>
+<li><p>Ask a friend ! They might have faced the same problem as you (although maybe don’t do this every 10 minutes as they might start to get annoyed and also working out a problem helps your understanding too).</p></li>
+<li><p>Sometimes it’s just better to walk away (for now). If you have been struggling for a couple of hours it’s sometimes really good to just walk away from it and start again another day when you have a fresh pair of eyes (and hopefully some renewed patience). Or even just going for a small walk can help you get some clarity on the problem.</p></li>
+<li><p>If you really can’t suss it ask a question on stack overflow (which can be quite intimidating as you need to follow certain rules e.g. have a small chunk of data which is reproducible) or supervisor/lecturer/someone very knowledgeable !</p></li>
+<li><p>People trying to help you, particularly when it’s someone that can’t sit with you and actually see your computer (i.e. someone on the internet) often find it useful to have a reproducible example, creating one of these in itself can be quite challenging but have a look at the ‘reprex’ package, it helps you you create a reproducible example snippet of your code which might help you to better understand your error/ problem and will help those people trying to help you</p></li>
+</ul>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

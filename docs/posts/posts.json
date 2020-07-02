@@ -1,5 +1,15 @@
 [
   {
+    "path": "posts/RStudio_for_beginners/",
+    "title": "Beginner session in R",
+    "description": {},
+    "author": [],
+    "date": "2020-07-02",
+    "categories": [],
+    "preview": "posts/RStudio_for_beginners/RStudio_for_beginners_files/figure-html5/unnamed-chunk-33-1.png",
+    "last_modified": "2020-07-02T09:50:09+02:00"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome",
     "description": {},
@@ -11,7 +21,7 @@
     ],
     "date": "2020-01-07",
     "categories": [],
-    "preview": "posts/welcome/welcome_files/figure-html5/pressure-1.png",
-    "last_modified": "2020-07-01T16:19:09+02:00"
+    "preview": {},
+    "last_modified": "2020-07-02T09:15:58+02:00"
   }
 ]
