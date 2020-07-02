@@ -1,7 +1,7 @@
 ---
 title: "Welcome"
 author: "Matt"
-date: "1 7 2020"
+date: "7 1 2020"
 output:
   distill::distill_article:
     self_contained: false

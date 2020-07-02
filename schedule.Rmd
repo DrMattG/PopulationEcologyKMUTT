@@ -25,7 +25,7 @@ Outline=c("Quick introduction to R and RStudio for ecological data analysis and 
 ") 
 Leaders=c("Dusit & Matt","Matt","George & Wanlop","George & Wanlop","Niti", "Dusit", "Matt")
 
-Link_to_resources=c(NA,NA,NA,NA,NA,NA,NA)
+Link_to_resources=c("https://drmattg.github.io/PopulationEcologyKMUTT/posts/RStudio_for_beginners/",NA,NA,NA,NA,NA,NA)
 
 table=data.frame(Date=Date, Subject=Subject, Outline=Outline, Leaders= Leaders, Link_to_resources=Link_to_resources)
 
