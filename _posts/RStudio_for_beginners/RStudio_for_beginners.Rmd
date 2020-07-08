@@ -50,14 +50,14 @@ library(knitr)
 - R recognises each object by the name is it's given, which can be made up of alphabetic characters and numbers. 
 - R is case-sensitive so fish and Fish are two different objects. 
 - Few symbols are allowed apart from '_' and '.'
-- Object names can't start with a number of '_' and it's advisable not to use '.' either 
+- Object names can't start with a number or '_' and it's advisable not to use '.' either 
 
 ## How R works (2)
 
 
 - Avoid some single letter object names because R sometimes also uses them. 
 - Avoid object names that can be functions in R e.g. data. 
-- You can create objects using '<-' which is R's version of '='
+- You can create objects using '<-' which is R's version of '=' (see: https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-assignment-operators-in-r for a discussion about the difference between the two)
 
 
 ```{r}
@@ -279,6 +279,7 @@ setwd('D:/Teaching_Fieldcourses')
 Be aware that you need to type the exact file path otherwise R won't be able to understand it, if you want to know the file path you can also go to windows explorer, find your folder and click once on the file path bar on the top of the window and it will show the file path. Just be careful if you copy this you need to change the backslashes ('\') to forward slashes ('/').
 
 
+[Advanced: see https://github.com/jennybc/here_here for a better way of working in RStudio using Projects]
 
 ### Read in data 
 
@@ -412,7 +413,7 @@ plot(x=penguins$bill_length_mm, y=penguins$bill_depth_mm)
 We can change axis labels by changing xlab and ylab in the brackets:
 
 ```{r}
-plot(x=iris$Sepal.Length, y=iris$Petal.Length, xlab="Sepal length", ylab="Petal length")
+plot(x=penguins$bill_length_mm, y=penguins$bill_depth_mm, xlab="Bill length", ylab="Bill depth")
 ```
 
 
