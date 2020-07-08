@@ -1,7 +1,7 @@
 ---
 title: "About this site"
 description: |
-  You can find some of the materials for the Pop
+  You can find some of the materials for the Population Ecology Course here
 ---
 
 ```{r setup, include=FALSE}
