@@ -14,8 +14,8 @@ navbar:
       href: index.html
     - text: "slides"
       menu: 
-      - text: "What is population ecology" 
-        href: slides/what_is_pop_ecol/What-is-population-ecology.html
+    - text: "What is population ecology" 
+      href: slides/what_is_pop_ecol/What-is-population-ecology.html
     - text: "about"
       href: about.html
 
