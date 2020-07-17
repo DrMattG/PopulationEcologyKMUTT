@@ -7,7 +7,8 @@
     "date": "2020-07-08",
     "categories": [],
     "preview": "posts/RStudio_for_beginners/RStudio_for_beginners_files/figure-html5/unnamed-chunk-33-1.png",
-    "last_modified": "2020-07-08T21:32:46+02:00"
+    "last_modified": "2020-07-08T21:32:46+02:00",
+    "input_file": {}
   },
   {
     "path": "posts/welcome/",
@@ -22,6 +23,7 @@
     "date": "2020-07-01",
     "categories": [],
     "preview": {},
-    "last_modified": "2020-07-02T09:55:23+02:00"
+    "last_modified": "2020-07-02T09:55:23+02:00",
+    "input_file": {}
   }
 ]

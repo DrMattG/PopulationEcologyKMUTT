@@ -8,8 +8,6 @@ navbar:
     - text: "schedule"
       href: schedule.html
   right:
-    - text: "info"
-      href: info.html
     - text: "posts"
       href: index.html
     - text: "slides"

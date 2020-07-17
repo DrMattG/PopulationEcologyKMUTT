@@ -9,3 +9,44 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## What is a population?
+
+A population is a group of individuals from a single species
+
+
+## What are the characteristics of a population?
+
+
+## Distribution
+
+
+
+## Density
+
+
+
+## Growth rate
+
+
+
+## Age structure
+
+
+
+## What affects population size
+
+
+
+## Population dynamics
+
+
+## Research questions about populations
+
+
+## Carrying capacity
+
+
+
+## What limits a population
+
+
