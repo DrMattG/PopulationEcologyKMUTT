@@ -8,7 +8,7 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Information 
+# Noticeboard
 
 
 
@@ -18,4 +18,4 @@ http://www.sumsar.net/blog/2017/02/introduction-to-bayesian-data-analysis-part-o
 
 http://www.sumsar.net/blog/2017/02/introduction-to-bayesian-data-analysis-part-two/
 
-http://www.sumsar.net/blog/2017/02/introduction-to-bayesian-data-analysis-part-three/
+http://www.sumsar.net/blog/2017/05/introduction-to-bayesian-data-analysis-part-three/
