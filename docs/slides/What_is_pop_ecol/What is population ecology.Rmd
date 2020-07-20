@@ -9,44 +9,237 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## What is population ecology?
+
+Population ecology:
+
+The dynamics of species populations and how these populations interact with the environment
+
 ## What is a population?
 
-A population is a group of individuals from a single species
+* A population is a all the individuals from a single species within an ecological community
+
+## Why do we study it?
+
+* In population ecology we are interested in growth, fluctuations, spread, interactions (within and between populations)
 
 
-## What are the characteristics of a population?
+* What information might we need to gather?
+* How would you measure population ecology?
 
 
-## Distribution
+## Population change
+
+* Methods to predict population change differ depending on whether reproduction only occurs seasonally, or whether it is continuous
+
+* Geometric and exponential rates of growth
+
+* Determining when exponential growth occurs
+
+## Population growth
+
+* Some species only breed once a year, with a distinct discrete breeding season.
+e.g. Most invertebrates, plants, mammals
+“Geometric growth”
+
+* Other species can breed at any time, so that the populations show continuous growth
+e.g. bacteria, primates
+“Exponential growth”
+
+* Different methods to predict populations
+
+## Population growth (2)
+
+* Imagine population of 2 animals, producing 2 offspring
+* Ignore Death, Emmigration and Immigration
+
+```{r annual breeding, echo=FALSE}
+N=c(NA,NA,NA,NA,NA,NA,NA,NA,NA)
+N[1]=2
+N[2]=4
+
+for (i in 2:10){
+  N[i+1]<-N[i]+N[i-1]
+}
+dat<-data.frame(N=N, Year=as.integer(c(0:10)))
+library(ggplot2)
+ggplot(data=dat,(aes(Year, N)))+
+  geom_point(colour="darkgreen", size=4)+
+  ggthemes::theme_base()
+
+```
+
+## Population breeds seasonally (i.e. at discrete time intervals)
+
+* Population growth is described using difference equations
+* Difference equations show the relationship between the population size at the start compared to the population at the end of one timestep
+ - Timestep is usually a year etc.
+
+* Geometric growth if population unlimited
+
+## Equation in words
+
+Pop. at end of timestep = Pop. at start of timestep   x  Discrete per capita net growth rate
 
 
+## Discrete breeding - unlimited population growth equation
 
-## Density
+Nt+1 = λ.Nt
+
+Nt 	population size at time t (this year)
+
+Nt+1	population size at time t+1 (next year)
+
+λ		finite rate of population increase, or 	discrete (per capita) net rate of growth, 	or geometric growth rate (births-deaths)
+
+t		is the time period (e.g. in years)
+
+## What is λ ?
+
+* λ (Greek symbol ‘lambda’) is the growth rate per head, and is any number greater than zero
+
+* Note that values of λ less than 1 result in population decline, so the term ‘growth’ rate is a little confusing.
+
+* Some textbooks use R instead of λ
+
+ 𝜆=  𝑁_(𝑡+1)/𝑁_𝑡 
+
+## Population size after discrete (seasonal) reproduction over many years
+
+* If you had two timesteps, then
+ - Nt+2 = λ.Nt+1
+ - which is the same as
+ - Nt+2 = λ.λ.Nt = λ2.Nt
+ - so that the generalised form for any number of years (T) is:
+
+NT = λT .N0
+
+## Species breeds all year (continuous reproduction)
+
+* Population growth in these animals is usually described with differential equations
+
+* Differential equations describe rates of change
+
+* Exponential growth if population unlimited
 
 
+## Equation in words
 
-## Growth rate
-
-
-
-## Age structure
+Rate of increase in population = (Average per capita birth rate - average per capita death rate)  x   Current population size
 
 
+## Continuous breeding: unlimited population growth equation
 
-## What affects population size
+𝑑𝑁/𝑑𝑡=(𝐵−𝐷)𝑁
+
+𝑑𝑁/𝑑𝑡=𝑟𝑁
+
+dN = change in population size
+
+dt = change in time
+
+dN/dt = rate of change in population
+
+r = instantaneous rate of population growth
 
 
+## λ versus r
 
-## Population dynamics
+* Note that λ and r are not the same!
+* λ = exp(r)
+ or
+ r = ln(λ)
+* λ only compounds once a year, whereas r compounds instantaneously
+* So, for example, if λ is 1.2 then the equivalent growth rate in r is only 0.18
+
+* Think of bank interest rates on monthly vs annual accounts
+
+## Population size after continuous reproduction over many years
+
+Continuous population growth after a set period of time can be predicted from:
+
+𝑁_𝑡=𝑁_0 𝑒^𝑟𝑡
+
+where:
+
+N0 =  Population at start
+
+Nt  = Population at time t
+
+r = instantaneous population growth rate
+
+e = Euler’s number for natural logarithm 2.718…
 
 
-## Research questions about populations
+## Limited population growth
+
+* In reality no population can grow indefinitely
+
+* Values of λ or r fluctuate both independent and dependent on the density of the population
+
+* Eventually density-dependent will limit growth; observed in a wide range of taxa and habitats
+
+* Carrying capacity K must be considered
+
+## Intraspecific competition: discrete breeding
+
+Intraspecific competition can be represented by the discrete logistic growth equation
+
+𝑁_(𝑡+1)=𝜆𝑁_𝑡 (1−𝑁_𝑡/𝐾)
+
+where
+K = carrying capacity
+λ = net reproductive rate
+
+## Example 
 
 
-## Carrying capacity
+## Intraspecific competition:continuous breeding
+
+Logistic growth equation for continuous growth:
+
+𝑑𝑁/𝑑𝑡=𝑟𝑁(1−𝑁/𝐾)
+
+where
+K = carrying capacity
+r = instantaneous population growth rate
 
 
+## Can human carrying capacity be predicted?
 
-## What limits a population
+* How will human population growth level off to a steady rate?
 
+* Problem of aging population as reproductive rate slows
+
+* Development – demand on resources by Developed and Developing countries
+
+* Attempt by Pearl & Reed (1920) to estimate K in USA
+
+## Example
+
+
+## Inverse density dependence
+
+* So far we have only considered populations where increasing population size results in a decline in population growth rates.
+
+* Density dependence usually has a regulating effect, so that the population tends towards its carrying capacity.
+
+* Inverse density dependence occurs where population growth rates fall as the population size declines.
+
+* THIS IS DESTABILISING AND CAN DRIVE ENDANGERED POPULATION TOWARDS EXTINCTION!
+
+## Example
+
+## Allee effect
+
+* Why did this happen in guillemots?  
+
+* Predation rate (from gulls) on chicks reduced with larger colonies.
+
+ - “Predator saturation”
+
+* Applies to many animals.  
+- Low populations: problems of finding mates, inbreeding etc.
+
+## Examples
 

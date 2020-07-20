@@ -19,7 +19,7 @@ The course runs on 09.07.2020, 21.07.2020 to 31.09.2020. Here is the schedule:
 
 ```{r, echo=FALSE}
 
-Date=c("09.07.2020","21.07.2020", "23.07.2020", "24.07.2020","27.07.2020","28.07.2020","29.07.2020")
+Date=c("20.07.2020","21.07.2020", "23.07.2020", "24.07.2020","27.07.2020","28.07.2020","29.07.2020")
 Subject=c("Introduction to R & RStudio", "Introduction to population ecology", "'Classic' population ecology models", "Species interactions", "Population viability analysis","Introduction to Bayesian analysis","Structured decision making")
 Outline=c("Quick introduction to R and RStudio for ecological data analysis and plotting graphs", "What is population ecology? Why do we study it? Broad approaches to modelling population change. Discrete and continuous growth models. Limited populations. Carrying capacity. Allee effects", "Lotka-Volterra models. Leslie/Transition matrices-age/stage", "Competition. Predation & Herbivory. Symbiosis", "What is PVA? Hunting mortality - compensatory or additive", "Approximate Bayesian Computation. Components of a Bayesian model (Priors, Data, Generative models)", "Decision making under uncertainty. Adaptive management. Structure of decision making process. Dealing with uncertainty. Conflicting objective. Bayesian networks for decision making. Agent based simulations for decision making
 ") 
