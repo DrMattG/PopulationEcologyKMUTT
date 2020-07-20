@@ -1,5 +1,37 @@
 [
   {
+    "path": "posts/if_you_go_down_to_the_woods/",
+    "title": "If you go down to the woods today....",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt Grainger",
+        "url": {}
+      }
+    ],
+    "date": "2020-07-20",
+    "categories": [],
+    "preview": "posts/if_you_go_down_to_the_woods/If_you_go_down_to_the_woods_files/figure-html5/bears-1.png",
+    "last_modified": "2020-07-20T16:54:04+02:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/Population_models/",
+    "title": "Population models",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt Grainger",
+        "url": {}
+      }
+    ],
+    "date": "2020-07-20",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-07-20T16:53:58+02:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/RStudio_for_beginners/",
     "title": "Beginner session in R",
     "description": {},

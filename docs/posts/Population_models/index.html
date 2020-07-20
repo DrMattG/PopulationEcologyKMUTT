@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+<title>Pop_Ecol_KMUTT: Population models</title>
+
+
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2020-07-20"/>
+<meta property="article:created" itemprop="dateCreated" content="2020-07-20"/>
+<meta name="article:author" content="Matt Grainger"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Pop_Ecol_KMUTT: Population models"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Pop_Ecol_KMUTT"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Pop_Ecol_KMUTT: Population models"/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Population models"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt Grainger"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-20-2020"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["Population-models1_files/bowser-1.9.3/bowser.min.js","Population-models1_files/distill-2.2.21/template.v2.js","Population-models1_files/figure-html5/add a stochastic term eg rmax is stochastically influenced by environment-1.png","Population-models1_files/figure-html5/add a stochastic term eg rmax is stochastically influenced by environment-2.png","Population-models1_files/figure-html5/Add stochastic term-1.png","Population-models1_files/figure-html5/Add stochastic term-2.png","Population-models1_files/figure-html5/density dependent logistic growth-1.png","Population-models1_files/figure-html5/Exponential growth model-1.png","Population-models1_files/figure-html5/Iterative approach using discrete model formulation-1.png","Population-models1_files/figure-html5/Make sure nothing silly happens-1.png","Population-models1_files/figure-html5/Stochastic-1.png","Population-models1_files/figure-html5/STOCHASTIC PROCESS ORIENTED MODELS-1.png","Population-models1_files/figure-html5/unnamed-chunk-1-1.png","Population-models1_files/figure-html5/unnamed-chunk-2-1.png","Population-models1_files/jquery-1.11.3/jquery.min.js","Population-models1_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #455a64;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative;}
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+</style>
+
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for table of contents */
+
+.d-toc {
+  color: rgba(0,0,0,0.8);
+  font-size: 0.8em;
+  line-height: 1em;
+}
+
+.d-toc-header {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1.3em;
+}
+
+.d-toc a {
+  border-bottom: none;
+}
+
+.d-toc ul {
+  padding-left: 0;
+}
+
+.d-toc li>ul {
+  padding-top: 0.8em;
+  padding-left: 16px;
+  margin-bottom: 0.6em;
+}
+
+.d-toc ul,
+.d-toc li {
+  list-style-type: none;
+}
+
+.d-toc li {
+  margin-bottom: 0.9em;
+}
+
+.d-toc-separator {
+  margin-top: 20px;
+  margin-bottom: 2em;
+}
+
+.d-article-with-toc {
+  border-top: none;
+  padding-top: 0;
+}
+
+
+
+/* Tweak code blocks (note that this CSS is repeated above in an injection
+   into the d-code shadow dom) */
+
+d-code {
+  overflow-x: auto !important;
+}
+
+pre.d-code code.d-code {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+pre.text-output {
+
+  font-size: 12px;
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+@media(min-width: 768px) {
+
+d-code {
+  overflow-x: visible !important;
+}
+
+pre.d-code code.d-code  {
+    padding-left: 18px;
+    font-size: 14px;
+}
+pre.text-output {
+  font-size: 14px;
+}
+}
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // create d-bibliography
+  var bibliography = $('<d-bibliography></d-bibliography>');
+  $('#distill-bibliography').wrap(bibliography);
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace citations with <d-cite>
+  $('.citation').each(function(i, val) {
+    appendix = true;
+    var cites = $(this).attr('data-cites').split(" ");
+    var dt_cite = $('<d-cite></d-cite>');
+    dt_cite.attr('key', cites.join());
+    $(this).replaceWith(dt_cite);
+  });
+  // remove refs
+  $('#refs').remove();
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-toc a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // replace code blocks with d-code
+  $('pre>code').each(function(i, val) {
+    var code = $(this);
+    var pre = code.parent();
+    var clz = "";
+    var language = pre.attr('class');
+    if (language) {
+      // map unknown languages to "clike" (without this they just dissapear)
+      if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                               "javascript", "js", "julia", "lua", "markdown",
+                               "markup", "mathml", "python", "svg", "xml"]) == -1)
+        language = "clike";
+      language = ' language="' + language + '"';
+      var dt_code = $('<d-code block' + language + clz + '></d-code>');
+      dt_code.text(code.text());
+      pre.replaceWith(dt_code);
+    } else {
+      code.addClass('text-output').unwrap().changeElementType('pre');
+    }
+  });
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('d-code, pre.text-output, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // table of contents
+    if (have_authors) // adjust border if we are in authors
+      $('.d-toc').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+    $('d-code').each(function(i, val) {
+      var style = document.createElement('style');
+      style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                        '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+      if (this.shadowRoot)
+        this.shadowRoot.appendChild(style);
+    });
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-toc-header').remove();
+  $('.d-toc').remove();
+  $('.d-toc-separator').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Population models","authors":[{"author":"Matt Grainger","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-07-20T00:00:00.000+02:00","citationText":"Grainger, 2020"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">Pop_Ecol_KMUTT</a>
+<a href="../../schedule.html">schedule</a>
+</div>
+<div class="nav-right">
+<a href="../../index.html">posts</a>
+<span class="nav-dropdown-header">slides</span>
+<a href="../../slides/What_is_pop_ecol/What-is-population-ecology.html">What is population ecology</a>
+<a href="../../about.html">about</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Population models</h1>
+
+</div>
+
+<div class="d-byline">
+  
+  Matt Grainger
+  
+<br/>07-20-2020
+</div>
+
+<div class="d-article">
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+#exponential growth model
+#initial population size
+N0&lt;-100
+#population growth rate
+r&lt;-0.1
+#years we are simulating
+T&lt;-10
+#method 1: use the explicit formula directly 
+#first generate a list of time indices
+t&lt;-0:T 
+#now calculate N at each time
+N&lt;-N0*exp(r*t)
+#make it pretty
+data.frame(t=t,N=N)</code></pre>
+<pre><code>
+    t        N
+1   0 100.0000
+2   1 110.5171
+3   2 122.1403
+4   3 134.9859
+5   4 149.1825
+6   5 164.8721
+7   6 182.2119
+8   7 201.3753
+9   8 222.5541
+10  9 245.9603
+11 10 271.8282</code></pre>
+<pre class="r"><code>
+plot(t,N,type=&quot;l&quot;)</code></pre>
+<p><img src="Population-models1_files/figure-html5/Exponential%20growth%20model-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+N0&lt;-100
+r.mean&lt;-0.10
+r.sd&lt;-0.30
+r&lt;-rnorm(T,r.mean,r.sd)
+plot(density(r))
+abline(v=r.mean,col=&quot;blue&quot;)
+abline(v=r.mean+r.sd,col=&quot;blue&quot;,lty=2)
+abline(v=r.mean-r.sd,col=&quot;blue&quot;,lty=2)</code></pre>
+<p><img src="Population-models1_files/figure-html5/Add%20stochastic%20term-1.png" width="624" /></p>
+<pre class="r"><code>
+#now use this in place of the constant r
+t&lt;-N&lt;-array(dim=T+1)
+
+#first element is initial value
+N[1]&lt;-N0
+t[1]&lt;-0
+for (i in 1:T)
+{
+  N[i+1]&lt;-N[i]*exp(r[i])
+  t[i+1]=t[i]+1
+}
+#make it pretty
+data.frame(t=t,N=N)</code></pre>
+<pre><code>
+    t         N
+1   0  100.0000
+2   1  155.0462
+3   2  127.1783
+4   3  208.2462
+5   4  161.0638
+6   5  249.5616
+7   6  305.1056
+8   7  515.8803
+9   8  500.5317
+10  9  670.0368
+11 10 1096.1710</code></pre>
+<pre class="r"><code>
+plot(t,N,type=&quot;l&quot;)</code></pre>
+<p><img src="Population-models1_files/figure-html5/Add%20stochastic%20term-2.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# N to be integer if we want. 
+N0&lt;-10
+r.mean&lt;-0.0
+r.sd&lt;-0.8
+r&lt;-rnorm(T,r.mean,r.sd)
+plot(density(r))
+abline(v=r.mean,col=&quot;blue&quot;)
+abline(v=r.mean+r.sd,col=&quot;blue&quot;,lty=2)
+abline(v=r.mean-r.sd,col=&quot;blue&quot;,lty=2)</code></pre>
+<p><img src="Population-models1_files/figure-html5/Make%20sure%20nothing%20silly%20happens-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+#now use this in place of the constant r
+t&lt;-N&lt;-array(dim=T+1)
+
+#first element is initial value
+N[1]&lt;-N0
+t[1]&lt;-0
+for (i in 1:T)
+{
+  N[i+1]&lt;-round(N[i]*exp(r[i]),0)
+  print(N[i+1])
+  N[i+1]&lt;-(N[i+1]&gt;1)*N[i+1] #makes N= 0 if falls below 2
+  
+  t[i+1]=t[i]+1
+}</code></pre>
+<pre><code>
+[1] 28
+[1] 106
+[1] 47
+[1] 45
+[1] 81
+[1] 224
+[1] 78
+[1] 138
+[1] 167
+[1] 179</code></pre>
+<pre class="r"><code>
+#make it pretty
+data.frame(t=t,N=N)</code></pre>
+<pre><code>
+    t   N
+1   0  10
+2   1  28
+3   2 106
+4   3  47
+5   4  45
+6   5  81
+7   6 224
+8   7  78
+9   8 138
+10  9 167
+11 10 179</code></pre>
+<pre class="r"><code>
+plot(t,N,type=&quot;l&quot;)</code></pre>
+<p><img src="Population-models1_files/figure-html5/Stochastic-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+#continuous growth model
+#parameters
+T&lt;-50
+N0&lt;-100
+K&lt;-500
+rmax&lt;-0.2
+C&lt;-K/N0-1 
+#first generate a list of time indices
+t&lt;-0:T 
+N&lt;-K/(1+C*exp(-rmax*t))
+#make it pretty
+data.frame(t=t,N=N)</code></pre>
+<pre><code>
+    t        N
+1   0 100.0000
+2   1 116.9612
+3   2 135.8223
+4   3 156.4824
+5   4 178.7428
+6   5 202.3048
+7   6 226.7803
+8   7 251.7132
+9   8 276.6120
+10  9 300.9880
+11 10 324.3928
+12 11 346.4493
+13 12 366.8724
+14 13 385.4770
+15 14 402.1749
+16 15 416.9626
+17 16 429.9046
+18 17 441.1143
+19 18 450.7368
+20 19 458.9332
+21 20 465.8692
+22 21 471.7060
+23 22 476.5947
+24 23 480.6734
+25 24 484.0651
+26 25 486.8778
+27 26 489.2051
+28 27 491.1271
+29 28 492.7121
+30 29 494.0173
+31 30 495.0912
+32 31 495.9738
+33 32 496.6988
+34 33 497.2940
+35 34 497.7823
+36 35 498.1829
+37 36 498.5113
+38 37 498.7805
+39 38 499.0011
+40 39 499.1819
+41 40 499.3300
+42 41 499.4513
+43 42 499.5507
+44 43 499.6321
+45 44 499.6987
+46 45 499.7533
+47 46 499.7980
+48 47 499.8346
+49 48 499.8646
+50 49 499.8891
+51 50 499.9092</code></pre>
+<pre class="r"><code>
+plot(t,N,type=&quot;l&quot;)</code></pre>
+<p><img src="Population-models1_files/figure-html5/density%20dependent%20logistic%20growth-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+#### 
+T&lt;-50
+N0&lt;-100
+K&lt;-500
+rmax&lt;-0.2
+
+t&lt;-N&lt;-array(dim=T+1)
+
+#first element is initial value
+N[1]&lt;-N0
+t[1]&lt;-0
+for (i in 1:T)
+{
+  N[i+1]&lt;-N[i]+rmax*N[i]*(1-N[i]/K)
+  t[i+1]=t[i]+1
+}
+#make it pretty
+data.frame(t=t,N=N)</code></pre>
+<pre><code>
+    t        N
+1   0 100.0000
+2   1 116.0000
+3   2 133.8176
+4   3 153.4183
+5   4 174.6870
+6   5 197.4182
+7   6 221.3123
+8   7 245.9831
+9   8 270.9766
+10  9 295.8006
+11 10 319.9616
+12 11 343.0037
+13 12 364.5438
+14 13 384.2957
+15 14 402.0816
+16 15 417.8301
+17 16 431.5633
+18 17 443.3772
+19 18 453.4193
+20 19 461.8675
+21 20 468.9124
+22 21 474.7433
+23 22 479.5395
+24 23 483.4642
+25 24 486.6620
+26 25 489.2584
+27 26 491.3606
+28 27 493.0586
+29 28 494.4276
+30 29 495.5297
+31 30 496.4157
+32 31 497.1275
+33 32 497.6987
+34 33 498.1568
+35 34 498.5241
+36 35 498.8184
+37 36 499.0542
+38 37 499.2430
+39 38 499.3941
+40 39 499.5152
+41 40 499.6120
+42 41 499.6896
+43 42 499.7516
+44 43 499.8013
+45 44 499.8410
+46 45 499.8728
+47 46 499.8982
+48 47 499.9186
+49 48 499.9349
+50 49 499.9479
+51 50 499.9583</code></pre>
+<pre class="r"><code>
+plot(t,N,type=&quot;l&quot;)</code></pre>
+<p><img src="Population-models1_files/figure-html5/Iterative%20approach%20using%20discrete%20model%20formulation-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+T&lt;-50
+N0&lt;-100
+K&lt;-500
+rmax.mean&lt;-0.2
+rmax.sd&lt;-0.2
+rmax&lt;-rnorm(T,rmax.mean,rmax.sd)
+t&lt;-N&lt;-array(dim=T+1)
+plot(density(rmax))
+abline(v=rmax.mean,col=&quot;blue&quot;)
+abline(v=rmax.mean+rmax.sd,col=&quot;blue&quot;,lty=2)
+abline(v=rmax.mean-rmax.sd,col=&quot;blue&quot;,lty=2)</code></pre>
+<p><img src="Population-models1_files/figure-html5/add%20a%20stochastic%20term%20eg%20rmax%20is%20stochastically%20influenced%20by%20environment-1.png" width="624" /></p>
+<pre class="r"><code>
+#first element is initial value
+N[1]&lt;-N0
+t[1]&lt;-0
+for (i in 1:T)
+{
+  N[i+1]&lt;-N[i]+rmax[i]*N[i]*(1-N[i]/K)
+  t[i+1]=t[i]+1
+}
+#make it pretty
+data.frame(t=t,N=N)</code></pre>
+<pre><code>
+    t        N
+1   0 100.0000
+2   1 124.7018
+3   2 121.5933
+4   3 121.9152
+5   4 148.2906
+6   5 178.6601
+7   6 179.3349
+8   7 188.4918
+9   8 209.1506
+10  9 187.2846
+11 10 186.6721
+12 11 225.5796
+13 12 229.3542
+14 13 267.9778
+15 14 263.6562
+16 15 309.3847
+17 16 328.6664
+18 17 358.4736
+19 18 359.8885
+20 19 378.2000
+21 20 424.8059
+22 21 415.5731
+23 22 425.7520
+24 23 451.8402
+25 24 461.3781
+26 25 467.1660
+27 26 475.4175
+28 27 483.9266
+29 28 487.2937
+30 29 489.0022
+31 30 490.9827
+32 31 495.0585
+33 32 497.8721
+34 33 498.8169
+35 34 499.1844
+36 35 499.3648
+37 36 499.2906
+38 37 499.2808
+39 38 499.2707
+40 39 499.5416
+41 40 499.5076
+42 41 499.3013
+43 42 499.3938
+44 43 499.5328
+45 44 499.5035
+46 45 499.6338
+47 46 499.7508
+48 47 499.8368
+49 48 499.8648
+50 49 499.8605
+51 50 499.9331</code></pre>
+<pre class="r"><code>
+plot(t,N,type=&quot;l&quot;)</code></pre>
+<p><img src="Population-models1_files/figure-html5/add%20a%20stochastic%20term%20eg%20rmax%20is%20stochastically%20influenced%20by%20environment-2.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+#instead of the above approaches we can model growth in terms of F and S directly
+#as Poisson and Binomial processes
+
+#AGE STRUCTURE
+#Survival rates for four age classes
+S=c(0.5,0.65,0.85,0)
+#births for four age classes
+b=c(0,1,2,0)
+f=c(b[1]*S[1],b[2]*S[2],b[3]*S[3],b[4]*S[4])
+A1=c(S[1],0,0,0)
+A2=c(0,S[2],0,0)
+A3=c(0,0,S[3],S[4])
+A=rbind(f,A1,A2,A3)
+A</code></pre>
+<pre><code>
+   [,1] [,2] [,3] [,4]
+f   0.0 0.65 1.70    0
+A1  0.5 0.00 0.00    0
+A2  0.0 0.65 0.00    0
+A3  0.0 0.00 0.85    0</code></pre>
+<pre class="r"><code>
+years=50
+#initial abundance vector
+N=c(10,100,200,500)
+N</code></pre>
+<pre><code>
+[1]  10 100 200 500</code></pre>
+<pre class="r"><code>
+#create empty vectors for age vector, time, population, individual ages, and growth rate
+age=c()
+t=c()
+pop=c()
+age0=c()
+age1=c()
+age2=c()
+age3=c()
+grow=c()
+#for loop to simulate population under deterministic conditions
+for (y in 1:max(years)){
+  t=append(t,y)
+  abund=sum(N)
+  pop=append(pop,abund)
+  for (i in 1:4){age[i]=N[i]/abund}
+  age0=append(age0,age[1])
+  age1=append(age1,age[2])
+  age2=append(age2,age[3])
+  age3=append(age3,age[4])
+  
+  cat(&quot;year&quot;,y,&quot;\n&quot;);
+  cat(&quot;Population&quot;,N,&quot;\n&quot;);
+  cat(&quot;age structure&quot;,age,&quot;\n&quot;);
+  N=A%*%N
+  
+  grow=append(grow,sum(N)/abund)
+  cat(&quot;lambda&quot;,grow[y],&quot;\n&quot;);
+}</code></pre>
+<pre><code>
+year 1 
+Population 10 100 200 500 
+age structure 0.01234568 0.1234568 0.2469136 0.617284 
+lambda 0.7962963 
+year 2 
+Population 405 5 65 170 
+age structure 0.627907 0.007751938 0.1007752 0.2635659 
+lambda 0.5810078 
+year 3 
+Population 113.75 202.5 3.25 55.25 
+age structure 0.3035357 0.5403602 0.008672448 0.1474316 
+lambda 0.8763509 
+year 4 
+Population 137.15 56.875 131.625 2.7625 
+age structure 0.417615 0.1731816 0.4007917 0.008411677 
+lambda 1.455962 
+year 5 
+Population 260.7312 68.575 36.96875 111.8812 
+age structure 0.5452846 0.1434155 0.07731521 0.2339847 
+lambda 0.6562362 
+year 6 
+Population 107.4206 130.3656 44.57375 31.42344 
+age structure 0.34234 0.4154637 0.1420526 0.1001437 
+lambda 1.073507 
+year 7 
+Population 160.513 53.71031 84.73766 37.88769 
+age structure 0.4765137 0.1594494 0.25156 0.1124769 
+lambda 1.087019 
+year 8 
+Population 178.9657 80.25652 34.9117 72.02701 
+age structure 0.4887624 0.2191837 0.09534524 0.1967086 
+lambda 0.7724504 
+year 9 
+Population 111.5166 89.48286 52.16674 29.67495 
+age structure 0.394273 0.3163714 0.1844383 0.1049174 
+lambda 1.078737 
+year 10 
+Population 146.8473 55.75832 58.16386 44.34172 
+age structure 0.4812911 0.1827475 0.1906317 0.1453297 
+lambda 0.9643281 
+year 11 
+Population 135.1215 73.42365 36.2429 49.43928 
+age structure 0.4592418 0.2495474 0.12318 0.1680309 
+lambda 0.8681414 
+year 12 
+Population 109.3383 67.56073 47.72538 30.80647 
+age structure 0.4280544 0.2644971 0.1868426 0.1206059 
+lambda 1.034322 
+year 13 
+Population 125.0476 54.66916 43.91448 40.56657 
+age structure 0.4733106 0.2069251 0.1662182 0.1535462 
+lambda 0.9295142 
+year 14 
+Population 110.1896 62.52381 35.53495 37.3273 
+age structure 0.4486991 0.254601 0.1447006 0.1519992 
+lambda 0.9243175 
+year 15 
+Population 101.0499 55.09478 40.64047 30.20471 
+age structure 0.4451736 0.2427191 0.1790409 0.1330663 
+lambda 0.994676 
+year 16 
+Population 104.9004 50.52495 35.81161 34.5444 
+age structure 0.4646106 0.2237782 0.1586119 0.1529994 
+lambda 0.9276772 
+year 17 
+Population 93.72095 52.45021 32.84122 30.43987 
+age structure 0.4474574 0.2504161 0.1567957 0.1453308 
+lambda 0.9490987 
+year 18 
+Population 89.9227 46.86047 34.09263 27.91503 
+age structure 0.4523483 0.2357275 0.1715 0.1404241 
+lambda 0.969945 
+year 19 
+Population 88.41679 44.96135 30.45931 28.97874 
+age structure 0.4585548 0.2331824 0.1579707 0.150292 
+lambda 0.9352399 
+year 20 
+Population 81.0057 44.20839 29.22488 25.89041 
+age structure 0.4492097 0.2451536 0.1620639 0.1435729 
+lambda 0.9565673 
+year 21 
+Population 78.41775 40.50285 28.73546 24.84115 
+age structure 0.454603 0.2348029 0.1665851 0.144009 
+lambda 0.9573372 
+year 22 
+Population 75.17713 39.20887 26.32685 24.42514 
+age structure 0.4552382 0.237431 0.1594234 0.1479074 
+lambda 0.9428089 
+year 23 
+Population 70.24142 37.58856 25.48577 22.37782 
+age structure 0.4511517 0.2414266 0.1636918 0.1437299 
+lambda 0.9568446 
+year 24 
+Population 67.75837 35.12071 24.43257 21.6629 
+age structure 0.4548319 0.2357497 0.164005 0.1454134 
+lambda 0.9521032 
+year 25 
+Population 64.36382 33.87919 22.82846 20.76768 
+age structure 0.4537804 0.2388564 0.1609461 0.1464171 
+lambda 0.9478161 
+year 26 
+Population 60.82985 32.18191 22.02147 19.40419 
+age structure 0.4524771 0.2393821 0.1638046 0.1443362 
+lambda 0.955137 
+year 27 
+Population 58.35474 30.41493 20.91824 18.71825 
+age structure 0.4544544 0.236865 0.1629068 0.1457738 
+lambda 0.9505642 
+year 28 
+Population 55.33072 29.17737 19.7697 17.78051 
+age structure 0.4533138 0.2390446 0.1619693 0.1456722 
+lambda 0.9504367 
+year 29 
+Population 52.57379 27.66536 18.96529 16.80425 
+age structure 0.4531884 0.2384766 0.1634817 0.1448534 
+lambda 0.953492 
+year 30 
+Population 50.22348 26.28689 17.98248 16.1205 
+age structure 0.4540454 0.2376467 0.1625706 0.1457374 
+lambda 0.9505184 
+year 31 
+Population 47.6567 25.11174 17.08648 15.28511 
+age structure 0.4532689 0.2388409 0.1625117 0.1453786 
+lambda 0.9515323 
+year 32 
+Population 45.36965 23.82835 16.32263 14.52351 
+age structure 0.4534963 0.2381784 0.1631543 0.145171 
+lambda 0.9524235 
+year 33 
+Population 43.2369 22.68482 15.48843 13.87424 
+age structure 0.4537669 0.2380749 0.1625495 0.1456087 
+lambda 0.950882 
+year 34 
+Population 41.07546 21.61845 14.74514 13.16516 
+age structure 0.4533505 0.2386031 0.1627423 0.1453041 
+lambda 0.9518521 
+year 35 
+Population 39.11872 20.53773 14.05199 12.53337 
+age structure 0.4535935 0.2381412 0.1629371 0.1453282 
+lambda 0.95187 
+year 36 
+Population 37.23791 19.55936 13.34953 11.94419 
+age structure 0.4536175 0.2382644 0.1626186 0.1454994 
+lambda 0.95123 
+year 37 
+Population 35.40778 18.61896 12.71358 11.3471 
+age structure 0.4534377 0.2384373 0.1628122 0.1453127 
+lambda 0.9518585 
+year 38 
+Population 33.71542 17.70389 12.10232 10.80655 
+age structure 0.4536021 0.2381854 0.1628228 0.1453896 
+lambda 0.9516403 
+year 39 
+Population 32.08147 16.85771 11.50753 10.28697 
+age structure 0.453553 0.2383265 0.1626881 0.1454325 
+lambda 0.9514555 
+year 40 
+Population 30.52031 16.04074 10.95751 9.781399 
+age structure 0.4534967 0.2383469 0.162816 0.1453403 
+lambda 0.9517802 
+year 41 
+Population 29.05425 15.26015 10.42648 9.313884 
+age structure 0.4535845 0.2382361 0.1627745 0.145405 
+lambda 0.951574 
+year 42 
+Population 27.64411 14.52712 9.9191 8.862507 
+age structure 0.4535328 0.2383338 0.162734 0.1453994 
+lambda 0.951572 
+year 43 
+Population 26.3051 13.82206 9.44263 8.431235 
+age structure 0.4535282 0.2383071 0.1628011 0.1453636 
+lambda 0.9517062 
+year 44 
+Population 25.03681 13.15255 8.984337 8.026236 
+age structure 0.4535659 0.2382711 0.1627599 0.145403 
+lambda 0.9515733 
+year 45 
+Population 23.82253 12.5184 8.549157 7.636687 
+age structure 0.4535312 0.2383242 0.1627581 0.1453865 
+lambda 0.9516202 
+year 46 
+Population 22.67053 11.91127 8.136963 7.266784 
+age structure 0.4535418 0.2382942 0.1627863 0.1453777 
+lambda 0.9516585 
+year 47 
+Population 21.57516 11.33527 7.742322 6.916418 
+age structure 0.4535535 0.2382902 0.1627593 0.1453971 
+lambda 0.9515901 
+year 48 
+Population 20.52987 10.78758 7.367922 6.580974 
+age structure 0.453535 0.2383135 0.1627682 0.1453834 
+lambda 0.9516339 
+year 49 
+Population 19.53739 10.26494 7.011927 6.262734 
+age structure 0.453546 0.2382928 0.1627766 0.1453847 
+lambda 0.9516339 
+year 50 
+Population 18.59248 9.768697 6.672208 5.960138 
+age structure 0.4535468 0.2382985 0.1627625 0.1453922 
+lambda 0.9516058 </code></pre>
+<pre class="r"><code>
+plot(t,pop,xlab=&quot;t&quot;,ylab=&quot;N&quot;,main=&quot;Popsize&quot;,type=&quot;l&quot;)</code></pre>
+<p><img src="Population-models1_files/figure-html5/STOCHASTIC%20PROCESS%20ORIENTED%20MODELS-1.png" width="624" /></p>
+<pre class="r"><code>
+#savePlot(filename=&quot;Popsize&quot;,type=&quot;png&quot;)
+#win.graph()</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(t,age0,xlab=&quot;t&quot;,ylab=&quot;age&quot;,main=&quot;age_structure&quot;,type=&quot;l&quot;)
+lines(t,age1,col=&quot;green&quot;)
+lines(t,age2,col=&quot;red&quot;)
+lines(t,age3,col=&quot;blue&quot;)
+legend(&quot;top&quot;,&quot;age0=black, age1=green, age2=red, age3=blue&quot;)</code></pre>
+<p><img src="Population-models1_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
+<pre class="r"><code>
+#savePlot(filename=&quot;age_structure&quot;,type=&quot;png&quot;)
+#win.graph()</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(t,grow,xlab=&quot;t&quot;,ylab=&quot;lambda&quot;,main=&quot;popgrowth_age&quot;,type=&quot;l&quot;)</code></pre>
+<p><img src="Population-models1_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+<pre class="r"><code>
+#savePlot(filename=&quot;popgrowth_age&quot;,type=&quot;png&quot;)</code></pre>
+</div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

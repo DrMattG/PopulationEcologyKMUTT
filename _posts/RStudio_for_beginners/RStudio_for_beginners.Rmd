@@ -62,6 +62,7 @@ library(knitr)
 
 ```{r}
 mut <- 3+ 4
+mut
 ```
 
 - There are different data types in R and the type of data an object is can affect how R 'deals' with it.
