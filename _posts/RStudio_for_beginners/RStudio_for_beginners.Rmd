@@ -574,14 +574,6 @@ The help files are very useful, and the more you use R, the better you will unde
 
 ## Useful resources
 
-
-### Workshops
-
-Intermediate R session: We are running a session on 22nd November to introduce you to more advanced techniques in R such as Rmarkdown,  for loops, if else statements and functions.
-
-Data visualization in R: We are running a session on 29th November to introduce you in more detail about how to display different types of variables, and more details about how to customise your plot using the ggplot2 package.
-
-
 ### Online
 
 There is lots of information online about all kinds of R related problems, tutorials and so on. Here are a few that are particularly useful if you are new to R:
