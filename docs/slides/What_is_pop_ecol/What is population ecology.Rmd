@@ -84,7 +84,7 @@ Pop. at end of timestep = Pop. at start of timestep   x  Discrete per capita net
 
 ## Discrete breeding - unlimited population growth equation
 
-Nt+1 = λ.Nt
+$$Nt+1 = λ.Nt$$
 
 Nt 	population size at time t (this year)
 
@@ -102,7 +102,7 @@ t		is the time period (e.g. in years)
 
 * Some textbooks use R instead of λ
 
- 𝜆=  𝑁_(𝑡+1)/𝑁_𝑡 
+ $$𝜆=  𝑁_(𝑡+1)/𝑁_𝑡 $$
 
 ## Population size after discrete (seasonal) reproduction over many years
 

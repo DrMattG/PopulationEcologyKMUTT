@@ -24,8 +24,8 @@
   
   
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2020-07-08"/>
-  <meta property="article:created" itemprop="dateCreated" content="2020-07-08"/>
+  <meta property="article:published" itemprop="datePublished" content="2020-07-20"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-07-20"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Beginner session in R"/>
@@ -40,7 +40,7 @@
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Beginner session in R"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-08-2020"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Beginner session in R"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-20-2020"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -395,6 +395,16 @@
   .article-footer .subscribe {
     font-size: 15px;
     margin-top: 45px;
+  }
+  
+  
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .custom p {
+    margin-bottom: 0.5em;
   }
   
   
@@ -938,7 +948,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Beginner session in R","authors":[],"publishedDate":"2020-07-08T00:00:00.000+02:00"}
+{"title":"Beginner session in R","authors":[],"publishedDate":"2020-07-20T00:00:00.000+02:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -983,13 +993,13 @@
 <li>R recognises each object by the name is it’s given, which can be made up of alphabetic characters and numbers.</li>
 <li>R is case-sensitive so fish and Fish are two different objects.</li>
 <li>Few symbols are allowed apart from ’_’ and ‘.’</li>
-<li>Object names can’t start with a number of ’_’ and it’s advisable not to use ‘.’ either</li>
+<li>Object names can’t start with a number or ’_’ and it’s advisable not to use ‘.’ either</li>
 </ul>
 <h2 id="how-r-works-2">How R works (2)</h2>
 <ul>
 <li>Avoid some single letter object names because R sometimes also uses them.</li>
 <li>Avoid object names that can be functions in R e.g. data.</li>
-<li>You can create objects using ‘&lt;-’ which is R’s version of ‘=’</li>
+<li>You can create objects using ‘&lt;-’ which is R’s version of ‘=’ (see: <a href="https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-assignment-operators-in-r" class="uri">https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-assignment-operators-in-r</a> for a discussion about the difference between the two)</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
@@ -1213,6 +1223,7 @@ getwd()</code></pre>
 setwd(&#39;D:/Teaching_Fieldcourses&#39;)</code></pre>
 </div>
 <p>Be aware that you need to type the exact file path otherwise R won’t be able to understand it, if you want to know the file path you can also go to windows explorer, find your folder and click once on the file path bar on the top of the window and it will show the file path. Just be careful if you copy this you need to change the backslashes (‘') to forward slashes (’/’).</p>
+<p>[Advanced: see <a href="https://github.com/jennybc/here_here" class="uri">https://github.com/jennybc/here_here</a> for a better way of working in RStudio using Projects]</p>
 <h3 id="read-in-data">Read in data</h3>
 <p>Note: R likes using .csv files rather than normal excel spreadsheets (.xlsx files). So please save the files you want to import into R as .csv files.</p>
 <p>Also make sure they are tidy (e.g. data in two columns with no breaks, you can have titles for columns) and don’t have random plots, writing etc. otherwise R won’t know how to interpret it.</p>
