@@ -1,5 +1,21 @@
 [
   {
+    "path": "posts/Competition/",
+    "title": "Links to videos from George",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2020-07-23",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-07-23T09:30:09+02:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/if_you_go_down_to_the_woods/",
     "title": "If you go down to the woods today....",
     "description": {},
@@ -9,10 +25,10 @@
         "url": {}
       }
     ],
-    "date": "2020-07-20",
+    "date": "2020-07-23",
     "categories": [],
     "preview": "posts/if_you_go_down_to_the_woods/If_you_go_down_to_the_woods_files/figure-html5/bears-1.png",
-    "last_modified": "2020-07-20T16:54:04+02:00",
+    "last_modified": "2020-07-23T09:31:47+02:00",
     "input_file": {}
   },
   {

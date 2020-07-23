@@ -19,35 +19,35 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-<title>Pop_Ecol_KMUTT: If you go down to the woods today....</title>
+<title>Pop_Ecol_KMUTT: Links to videos from George</title>
 
 
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2020-07-23"/>
 <meta property="article:created" itemprop="dateCreated" content="2020-07-23"/>
-<meta name="article:author" content="Matt Grainger"/>
+<meta name="article:author" content="Matt"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Pop_Ecol_KMUTT: If you go down to the woods today...."/>
+<meta property="og:title" content="Pop_Ecol_KMUTT: Links to videos from George"/>
 <meta property="og:type" content="article"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Pop_Ecol_KMUTT"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Pop_Ecol_KMUTT: If you go down to the woods today...."/>
+<meta property="twitter:title" content="Pop_Ecol_KMUTT: Links to videos from George"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["If you go down to the woods today...."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt Grainger"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-23-2020"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Links to videos from George"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-23-2020"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["If_you_go_down_to_the_woods.pdf","If_you_go_down_to_the_woods_files/bowser-1.9.3/bowser.min.js","If_you_go_down_to_the_woods_files/distill-2.2.21/template.v2.js","If_you_go_down_to_the_woods_files/figure-html5/bears-1.png","If_you_go_down_to_the_woods_files/jquery-1.11.3/jquery.min.js","If_you_go_down_to_the_woods_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"NULL"}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 
@@ -1287,7 +1287,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"If you go down to the woods today....","authors":[{"author":"Matt Grainger","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-07-23T00:00:00.000+02:00","citationText":"Grainger, 2020"}
+{"title":"Links to videos from George","authors":[{"author":"Matt","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-07-23T00:00:00.000+02:00","citationText":"Matt, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1312,54 +1312,38 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>If you go down to the woods today….</h1>
+<h1>Links to videos from George</h1>
 
 </div>
 
 <div class="d-byline">
   
-  Matt Grainger
+  Matt
   
 <br/>07-23-2020
 </div>
 
 <div class="d-article">
-<h2 id="bear-population-challenge">Bear population challenge</h2>
-<p>Apply your knowledge about population models to this grizzly bear dataset. Answer the questions and show your code (either in a new script file or in a new Rmarkdown file - you can adapt the original). Save the file and send it to me.</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-# a # sign means that R does not read this as code. 
-#install.packages(&quot;popbio&quot;) #remove the first hash if you do not have popbio installed as a package 
-library(popbio)</code></pre>
-</div>
-<h2 id="upload-and-explore-the-bears-dataset">Upload and explore the bears dataset</h2>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-data(grizzly)
-#View(grizzly)
-#?grizzly# what is the grizzly data about?
-attach(grizzly) ## You need to attach the data so that 
-#you can use it in the functions that follow 
-#(otherwise you need to signal to R which data you are using)
-plot(year, N, type=&#39;o&#39;, pch=16, las=1, xlab=&quot;Year&quot;, 
-     ylab=&quot;Adult females&quot;, main=&quot;Yellowstone grizzly bears&quot;) </code></pre>
-<p><img src="If_you_go_down_to_the_woods_files/figure-html5/bears-1.png" width="624" /></p>
-</div>
-<h2 id="what-is-the-grizzly-data-set-all-about">What is the grizzly data set all about</h2>
-<p>Look up the grizzly dataset from the R help (see above ?grizzly will search for the dataset in the helpfiles).</p>
-<p>Provide a summary of the grizzly dataset</p>
-<h2 id="calculate-the-rate-of-population-change">Calculate the rate of population change</h2>
-<p>Their are only female bears in this count. What could you do to make this data more representative of the population?</p>
-<p>Do we need more data than just female bears?</p>
-<h2 id="use-the-population-models-to-assess-the-population-change-in-bears">Use the population models to assess the population change in bears</h2>
-<p>Make use of only the first 10 years of the bears dataset to predict the future 17 years. Plot this on the same graph (hint in base R you can add points to a plot using the “points()” fuction)</p>
-<p>#Extra credit:: Make the plots look pretty (look at ?ggplot2 for example and search on Google for ggplot2)</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-detach(grizzly)# remember to detach the data from the session
-rm(list=ls())# this cleans your environment - is useful but 
-#you might want to keep it sometimes - use caution</code></pre>
-</div>
+<blockquote>
+<p>Modelling Interspecific Competition</p>
+</blockquote>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/obasfCufOr0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<blockquote>
+<p>Predator prey</p>
+</blockquote>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bgsZy2HAZVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<blockquote>
+<p>Population dynamics</p>
+</blockquote>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2rWr2QlQm4k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<blockquote>
+<p>Leslie Matrices</p>
+</blockquote>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HSiY3CFUREM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

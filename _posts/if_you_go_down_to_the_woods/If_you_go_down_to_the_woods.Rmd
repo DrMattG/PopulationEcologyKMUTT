@@ -26,7 +26,7 @@ library(popbio)
 
 ```{r bears, echo=TRUE}
 data(grizzly)
-View(grizzly)
+#View(grizzly)
 #?grizzly# what is the grizzly data about?
 attach(grizzly) ## You need to attach the data so that 
 #you can use it in the functions that follow 
