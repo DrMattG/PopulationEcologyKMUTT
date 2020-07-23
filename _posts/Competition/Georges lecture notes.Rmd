@@ -1,0 +1,27 @@
+---
+title: "Links to videos from George"
+author: "Matt"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+> Modelling Interspecific Competition 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/obasfCufOr0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> Predator prey
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bgsZy2HAZVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> Population dynamics
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2rWr2QlQm4k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> Leslie Matrices
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HSiY3CFUREM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
