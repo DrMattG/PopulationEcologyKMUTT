@@ -18,14 +18,82 @@
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
   <!--radix_placeholder_meta_tags-->
   <title>Beginner session in R</title>
   
   
   
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2020-07-20"/>
-  <meta property="article:created" itemprop="dateCreated" content="2020-07-20"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-06-12"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-06-12"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Beginner session in R"/>
@@ -40,12 +108,12 @@
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Beginner session in R"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-20-2020"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Beginner session in R"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["06-12-2022"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["rplot.jpg","rplot.pdf","RStudio.jpg","RStudio_for_beginners_files/bowser-1.9.3/bowser.min.js","RStudio_for_beginners_files/distill-2.2.21/template.v2.js","RStudio_for_beginners_files/figure-html5/unnamed-chunk-32-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-33-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-34-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-35-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-36-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-37-1.png","RStudio_for_beginners_files/jquery-1.11.3/jquery.min.js","RStudio_for_beginners_files/webcomponents-2.0.0/webcomponents.js","RStudio2.jpg","RStudio3.jpg","RStudio4.jpg","RStudio5.jpg"]}
+  {"type":"character","attributes":{},"value":["rplot.jpg","rplot.pdf","RStudio.jpg","RStudio_for_beginners_files/anchor-4.2.2/anchor.min.js","RStudio_for_beginners_files/bowser-1.9.3/bowser.min.js","RStudio_for_beginners_files/distill-2.2.21/template.v2.js","RStudio_for_beginners_files/figure-html5/unnamed-chunk-32-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-33-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-34-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-35-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-36-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-37-1.png","RStudio_for_beginners_files/figure-html5/unnamed-chunk-38-1.png","RStudio_for_beginners_files/jquery-1.11.3/jquery.min.js","RStudio_for_beginners_files/jquery-3.6.0/jquery-3.6.0.js","RStudio_for_beginners_files/jquery-3.6.0/jquery-3.6.0.min.js","RStudio_for_beginners_files/jquery-3.6.0/jquery-3.6.0.min.map","RStudio_for_beginners_files/popper-2.6.0/popper.min.js","RStudio_for_beginners_files/tippy-6.2.7/tippy-bundle.umd.min.js","RStudio_for_beginners_files/tippy-6.2.7/tippy-light-border.css","RStudio_for_beginners_files/tippy-6.2.7/tippy.css","RStudio_for_beginners_files/tippy-6.2.7/tippy.umd.min.js","RStudio_for_beginners_files/webcomponents-2.0.0/webcomponents.js","RStudio2.jpg","RStudio3.jpg","RStudio4.jpg","RStudio5.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -71,6 +139,51 @@
   
   .pagedtable-footer {
     font-size: 15px;
+  }
+  
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+  
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+  
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+  
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+  
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+  
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
   }
   
   .html-widget {
@@ -112,6 +225,7 @@
   }
   
   d-article {
+    padding-top: 2.5rem;
     padding-bottom: 30px;
   }
   
@@ -123,91 +237,48 @@
     width: 100%;
   }
   
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+  
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+  
   d-article iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2.0em;
     width: 100%;
   }
   
-  figure img.external {
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
-    padding: 18px;
-    box-sizing: border-box;
+  /* Tweak code blocks */
+  
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   }
   
-  /* CSS for table of contents */
-  
-  .d-toc {
-    color: rgba(0,0,0,0.8);
-    font-size: 0.8em;
-    line-height: 1em;
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
   }
   
-  .d-toc-header {
-    font-size: 0.6rem;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 1.3em;
+  d-article div.sourceCode {
+    background-color: white;
   }
   
-  .d-toc a {
-    border-bottom: none;
-  }
-  
-  .d-toc ul {
-    padding-left: 0;
-  }
-  
-  .d-toc li>ul {
-    padding-top: 0.8em;
-    padding-left: 16px;
-    margin-bottom: 0.6em;
-  }
-  
-  .d-toc ul,
-  .d-toc li {
-    list-style-type: none;
-  }
-  
-  .d-toc li {
-    margin-bottom: 0.9em;
-  }
-  
-  .d-toc-separator {
-    margin-top: 20px;
-    margin-bottom: 2em;
-  }
-  
-  .d-article-with-toc {
-    border-top: none;
-    padding-top: 0;
-  }
-  
-  
-  
-  /* Tweak code blocks (note that this CSS is repeated above in an injection
-     into the d-code shadow dom) */
-  
-  d-code {
-    overflow-x: auto !important;
-  }
-  
-  pre.d-code code.d-code {
+  d-article div.sourceCode pre {
     padding-left: 10px;
     font-size: 12px;
     border-left: 2px solid rgba(0,0,0,0.1);
   }
   
-  pre.text-output {
-  
+  d-article pre {
     font-size: 12px;
     color: black;
     background: none;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    margin-top: 0;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -225,20 +296,128 @@
     hyphens: none;
   }
   
+  d-article pre a {
+    border-bottom: none;
+  }
+  
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+  
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+  
   @media(min-width: 768px) {
   
-  d-code {
-    overflow-x: visible !important;
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
   }
   
-  pre.d-code code.d-code  {
-      padding-left: 18px;
-      font-size: 14px;
-  }
-  pre.text-output {
+  d-article div.sourceCode pre {
+    padding-left: 18px;
     font-size: 14px;
   }
+  
+  d-article pre {
+    font-size: 14px;
   }
+  
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for d-contents */
+  
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+  
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+  
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  .d-contents li {
+    list-style-type: none
+  }
+  
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+  
+  .d-contents ul {
+    padding-left: 1em
+  }
+  
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+  
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+  
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+  
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+  
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+  
+  
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+  
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+  
   
   /* Figure */
   
@@ -276,6 +455,27 @@
     color: rgba(0, 0, 0, 1.0);
   }
   
+  /* Citations */
+  
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+  
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+  
+  /* Citation hover box */
+  
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+  
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
   
   
   /* Tweak 1000px media break to show more text */
@@ -351,6 +551,91 @@
     word-wrap: break-word;
   }
   
+  /* Include appendix styles here so they can be overridden */
+  
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+  
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+  
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+  
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+  
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+  
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+  
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  d-appendix > * {
+    grid-column: text;
+  }
+  
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+  
+  /* Include footnote styles here so they can be overridden */
+  
+  d-footnote-list {
+    contain: layout style;
+  }
+  
+  d-footnote-list > * {
+    grid-column: text;
+  }
+  
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+  
+  
+  
+  /* Anchor.js */
+  
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
   
   /* Social footer */
   
@@ -405,6 +690,211 @@
   
   .custom p {
     margin-bottom: 0.5em;
+  }
+  
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+  
+  /* Styles for posts lists (not auto-injected) */
+  
+  
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+  
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+  
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+  
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+  
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+  
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+  
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+  
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+  
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+  
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+  
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+  
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+  
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .posts-list img {
+    opacity: 1;
+  }
+  
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+  
+  .posts-more {
+    clear: both;
+  }
+  
+  
+  .posts-sidebar {
+    font-size: 16px;
+  }
+  
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+  
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+  
+  .categories li>a {
+    border-bottom: none;
+  }
+  
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+  
+  .categories .active {
+    font-weight: 600;
+  }
+  
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
   }
   
   
@@ -536,6 +1026,12 @@
     hyphens: none;
   }
   
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+  
+  
+  
   </style>
   
   <script type="application/javascript">
@@ -551,6 +1047,13 @@
   
   // show body when load is complete
   function on_load_complete() {
+  
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+  
   
     // set body to visible
     document.body.style.visibility = 'visible';
@@ -597,23 +1100,8 @@
     // create d-appendix
     $('.d-appendix').changeElementType('d-appendix');
   
-    // create d-bibliography
-    var bibliography = $('<d-bibliography></d-bibliography>');
-    $('#distill-bibliography').wrap(bibliography);
-  
     // flag indicating that we have appendix items
     var appendix = $('.appendix-bottom').children('h3').length > 0;
-  
-    // replace citations with <d-cite>
-    $('.citation').each(function(i, val) {
-      appendix = true;
-      var cites = $(this).attr('data-cites').split(" ");
-      var dt_cite = $('<d-cite></d-cite>');
-      dt_cite.attr('key', cites.join());
-      $(this).replaceWith(dt_cite);
-    });
-    // remove refs
-    $('#refs').remove();
   
     // replace footnotes with <d-footnote>
     $('.footnote-ref').each(function(i, val) {
@@ -631,39 +1119,21 @@
     // remove footnotes
     $('.footnotes').remove();
   
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+  
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
     });
     $('h3.appendix').each(function(i, val) {
       var id = $(this).attr('id');
-      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
       appendix = true;
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
   
     // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
-  
-    // replace code blocks with d-code
-    $('pre>code').each(function(i, val) {
-      var code = $(this);
-      var pre = code.parent();
-      var clz = "";
-      var language = pre.attr('class');
-      if (language) {
-        // map unknown languages to "clike" (without this they just dissapear)
-        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
-                                 "javascript", "js", "julia", "lua", "markdown",
-                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
-          language = "clike";
-        language = ' language="' + language + '"';
-        var dt_code = $('<d-code block' + language + clz + '></d-code>');
-        dt_code.text(code.text());
-        pre.replaceWith(dt_code);
-      } else {
-        code.addClass('text-output').unwrap().changeElementType('pre');
-      }
-    });
   
     // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
@@ -672,7 +1142,7 @@
       var layout = $(this).attr('data-layout');
   
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('d-code, pre.text-output, script');
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -689,6 +1159,13 @@
       $(this).children().unwrap();
     });
   
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+  
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+  
     // load distill framework
     load_distill_framework();
   
@@ -704,12 +1181,26 @@
       if (!have_authors)
         $('d-byline').addClass('hidden');
   
-      // table of contents
-      if (have_authors) // adjust border if we are in authors
-        $('.d-toc').parent().addClass('d-article-with-toc');
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
   
       // strip links that point to #
       $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
   
       // hide elements of author/affiliations grid that have no value
       function hide_byline_column(caption) {
@@ -759,18 +1250,30 @@
         grid.children('h3:contains("Affiliations")').text('Affiliation');
       }
   
-      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
-      $('d-code').each(function(i, val) {
-        var style = document.createElement('style');
-        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
-                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
-        if (this.shadowRoot)
-          this.shadowRoot.appendChild(style);
-      });
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
   
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
+  
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
   
       // clear polling timer
       clearInterval(tid);
@@ -802,9 +1305,7 @@
     $('.d-byline a').remove();
   
     // remove toc
-    $('.d-toc-header').remove();
-    $('.d-toc').remove();
-    $('.d-toc-separator').remove();
+    $('.d-contents').remove();
   
     // move appendix elements
     $('h1.appendix, h2.appendix').each(function(i, val) {
@@ -933,7 +1434,12 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="RStudio_for_beginners_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="RStudio_for_beginners_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="RStudio_for_beginners_files/popper-2.6.0/popper.min.js"></script>
+  <link href="RStudio_for_beginners_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="RStudio_for_beginners_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="RStudio_for_beginners_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="RStudio_for_beginners_files/anchor-4.2.2/anchor.min.js"></script>
   <script src="RStudio_for_beginners_files/bowser-1.9.3/bowser.min.js"></script>
   <script src="RStudio_for_beginners_files/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="RStudio_for_beginners_files/distill-2.2.21/template.v2.js"></script>
@@ -948,7 +1454,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Beginner session in R","authors":[],"publishedDate":"2020-07-20T00:00:00.000+02:00"}
+{"title":"Beginner session in R","authors":[],"publishedDate":"2022-06-12T00:00:00.000+02:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -959,6 +1465,8 @@
 
 <div class="d-title">
 <h1>Beginner session in R</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
 
 </div>
 
@@ -1002,8 +1510,12 @@
 <li>You can create objects using ‘&lt;-’ which is R’s version of ‘=’ (see: <a href="https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-assignment-operators-in-r" class="uri">https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-assignment-operators-in-r</a> for a discussion about the difference between the two)</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-mut &lt;- 3+ 4</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mut</span> <span class='op'>&lt;-</span> <span class='fl'>3</span><span class='op'>+</span> <span class='fl'>4</span>
+<span class='va'>mut</span>
+</code></pre>
+</div>
+<pre><code>[1] 7</code></pre>
 </div>
 <ul>
 <li>There are different data types in R and the type of data an object is can affect how R ‘deals’ with it.</li>
@@ -1014,104 +1526,117 @@ mut &lt;- 3+ 4</code></pre>
 </ul>
 <h3 id="numeric-vector">Numeric vector</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-a &lt;- c(1,2,5.3,6,-2,4) 
-a</code></pre>
-<pre><code>
-[1]  1.0  2.0  5.3  6.0 -2.0  4.0</code></pre>
-<pre class="r"><code>
-str(a)</code></pre>
-<pre><code>
- num [1:6] 1 2 5.3 6 -2 4</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>a</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>5.3</span>,<span class='fl'>6</span>,<span class='op'>-</span><span class='fl'>2</span>,<span class='fl'>4</span><span class='op'>)</span> 
+<span class='va'>a</span>
+</code></pre>
+</div>
+<pre><code>[1]  1.0  2.0  5.3  6.0 -2.0  4.0</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>a</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> num [1:6] 1 2 5.3 6 -2 4</code></pre>
 </div>
 <h3 id="character-vector">Character vector</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-b &lt;- c(&quot;one&quot;,&quot;two&quot;,&quot;three&quot;) 
-b</code></pre>
-<pre><code>
-[1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot;</code></pre>
-<pre class="r"><code>
-str(b)</code></pre>
-<pre><code>
- chr [1:3] &quot;one&quot; &quot;two&quot; &quot;three&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>b</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"one"</span>,<span class='st'>"two"</span>,<span class='st'>"three"</span><span class='op'>)</span> 
+<span class='va'>b</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>b</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> chr [1:3] &quot;one&quot; &quot;two&quot; &quot;three&quot;</code></pre>
 </div>
 <h3 id="logical-vector">Logical vector</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-c &lt;- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE) 
-c</code></pre>
-<pre><code>
-[1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE</code></pre>
-<pre class="r"><code>
-str(c)</code></pre>
-<pre><code>
- logi [1:6] TRUE TRUE TRUE FALSE TRUE FALSE</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>c</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>TRUE</span>,<span class='cn'>TRUE</span>,<span class='cn'>TRUE</span>,<span class='cn'>FALSE</span>,<span class='cn'>TRUE</span>,<span class='cn'>FALSE</span><span class='op'>)</span> 
+<span class='va'>c</span>
+</code></pre>
+</div>
+<pre><code>[1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>c</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> logi [1:6] TRUE TRUE TRUE FALSE TRUE FALSE</code></pre>
 </div>
 <h2 id="data-types-in-r-matrix">Data types in R: Matrix</h2>
 <ul>
 <li>A vector with added dimensions (must have columns and rows). All columns must have the same mode and length</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-y&lt;-matrix(1:20, nrow=5,ncol=4)   # generates 5 x 4 numeric matrix 
-y</code></pre>
-<pre><code>
-     [,1] [,2] [,3] [,4]
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>y</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>20</span>, nrow<span class='op'>=</span><span class='fl'>5</span>,ncol<span class='op'>=</span><span class='fl'>4</span><span class='op'>)</span>   <span class='co'># generates 5 x 4 numeric matrix </span>
+<span class='va'>y</span>
+</code></pre>
+</div>
+<pre><code>     [,1] [,2] [,3] [,4]
 [1,]    1    6   11   16
 [2,]    2    7   12   17
 [3,]    3    8   13   18
 [4,]    4    9   14   19
 [5,]    5   10   15   20</code></pre>
-<pre class="r"><code>
-str(y)</code></pre>
-<pre><code>
- int [1:5, 1:4] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>y</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> int [1:5, 1:4] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
 </div>
 <h2 id="data-types-in-r-matrix-2">Data types in R: Matrix (2)</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-s_means = matrix(c(-14, -15.1, -11.03, 3.06, 7.05, 13.72), ncol=2, nrow=3)
-s_means</code></pre>
-<pre><code>
-       [,1]  [,2]
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>s_means</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>14</span>, <span class='op'>-</span><span class='fl'>15.1</span>, <span class='op'>-</span><span class='fl'>11.03</span>, <span class='fl'>3.06</span>, <span class='fl'>7.05</span>, <span class='fl'>13.72</span><span class='op'>)</span>, ncol<span class='op'>=</span><span class='fl'>2</span>, nrow<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span>
+<span class='va'>s_means</span>
+</code></pre>
+</div>
+<pre><code>       [,1]  [,2]
 [1,] -14.00  3.06
 [2,] -15.10  7.05
 [3,] -11.03 13.72</code></pre>
-<pre class="r"><code>
-str(s_means)</code></pre>
-<pre><code>
- num [1:3, 1:2] -14 -15.1 -11.03 3.06 7.05 ...</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>s_means</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> num [1:3, 1:2] -14 -15.1 -11.03 3.06 7.05 ...</code></pre>
 </div>
 <h2 id="data-types-in-r-data-frame">Data types in R: Data frame</h2>
 <ul>
 <li>They are more general than a matrix and can have columns which have different modes.</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-dat &lt;- data.frame(id = letters[1:3], x = 1:3, y = 4:6)
-dat</code></pre>
-<pre><code>
-  id x y
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>id <span class='op'>=</span> <span class='va'>letters</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span>, x <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>, y <span class='op'>=</span> <span class='fl'>4</span><span class='op'>:</span><span class='fl'>6</span><span class='op'>)</span>
+<span class='va'>dat</span>
+</code></pre>
+</div>
+<pre><code>  id x y
 1  a 1 4
 2  b 2 5
 3  c 3 6</code></pre>
-<pre class="r"><code>
-str(dat)</code></pre>
-<pre><code>
-&#39;data.frame&#39;:   3 obs. of  3 variables:
- $ id: Factor w/ 3 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;: 1 2 3
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>dat</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>&#39;data.frame&#39;:   3 obs. of  3 variables:
+ $ id: chr  &quot;a&quot; &quot;b&quot; &quot;c&quot;
  $ x : int  1 2 3
  $ y : int  4 5 6</code></pre>
 </div>
 <h2 id="data-types-in-r-list">Data types in R: List</h2>
 <p>An ordered collection of objects and they can have different modes in one list</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-w &lt;- list(name=&quot;Fred&quot;, mynumbers=a, mymatrix=y, age=5.3)
-str(w)</code></pre>
-<pre><code>
-List of 4
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>w</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>name<span class='op'>=</span><span class='st'>"Fred"</span>, mynumbers<span class='op'>=</span><span class='va'>a</span>, mymatrix<span class='op'>=</span><span class='va'>y</span>, age<span class='op'>=</span><span class='fl'>5.3</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>w</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>List of 4
  $ name     : chr &quot;Fred&quot;
  $ mynumbers: num [1:6] 1 2 5.3 6 -2 4
  $ mymatrix : int [1:5, 1:4] 1 2 3 4 5 6 7 8 9 10 ...
@@ -1120,16 +1645,18 @@ List of 4
 <h2 id="data-types-in-r-factor">Data types in R: Factor</h2>
 <p>You can tell R that a variable is nominal (used for identification/labelling) by making it a factor.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-x &lt;- factor(c(&quot;yes&quot;, &quot;no&quot;, &quot;no&quot;, &quot;yes&quot;, &quot;yes&quot;))
-x</code></pre>
-<pre><code>
-[1] yes no  no  yes yes
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"yes"</span>, <span class='st'>"no"</span>, <span class='st'>"no"</span>, <span class='st'>"yes"</span>, <span class='st'>"yes"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>x</span>
+</code></pre>
+</div>
+<pre><code>[1] yes no  no  yes yes
 Levels: no yes</code></pre>
-<pre class="r"><code>
-str(x)</code></pre>
-<pre><code>
- Factor w/ 2 levels &quot;no&quot;,&quot;yes&quot;: 2 1 1 2 2</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> Factor w/ 2 levels &quot;no&quot;,&quot;yes&quot;: 2 1 1 2 2</code></pre>
 </div>
 <h2 id="basic-commands-in-r-e.g.-calculator">Basic commands in R e.g. calculator</h2>
 <p>Open up Rstudio.</p>
@@ -1138,68 +1665,82 @@ str(x)</code></pre>
 <p>Once you are happy navigating the different windows, in the bottom left hand window (the console) try typing the following (in grey) and press enter after each line when you want an output. The output that should come up is shown in white boxes.</p>
 <p>You can use R as a simple calculator:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-3 + 4</code></pre>
-<pre><code>
-[1] 7</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>3</span> <span class='op'>+</span> <span class='fl'>4</span>
+</code></pre>
+</div>
+<pre><code>[1] 7</code></pre>
 </div>
 <p>Create an object called foo:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-foo&lt;- 3 + 4</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>foo</span><span class='op'>&lt;-</span> <span class='fl'>3</span> <span class='op'>+</span> <span class='fl'>4</span>
+</code></pre>
+</div>
 </div>
 <p>You should see this object appear under your ‘values’ tab in your environment. See what foo looks like:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-foo</code></pre>
-<pre><code>
-[1] 7</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>foo</span>
+</code></pre>
+</div>
+<pre><code>[1] 7</code></pre>
 </div>
 <p>Create another object called po:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-po&lt;- 8+ 5</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>po</span><span class='op'>&lt;-</span> <span class='fl'>8</span><span class='op'>+</span> <span class='fl'>5</span>
+</code></pre>
+</div>
 </div>
 <p>See what po looks like:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-po</code></pre>
-<pre><code>
-[1] 13</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>po</span>
+</code></pre>
+</div>
+<pre><code>[1] 13</code></pre>
 </div>
 <p>Add foo and po together and create a new object, zu:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-zu&lt;- foo + po</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>zu</span><span class='op'>&lt;-</span> <span class='va'>foo</span> <span class='op'>+</span> <span class='va'>po</span>
+</code></pre>
+</div>
 </div>
 <p>See what zu looks like:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-zu</code></pre>
-<pre><code>
-[1] 20</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>zu</span>
+</code></pre>
+</div>
+<pre><code>[1] 20</code></pre>
 </div>
 <p>See what the structure of zu looks like:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-str(zu)</code></pre>
-<pre><code>
- num 20</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>zu</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> num 20</code></pre>
 </div>
 <p>You can also overwrite objects:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-zu&lt;- &quot;hello&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>zu</span><span class='op'>&lt;-</span> <span class='st'>"hello"</span>
+</code></pre>
+</div>
 </div>
 <p>Now see what zu looks like:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-str(zu)</code></pre>
-<pre><code>
- chr &quot;hello&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>zu</span><span class='op'>)</span>
+</code></pre>
 </div>
-<h2 id="set-working-directory">Set working directory</h2>
-<p>If you want to import an excel file with your data in, rather than typing it in by hand or export an output to a folder, you need to tell R where to look. You do this by setting the working directory. But before you do this you need to create a new folder and download and save the example data file in this new folder.</p>
+<pre><code> chr &quot;hello&quot;</code></pre>
+</div>
+<h2 id="working-directories-and-projects-in-rstudio">Working directories and Projects in RStudio</h2>
+<p>If you want to import an excel file with your data in, rather than typing it in by hand or export an output to a folder, you need to tell R where to look. You can do this by setting the working directory. But before you do this you need to create a new folder and download and save the example data file in this new folder.</p>
 <p>First of all create a new folder called ‘Rsession’ in your main drive (I call this H:, but it could be C: or any other letter!).</p>
 <p>There are two different ways to set the working directory:</p>
 <p>1.Use the main menu to navigate to the right folder</p>
@@ -1210,8 +1751,10 @@ str(zu)</code></pre>
 <p>Note: Beware of double clicking on the folder because it will open the folder which you don’t won’t be able to find your data file.</p>
 <p>You can check you have the right folder set as your working directory by doing:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-getwd()</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>You should see:“H:/Rsession”</p>
 <ol start="2" type="1">
@@ -1219,24 +1762,46 @@ getwd()</code></pre>
 </ol>
 <p>On the top left hand window (in your Rscript) type:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-setwd(&#39;D:/Teaching_Fieldcourses&#39;)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='st'>'D:/Teaching_Fieldcourses'</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Be aware that you need to type the exact file path otherwise R won’t be able to understand it, if you want to know the file path you can also go to windows explorer, find your folder and click once on the file path bar on the top of the window and it will show the file path. Just be careful if you copy this you need to change the backslashes (‘') to forward slashes (’/’).</p>
-<p>[Advanced: see <a href="https://github.com/jennybc/here_here" class="uri">https://github.com/jennybc/here_here</a> for a better way of working in RStudio using Projects]</p>
+<h3 id="projects">Projects</h3>
+<p>A big problem with setting the working directory is that if George shares his code with me and it says:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='st'>"C:/Users/georgeGale/Documents/PopulationEcologyKMUTT"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>My computer will try to look for this folder on my computer. Obviously, this will fail and therefore my code is not <em>reproducible</em>. In RStudio you can use projects to keep all files associated with one project together and to interact with GitHub. You can use the library(here) to make your code reproducible. What here::here() does is to look for the main “root” folder where your project is maintained and then use that as the path. See <a href="https://github.com/jennybc/here_here">this</a>.</p>
 <h3 id="read-in-data">Read in data</h3>
 <p>Note: R likes using .csv files rather than normal excel spreadsheets (.xlsx files). So please save the files you want to import into R as .csv files.</p>
 <p>Also make sure they are tidy (e.g. data in two columns with no breaks, you can have titles for columns) and don’t have random plots, writing etc. otherwise R won’t know how to interpret it.</p>
 <p>We will practice loading data into R now. Let’s get a nice opensource data file from GitHub. You need to put in the following command to get the dataset:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-install.packages(&quot;devtools&quot;)
-devtools::install_github(&quot;allisonhorst/palmerpenguins&quot;)
-library(palmerpenguins)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"devtools"</span><span class='op'>)</span>
+<span class='fu'>devtools</span><span class='fu'>::</span><span class='fu'><a href='https://devtools.r-lib.org/reference/remote-reexports.html'>install_github</a></span><span class='op'>(</span><span class='st'>"allisonhorst/palmerpenguins"</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://allisonhorst.github.io/palmerpenguins/'>palmerpenguins</a></span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>Copy the following file into Excel:</p>
 <div class="layout-chunk" data-layout="l-body">
 <table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 11%" />
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 20%" />
+<col style="width: 13%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">species</th>
@@ -1246,6 +1811,7 @@ library(palmerpenguins)</code></pre>
 <th style="text-align: right;">flipper_length_mm</th>
 <th style="text-align: right;">body_mass_g</th>
 <th style="text-align: left;">sex</th>
+<th style="text-align: right;">year</th>
 </tr>
 </thead>
 <tbody>
@@ -1257,6 +1823,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">181</td>
 <td style="text-align: right;">3750</td>
 <td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Adelie</td>
@@ -1266,6 +1833,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">186</td>
 <td style="text-align: right;">3800</td>
 <td style="text-align: left;">female</td>
+<td style="text-align: right;">2007</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Adelie</td>
@@ -1275,6 +1843,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">195</td>
 <td style="text-align: right;">3250</td>
 <td style="text-align: left;">female</td>
+<td style="text-align: right;">2007</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Adelie</td>
@@ -1284,6 +1853,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">2007</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Adelie</td>
@@ -1293,6 +1863,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">193</td>
 <td style="text-align: right;">3450</td>
 <td style="text-align: left;">female</td>
+<td style="text-align: right;">2007</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Adelie</td>
@@ -1302,6 +1873,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">190</td>
 <td style="text-align: right;">3650</td>
 <td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Adelie</td>
@@ -1311,6 +1883,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">181</td>
 <td style="text-align: right;">3625</td>
 <td style="text-align: left;">female</td>
+<td style="text-align: right;">2007</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Adelie</td>
@@ -1320,6 +1893,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">195</td>
 <td style="text-align: right;">4675</td>
 <td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Adelie</td>
@@ -1329,6 +1903,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">193</td>
 <td style="text-align: right;">3475</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">2007</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Adelie</td>
@@ -1338,6 +1913,7 @@ library(palmerpenguins)</code></pre>
 <td style="text-align: right;">190</td>
 <td style="text-align: right;">4250</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">2007</td>
 </tr>
 </tbody>
 </table>
@@ -1345,31 +1921,37 @@ library(palmerpenguins)</code></pre>
 <p>Now save the file in the Rsession folder you created. Call it testdata and save it as type CSV (Comma delimited).</p>
 <p>To read in your file you use the function read.csv in R:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-mydata&lt;-read.csv(&quot;testdata.csv&quot;) 
-# here the file will be called mydata in R, and as the working directory will be the folder in which your data file is saved, R will find it there</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mydata</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"testdata.csv"</span><span class='op'>)</span> 
+<span class='co'># here the file will be called mydata in R, and as the working directory will be the folder in which your data file is saved, R will find it there</span>
+</code></pre>
+</div>
 </div>
 <p>You can also save files back into your working directory with the function write.csv, if you have changed them in R:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-write.csv(mydata, &quot;testdatanew.csv&quot;) 
-# the first bit in the bracket is the name of the file in R, the second bit is the name of the new csv file you want to save</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/write.table.html'>write.csv</a></span><span class='op'>(</span><span class='va'>mydata</span>, <span class='st'>"testdatanew.csv"</span><span class='op'>)</span> 
+<span class='co'># the first bit in the bracket is the name of the file in R, the second bit is the name of the new csv file you want to save</span>
+</code></pre>
+</div>
 </div>
 <h2 id="some-basic-outputs-from-a-dataset">Some basic outputs from a dataset</h2>
 <p>Apart from the str function, there are some other functions we can use to get an initial idea of our data. We can use the function mean to calculate the mean of some values:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-mean(c(5,7,9))</code></pre>
-<pre><code>
-[1] 7</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>5</span>,<span class='fl'>7</span>,<span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
 </div>
-<p>We can summarise each column. For continuous variables, this will show the minimum and maximum value, the quartiles and the mean. For nominal variables, it will show the different categories and a count of each one. We will use a built-in dataset called iris:</p>
+<pre><code>[1] 7</code></pre>
+</div>
+<p>We can summarise each column. For continuous variables, this will show the minimum and maximum value, the quartiles and the mean. For nominal variables, it will show the different categories and a count of each one.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-penguins&lt;-palmerpenguins::penguins
-summary(penguins)</code></pre>
-<pre><code>
-      species          island    bill_length_mm  bill_depth_mm  
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>penguins</span><span class='op'>&lt;-</span><span class='fu'>palmerpenguins</span><span class='fu'>::</span><span class='va'><a href='https://allisonhorst.github.io/palmerpenguins/reference/penguins.html'>penguins</a></span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>      species          island    bill_length_mm  bill_depth_mm  
  Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  
  Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  
  Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  
@@ -1377,205 +1959,236 @@ summary(penguins)</code></pre>
                                  3rd Qu.:48.50   3rd Qu.:18.70  
                                  Max.   :59.60   Max.   :21.50  
                                  NA&#39;s   :2       NA&#39;s   :2      
- flipper_length_mm  body_mass_g       sex     
- Min.   :172.0     Min.   :2700   female:165  
- 1st Qu.:190.0     1st Qu.:3550   male  :168  
- Median :197.0     Median :4050   NA&#39;s  : 11  
- Mean   :200.9     Mean   :4202               
- 3rd Qu.:213.0     3rd Qu.:4750               
- Max.   :231.0     Max.   :6300               
- NA&#39;s   :2         NA&#39;s   :2                  </code></pre>
+ flipper_length_mm  body_mass_g       sex           year     
+ Min.   :172.0     Min.   :2700   female:165   Min.   :2007  
+ 1st Qu.:190.0     1st Qu.:3550   male  :168   1st Qu.:2007  
+ Median :197.0     Median :4050   NA&#39;s  : 11   Median :2008  
+ Mean   :200.9     Mean   :4202                Mean   :2008  
+ 3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  
+ Max.   :231.0     Max.   :6300                Max.   :2009  
+ NA&#39;s   :2         NA&#39;s   :2                                 </code></pre>
 </div>
 <p>We can also get the summary for just one variable. We need to tell R in which dataset to look for it, and then add the column name after a dollar sign:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-summary(penguins$bill_depth_mm)</code></pre>
-<pre><code>
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_depth_mm</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
   13.10   15.60   17.30   17.15   18.70   21.50       2 </code></pre>
-<pre class="r"><code>
-mean(penguins$bill_depth_mm)</code></pre>
-<pre><code>
-[1] NA</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_depth_mm</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] NA</code></pre>
 </div>
 <p>To get a better idea of your dataset, you can also use the head function, which will show the first 6 rows of the dataset, unless otherwise specified in the code:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-head(penguins)</code></pre>
-<pre><code>
-# A tibble: 6 x 7
-  species island bill_length_mm bill_depth_mm flipper_length_~
-  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
-1 Adelie  Torge~           39.1          18.7              181
-2 Adelie  Torge~           39.5          17.4              186
-3 Adelie  Torge~           40.3          18                195
-4 Adelie  Torge~           NA            NA                 NA
-5 Adelie  Torge~           36.7          19.3              193
-6 Adelie  Torge~           39.3          20.6              190
-# ... with 2 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;</code></pre>
-<pre class="r"><code>
-head(penguins, 10) </code></pre>
-<pre><code>
-# A tibble: 10 x 7
-   species island bill_length_mm bill_depth_mm flipper_length_~
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
- 1 Adelie  Torge~           39.1          18.7              181
- 2 Adelie  Torge~           39.5          17.4              186
- 3 Adelie  Torge~           40.3          18                195
- 4 Adelie  Torge~           NA            NA                 NA
- 5 Adelie  Torge~           36.7          19.3              193
- 6 Adelie  Torge~           39.3          20.6              190
- 7 Adelie  Torge~           38.9          17.8              181
- 8 Adelie  Torge~           39.2          19.6              195
- 9 Adelie  Torge~           34.1          18.1              193
-10 Adelie  Torge~           42            20.2              190
-# ... with 2 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;</code></pre>
-<pre class="r"><code>
-# this will show the first 10 rows</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 6 x 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm
+  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;
+1 Adelie  Torgersen           39.1          18.7               181
+2 Adelie  Torgersen           39.5          17.4               186
+3 Adelie  Torgersen           40.3          18                 195
+4 Adelie  Torgersen           NA            NA                  NA
+5 Adelie  Torgersen           36.7          19.3               193
+6 Adelie  Torgersen           39.3          20.6               190
+# ... with 3 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>penguins</span>, <span class='fl'>10</span><span class='op'>)</span> 
+</code></pre>
+</div>
+<pre><code># A tibble: 10 x 8
+   species island    bill_length_mm bill_depth_mm flipper_length_mm
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181
+ 2 Adelie  Torgersen           39.5          17.4               186
+ 3 Adelie  Torgersen           40.3          18                 195
+ 4 Adelie  Torgersen           NA            NA                  NA
+ 5 Adelie  Torgersen           36.7          19.3               193
+ 6 Adelie  Torgersen           39.3          20.6               190
+ 7 Adelie  Torgersen           38.9          17.8               181
+ 8 Adelie  Torgersen           39.2          19.6               195
+ 9 Adelie  Torgersen           34.1          18.1               193
+10 Adelie  Torgersen           42            20.2               190
+# ... with 3 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># this will show the first 10 rows</span>
+</code></pre>
+</div>
 </div>
 <p>The same works for the last 6 rows with the tail function:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-tail(penguins)</code></pre>
-<pre><code>
-# A tibble: 6 x 7
-  species island bill_length_mm bill_depth_mm flipper_length_~
-  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
-1 Chinst~ Dream            45.7          17                195
-2 Chinst~ Dream            55.8          19.8              207
-3 Chinst~ Dream            43.5          18.1              202
-4 Chinst~ Dream            49.6          18.2              193
-5 Chinst~ Dream            50.8          19                210
-6 Chinst~ Dream            50.2          18.7              198
-# ... with 2 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;</code></pre>
-<pre class="r"><code>
-tail(penguins, 10)</code></pre>
-<pre><code>
-# A tibble: 10 x 7
-   species island bill_length_mm bill_depth_mm flipper_length_~
-   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;
- 1 Chinst~ Dream            50.2          18.8              202
- 2 Chinst~ Dream            45.6          19.4              194
- 3 Chinst~ Dream            51.9          19.5              206
- 4 Chinst~ Dream            46.8          16.5              189
- 5 Chinst~ Dream            45.7          17                195
- 6 Chinst~ Dream            55.8          19.8              207
- 7 Chinst~ Dream            43.5          18.1              202
- 8 Chinst~ Dream            49.6          18.2              193
- 9 Chinst~ Dream            50.8          19                210
-10 Chinst~ Dream            50.2          18.7              198
-# ... with 2 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 6 x 8
+  species   island bill_length_mm bill_depth_mm flipper_length_mm
+  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;
+1 Chinstrap Dream            45.7          17                 195
+2 Chinstrap Dream            55.8          19.8               207
+3 Chinstrap Dream            43.5          18.1               202
+4 Chinstrap Dream            49.6          18.2               193
+5 Chinstrap Dream            50.8          19                 210
+6 Chinstrap Dream            50.2          18.7               198
+# ... with 3 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span><span class='op'>(</span><span class='va'>penguins</span>, <span class='fl'>10</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 10 x 8
+   species   island bill_length_mm bill_depth_mm flipper_length_mm
+   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;
+ 1 Chinstrap Dream            50.2          18.8               202
+ 2 Chinstrap Dream            45.6          19.4               194
+ 3 Chinstrap Dream            51.9          19.5               206
+ 4 Chinstrap Dream            46.8          16.5               189
+ 5 Chinstrap Dream            45.7          17                 195
+ 6 Chinstrap Dream            55.8          19.8               207
+ 7 Chinstrap Dream            43.5          18.1               202
+ 8 Chinstrap Dream            49.6          18.2               193
+ 9 Chinstrap Dream            50.8          19                 210
+10 Chinstrap Dream            50.2          18.7               198
+# ... with 3 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
 <h2 id="changing-the-type-of-variable">Changing the type of variable</h2>
 <p>If variables are not in the right format, it can mess up our analysis or our plots, as R might deal differently with different types of variables. Sometimes R does not read the variables in the right way, or we need to change the variable type for some reason. Once we have checked whether our variables are in the correct format, we can change those that are not:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-penguins$species&lt;-as.character(penguins$species)
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span><span class='op'>)</span>
 
-# we can check what type of variable we have in different ways:
-str(penguins$species)</code></pre>
-<pre><code>
- chr [1:344] &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; ...</code></pre>
-<pre class="r"><code>
-is.character(penguins$species)</code></pre>
-<pre><code>
-[1] TRUE</code></pre>
+<span class='co'># we can check what type of variable we have in different ways:</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> chr [1:344] &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; ...</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/character.html'>is.character</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] TRUE</code></pre>
 </div>
 <p>In this case, species should really be a factor, so we will change it back to that:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-penguins$species&lt;-as.factor(penguins$species)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>In the same way, we can change variables to integers (as.integer) or continuous variables (as.numeric).</p>
 <h2 id="basic-plots">Basic plots</h2>
 <p>Now we have some idea of what our data are, we can start to make plots to see whether our variables interact in some way. The function is called plot and is very simple. If we have two continuous variables, we will get a scatter plot:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-plot(x=penguins$bill_length_mm, y=penguins$bill_depth_mm)</code></pre>
-<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-33-1.png" width="624" /></p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_length_mm</span>, y<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_depth_mm</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-34-1.png" width="624" /></p>
 </div>
 <p>We can change axis labels by changing xlab and ylab in the brackets:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-plot(x=penguins$bill_length_mm, y=penguins$bill_depth_mm, xlab=&quot;Bill length&quot;, ylab=&quot;Bill depth&quot;)</code></pre>
-<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-34-1.png" width="624" /></p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_length_mm</span>, y<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_depth_mm</span>, xlab<span class='op'>=</span><span class='st'>"Bill length"</span>, ylab<span class='op'>=</span><span class='st'>"Bill depth"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-35-1.png" width="624" /></p>
 </div>
 <p>We can change the colour of the circles depending on the species:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-plot(x=penguins$bill_length_mm, y=penguins$bill_depth_mm, xlab=&quot;Bill length&quot;, ylab=&quot;Bill depth&quot;, col=penguins$species)</code></pre>
-<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-35-1.png" width="624" /></p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_length_mm</span>, y<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_depth_mm</span>, xlab<span class='op'>=</span><span class='st'>"Bill length"</span>, ylab<span class='op'>=</span><span class='st'>"Bill depth"</span>, col<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-36-1.png" width="624" /></p>
 </div>
 <p>If we have one ordinal variable (species) and one continuous variable (bill_length_mm), we will get a boxplot:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-plot(x=penguins$species, y=penguins$bill_length_mm)</code></pre>
-<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-36-1.png" width="624" /></p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span>, y<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_length_mm</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-37-1.png" width="624" /></p>
 </div>
 <p>We can also make histograms using the hist function:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-hist(penguins$bill_length_mm)</code></pre>
-<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-37-1.png" width="624" /></p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_length_mm</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="RStudio_for_beginners_files/figure-html5/unnamed-chunk-38-1.png" width="624" /></p>
 </div>
 <p>We can completely customise the plots. The benefit of making plots in R is that we can use the same colours, font etc for all of them by just changing the variable names in our code. This means you can standardise how your plots will look in your final PhD thesis very easily.</p>
 <p>To save the plots, we need to set up the type of file first, run the plot commands, and then save it:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-jpeg(&#39;rplot.jpg&#39;)
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/grDevices/png.html'>jpeg</a></span><span class='op'>(</span><span class='st'>'rplot.jpg'</span><span class='op'>)</span>
 
-plot(x=penguins$species, y=penguins$bill_length_mm)
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span>, y<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_length_mm</span><span class='op'>)</span>
 
-dev.off()</code></pre>
-<pre><code>
-png 
+<span class='fu'><a href='https://rdrr.io/r/grDevices/dev.html'>dev.off</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>png 
   2 </code></pre>
 </div>
 <p>The plots will be saved in the folder that you set in the working directory. We can also save plots as pdfs:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-pdf(&#39;rplot.pdf&#39;)
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/grDevices/pdf.html'>pdf</a></span><span class='op'>(</span><span class='st'>'rplot.pdf'</span><span class='op'>)</span>
 
-plot(x=penguins$species, y=penguins$bill_length_mm)
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>species</span>, y<span class='op'>=</span><span class='va'>penguins</span><span class='op'>$</span><span class='va'>bill_length_mm</span><span class='op'>)</span>
 
-dev.off()</code></pre>
-<pre><code>
-png 
+<span class='fu'><a href='https://rdrr.io/r/grDevices/dev.html'>dev.off</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>png 
   2 </code></pre>
 </div>
 <h2 id="how-to-install-and-load-packages">How to install and load packages</h2>
 <p>R has a huge library of additional packages. At some point you will most likely need to use some of these packages - they might be able to run some analyses which will save you from writing lots of code, contain some datasets that are of interest to you, or help with organising or displaying your data, for example. Some packages are very specific and will only be of interest to a few, whereas others are widely used. For a full list see <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html" class="uri">https://cran.r-project.org/web/packages/available_packages_by_name.html</a></p>
 <p>As with all programmes on your computer, you need to install a package the first time that you use it, and load it every following time. To install a package, you can either use the code</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-install.packages(&quot;dplyr&quot;) # in this case, we are installing a package called dplyr</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"dplyr"</span><span class='op'>)</span> <span class='co'># in this case, we are installing a package called dplyr</span>
+</code></pre>
+</div>
 </div>
 <p>Or choose the package through the menu: Tools &gt; Install packages., then you can type the name of the package.</p>
 <p><img src="RStudio4.jpg" /></p>
 <p><img src="RStudio5.jpg" /></p>
 <p>Once you have installed your package, you can load it.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-library(dplyr)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <h4 id="every-time-you-start-r-you-will-have-to-load-the-package-again-if-you-want-to-use-a-function-in-that-package">Every time you start R, you will have to load the package again if you want to use a function in that package!</h4>
 <p>To find out about all the different functions in a package, you can usually find a detailed description of all functions in a package (called vignette) online, just google “R package packagename”. For dplyr, this will get you the following pdf: <a href="https://cran.r-project.org/web/packages/dplyr/dplyr.pdf" class="uri">https://cran.r-project.org/web/packages/dplyr/dplyr.pdf</a></p>
 <p>dplyr is a useful package for manipulating data. We will use a dataset called airquality for some basic functions with dplyr. Some of the easiest to use functions in the package are filter and select.</p>
 <p>filter will retain or remove rows in your dataset, according to conditions you set:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-temphigh&lt;-filter(airquality, Temp&gt;79) 
-# this creates a new dataset called temphigh, which are all values from dataset airquality where temperature is above 79
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>temphigh</span><span class='op'>&lt;-</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>airquality</span>, <span class='va'>Temp</span><span class='op'>&gt;</span><span class='fl'>79</span><span class='op'>)</span> 
+<span class='co'># this creates a new dataset called temphigh, which are all values from dataset airquality where temperature is above 79</span>
 
-templow&lt;-filter(airquality, Temp&lt;=79) 
-# this creates a new dataset called temphigh, which are all values from dataset airquality where temperature is below or at 79</code></pre>
+<span class='va'>templow</span><span class='op'>&lt;-</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>airquality</span>, <span class='va'>Temp</span><span class='op'>&lt;=</span><span class='fl'>79</span><span class='op'>)</span> 
+<span class='co'># this creates a new dataset called temphigh, which are all values from dataset airquality where temperature is below or at 79</span>
+</code></pre>
+</div>
 </div>
 <p>We can also examine rows that contain NA values, or exclude rows that contain NA values:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-summary(airquality) </code></pre>
-<pre><code>
-     Ozone           Solar.R           Wind             Temp      
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>airquality</span><span class='op'>)</span> 
+</code></pre>
+</div>
+<pre><code>     Ozone           Solar.R           Wind             Temp      
  Min.   :  1.00   Min.   :  7.0   Min.   : 1.700   Min.   :56.00  
  1st Qu.: 18.00   1st Qu.:115.8   1st Qu.: 7.400   1st Qu.:72.00  
  Median : 31.50   Median :205.0   Median : 9.700   Median :79.00  
@@ -1591,15 +2204,16 @@ summary(airquality) </code></pre>
  3rd Qu.:8.000   3rd Qu.:23.0  
  Max.   :9.000   Max.   :31.0  
                                </code></pre>
-<pre class="r"><code>
-# Ozone contains 37 rows with NA values
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Ozone contains 37 rows with NA values</span>
 
-airqualityNA&lt;-filter(airquality, is.na(Ozone)) 
-# In this case we keep those rows where Ozone is NA
+<span class='va'>airqualityNA</span><span class='op'>&lt;-</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>airquality</span>, <span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>Ozone</span><span class='op'>)</span><span class='op'>)</span> 
+<span class='co'># In this case we keep those rows where Ozone is NA</span>
 
-summary(airqualityNA)</code></pre>
-<pre><code>
-     Ozone        Solar.R           Wind            Temp      
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>airqualityNA</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>     Ozone        Solar.R           Wind            Temp      
  Min.   : NA   Min.   : 31.0   Min.   : 1.70   Min.   :56.00  
  1st Qu.: NA   1st Qu.:131.0   1st Qu.: 8.00   1st Qu.:75.00  
  Median : NA   Median :194.0   Median : 9.70   Median :79.00  
@@ -1615,13 +2229,14 @@ summary(airqualityNA)</code></pre>
  3rd Qu.:7.000   3rd Qu.:25.00  
  Max.   :9.000   Max.   :30.00  
                                 </code></pre>
-<pre class="r"><code>
-airqualitynoNA&lt;-filter(airquality, !is.na(Ozone)) 
-# Often we might want to remove NAs from our dataset, not keep them - we do this by adding ! in front of is.na. Here we keep rows if Ozone is not NA
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>airqualitynoNA</span><span class='op'>&lt;-</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>airquality</span>, <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>Ozone</span><span class='op'>)</span><span class='op'>)</span> 
+<span class='co'># Often we might want to remove NAs from our dataset, not keep them - we do this by adding ! in front of is.na. Here we keep rows if Ozone is not NA</span>
 
-summary(airqualitynoNA)</code></pre>
-<pre><code>
-     Ozone           Solar.R           Wind             Temp      
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>airqualitynoNA</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>     Ozone           Solar.R           Wind             Temp      
  Min.   :  1.00   Min.   :  7.0   Min.   : 2.300   Min.   :57.00  
  1st Qu.: 18.00   1st Qu.:113.5   1st Qu.: 7.400   1st Qu.:71.00  
  Median : 31.50   Median :207.0   Median : 9.700   Median :79.00  
@@ -1640,25 +2255,27 @@ summary(airqualitynoNA)</code></pre>
 </div>
 <p>The select function can be used to include or exclude columns from the dataset:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-airquality2&lt;-select(airquality, -Ozone) 
-# this will make a new dataset called airquality2, based on airquality, without the variable Ozone
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>airquality2</span><span class='op'>&lt;-</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>airquality</span>, <span class='op'>-</span><span class='va'>Ozone</span><span class='op'>)</span> 
+<span class='co'># this will make a new dataset called airquality2, based on airquality, without the variable Ozone</span>
 
-str(airquality2)</code></pre>
-<pre><code>
-&#39;data.frame&#39;:   153 obs. of  5 variables:
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>airquality2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>&#39;data.frame&#39;:   153 obs. of  5 variables:
  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
  $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
  $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...</code></pre>
-<pre class="r"><code>
-airquality3&lt;-select(airquality, Ozone, Solar.R) 
-# this will make a new dataset called airquality3, based on airquality, with only the variables Ozone and Solar.R
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>airquality3</span><span class='op'>&lt;-</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>airquality</span>, <span class='va'>Ozone</span>, <span class='va'>Solar.R</span><span class='op'>)</span> 
+<span class='co'># this will make a new dataset called airquality3, based on airquality, with only the variables Ozone and Solar.R</span>
 
-str(airquality3)</code></pre>
-<pre><code>
-&#39;data.frame&#39;:   153 obs. of  2 variables:
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>airquality3</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>&#39;data.frame&#39;:   153 obs. of  2 variables:
  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...</code></pre>
 </div>
@@ -1666,16 +2283,20 @@ str(airquality3)</code></pre>
 <p>It is important to save your code - if you find a mistake in your dataset, or your supervisor wants you to run some analysis again, it will be much quicker to do if you have your code saved.</p>
 <p>It is up to you how you organise your code - for example, you could have a script for each chapter of your PhD. It is always a good idea to annotate what you do, so if you come back to your code at a later date you know what you were doing:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-# if you add a hash, R won&#39;t read what you write after it until the next line. This way you can annotate your code</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># if you add a hash, R won't read what you write after it until the next line. This way you can annotate your code</span>
+</code></pre>
+</div>
 </div>
 <p>To save your R script, go to File &gt; Save as. and then find the folder that you want to save your script in. You can also save your code in text files, but be careful with using Word: it formats some symbols in a way that R then cannot read!</p>
 <h2 id="solving-problems-in-r-help">Solving problems in R/ help</h2>
 <p>Sometimes it is difficult to know how exactly you need to write your code for a certain function, and you might get error messages. These can be difficult to interpret, especially if you are new to R. You can get more information on how to set up your code within a function by finding an R help file:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-?summary
-# this will tell you more about the summary function</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='op'>?</span><span class='va'>summary</span>
+<span class='co'># this will tell you more about the summary function</span>
+</code></pre>
+</div>
 </div>
 <p>The help files are very useful, and the more you use R, the better you will understand them. Often it is easiest to look at the example code at the end.</p>
 <h2 id="useful-resources">Useful resources</h2>
@@ -1697,6 +2318,7 @@ str(airquality3)</code></pre>
 <li><p>If you really can’t suss it ask a question on stack overflow (which can be quite intimidating as you need to follow certain rules e.g. have a small chunk of data which is reproducible) or supervisor/lecturer/someone very knowledgeable !</p></li>
 <li><p>People trying to help you, particularly when it’s someone that can’t sit with you and actually see your computer (i.e. someone on the internet) often find it useful to have a reproducible example, creating one of these in itself can be quite challenging but have a look at the ‘reprex’ package, it helps you you create a reproducible example snippet of your code which might help you to better understand your error/ problem and will help those people trying to help you</p></li>
 </ul>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

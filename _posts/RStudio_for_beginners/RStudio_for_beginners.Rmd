@@ -227,10 +227,10 @@ str(zu)
 
 
 
-## Set working directory 
+## Working directories and Projects in RStudio
 
 
-If you want to import an excel file with your data in, rather than typing it in by hand or export an output to a folder, you need to tell R where to look. You do this by setting the working directory. But before you do this you need to create a new folder and download and save the example data file in this new folder.  
+If you want to import an excel file with your data in, rather than typing it in by hand or export an output to a folder, you need to tell R where to look. You can do this by setting the working directory. But before you do this you need to create a new folder and download and save the example data file in this new folder.  
 
 
 First of all create a new folder called 'Rsession' in your main drive (I call this H:, but it could be C: or any other letter!). 
@@ -280,7 +280,16 @@ setwd('D:/Teaching_Fieldcourses')
 Be aware that you need to type the exact file path otherwise R won't be able to understand it, if you want to know the file path you can also go to windows explorer, find your folder and click once on the file path bar on the top of the window and it will show the file path. Just be careful if you copy this you need to change the backslashes ('\') to forward slashes ('/').
 
 
-[Advanced: see https://github.com/jennybc/here_here for a better way of working in RStudio using Projects]
+### Projects
+
+A big problem with setting the working directory is that if George shares his code with me and it says: 
+
+```{r, eval=FALSE, echo=TRUE}
+setwd("C:/Users/georgeGale/Documents/PopulationEcologyKMUTT")
+```
+
+My computer will try to look for this folder on my computer. Obviously, this will fail and therefore my code is not *reproducible*. In RStudio you can use projects to keep all files associated with one project together and to interact with GitHub. You can use the library(here) to make your code reproducible. What here::here() does is to look for the main "root" folder where your project is maintained and then use that as the path. See [this](https://github.com/jennybc/here_here). 
+
 
 ### Read in data 
 
@@ -341,7 +350,7 @@ mean(c(5,7,9))
 ```
 
 
-We can summarise each column. For continuous variables, this will show the minimum and maximum value, the quartiles and the mean. For nominal variables, it will show the different categories and a count of each one. We will use a built-in dataset called iris:
+We can summarise each column. For continuous variables, this will show the minimum and maximum value, the quartiles and the mean. For nominal variables, it will show the different categories and a count of each one. 
 
 ```{r}
 penguins<-palmerpenguins::penguins

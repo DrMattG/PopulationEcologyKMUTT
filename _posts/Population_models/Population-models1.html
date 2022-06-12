@@ -18,14 +18,82 @@
  <!--radix_placeholder_import_source-->
  <!--/radix_placeholder_import_source-->
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
   <!--radix_placeholder_meta_tags-->
   <title>Population models</title>
   
   
   
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2020-07-20"/>
-  <meta property="article:created" itemprop="dateCreated" content="2020-07-20"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-06-12"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-06-12"/>
   <meta name="article:author" content="Matt Grainger"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -41,7 +109,7 @@
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Population models"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt Grainger"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-20-2020"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Population models"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt Grainger"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["06-12-2022"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -72,6 +140,51 @@
   
   .pagedtable-footer {
     font-size: 15px;
+  }
+  
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+  
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+  
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+  
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+  
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+  
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
   }
   
   .html-widget {
@@ -113,6 +226,7 @@
   }
   
   d-article {
+    padding-top: 2.5rem;
     padding-bottom: 30px;
   }
   
@@ -124,91 +238,48 @@
     width: 100%;
   }
   
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+  
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+  
   d-article iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2.0em;
     width: 100%;
   }
   
-  figure img.external {
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
-    padding: 18px;
-    box-sizing: border-box;
+  /* Tweak code blocks */
+  
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   }
   
-  /* CSS for table of contents */
-  
-  .d-toc {
-    color: rgba(0,0,0,0.8);
-    font-size: 0.8em;
-    line-height: 1em;
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
   }
   
-  .d-toc-header {
-    font-size: 0.6rem;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 1.3em;
+  d-article div.sourceCode {
+    background-color: white;
   }
   
-  .d-toc a {
-    border-bottom: none;
-  }
-  
-  .d-toc ul {
-    padding-left: 0;
-  }
-  
-  .d-toc li>ul {
-    padding-top: 0.8em;
-    padding-left: 16px;
-    margin-bottom: 0.6em;
-  }
-  
-  .d-toc ul,
-  .d-toc li {
-    list-style-type: none;
-  }
-  
-  .d-toc li {
-    margin-bottom: 0.9em;
-  }
-  
-  .d-toc-separator {
-    margin-top: 20px;
-    margin-bottom: 2em;
-  }
-  
-  .d-article-with-toc {
-    border-top: none;
-    padding-top: 0;
-  }
-  
-  
-  
-  /* Tweak code blocks (note that this CSS is repeated above in an injection
-     into the d-code shadow dom) */
-  
-  d-code {
-    overflow-x: auto !important;
-  }
-  
-  pre.d-code code.d-code {
+  d-article div.sourceCode pre {
     padding-left: 10px;
     font-size: 12px;
     border-left: 2px solid rgba(0,0,0,0.1);
   }
   
-  pre.text-output {
-  
+  d-article pre {
     font-size: 12px;
     color: black;
     background: none;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    margin-top: 0;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -226,20 +297,128 @@
     hyphens: none;
   }
   
+  d-article pre a {
+    border-bottom: none;
+  }
+  
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+  
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+  
   @media(min-width: 768px) {
   
-  d-code {
-    overflow-x: visible !important;
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
   }
   
-  pre.d-code code.d-code  {
-      padding-left: 18px;
-      font-size: 14px;
-  }
-  pre.text-output {
+  d-article div.sourceCode pre {
+    padding-left: 18px;
     font-size: 14px;
   }
+  
+  d-article pre {
+    font-size: 14px;
   }
+  
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for d-contents */
+  
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+  
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+  
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  .d-contents li {
+    list-style-type: none
+  }
+  
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+  
+  .d-contents ul {
+    padding-left: 1em
+  }
+  
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+  
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+  
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+  
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+  
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+  
+  
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+  
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+  
   
   /* Figure */
   
@@ -277,6 +456,27 @@
     color: rgba(0, 0, 0, 1.0);
   }
   
+  /* Citations */
+  
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+  
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+  
+  /* Citation hover box */
+  
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+  
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
   
   
   /* Tweak 1000px media break to show more text */
@@ -352,6 +552,91 @@
     word-wrap: break-word;
   }
   
+  /* Include appendix styles here so they can be overridden */
+  
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+  
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+  
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+  
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+  
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+  
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+  
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  d-appendix > * {
+    grid-column: text;
+  }
+  
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+  
+  /* Include footnote styles here so they can be overridden */
+  
+  d-footnote-list {
+    contain: layout style;
+  }
+  
+  d-footnote-list > * {
+    grid-column: text;
+  }
+  
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+  
+  
+  
+  /* Anchor.js */
+  
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
   
   /* Social footer */
   
@@ -406,6 +691,211 @@
   
   .custom p {
     margin-bottom: 0.5em;
+  }
+  
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+  
+  /* Styles for posts lists (not auto-injected) */
+  
+  
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+  
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+  
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+  
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+  
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+  
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+  
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+  
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+  
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+  
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+  
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+  
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+  
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .posts-list img {
+    opacity: 1;
+  }
+  
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+  
+  .posts-more {
+    clear: both;
+  }
+  
+  
+  .posts-sidebar {
+    font-size: 16px;
+  }
+  
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+  
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+  
+  .categories li>a {
+    border-bottom: none;
+  }
+  
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+  
+  .categories .active {
+    font-weight: 600;
+  }
+  
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
   }
   
   
@@ -537,6 +1027,12 @@
     hyphens: none;
   }
   
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+  
+  
+  
   </style>
   
   <script type="application/javascript">
@@ -552,6 +1048,13 @@
   
   // show body when load is complete
   function on_load_complete() {
+  
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+  
   
     // set body to visible
     document.body.style.visibility = 'visible';
@@ -598,23 +1101,8 @@
     // create d-appendix
     $('.d-appendix').changeElementType('d-appendix');
   
-    // create d-bibliography
-    var bibliography = $('<d-bibliography></d-bibliography>');
-    $('#distill-bibliography').wrap(bibliography);
-  
     // flag indicating that we have appendix items
     var appendix = $('.appendix-bottom').children('h3').length > 0;
-  
-    // replace citations with <d-cite>
-    $('.citation').each(function(i, val) {
-      appendix = true;
-      var cites = $(this).attr('data-cites').split(" ");
-      var dt_cite = $('<d-cite></d-cite>');
-      dt_cite.attr('key', cites.join());
-      $(this).replaceWith(dt_cite);
-    });
-    // remove refs
-    $('#refs').remove();
   
     // replace footnotes with <d-footnote>
     $('.footnote-ref').each(function(i, val) {
@@ -632,39 +1120,21 @@
     // remove footnotes
     $('.footnotes').remove();
   
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+  
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
     });
     $('h3.appendix').each(function(i, val) {
       var id = $(this).attr('id');
-      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
       appendix = true;
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
   
     // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
-  
-    // replace code blocks with d-code
-    $('pre>code').each(function(i, val) {
-      var code = $(this);
-      var pre = code.parent();
-      var clz = "";
-      var language = pre.attr('class');
-      if (language) {
-        // map unknown languages to "clike" (without this they just dissapear)
-        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
-                                 "javascript", "js", "julia", "lua", "markdown",
-                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
-          language = "clike";
-        language = ' language="' + language + '"';
-        var dt_code = $('<d-code block' + language + clz + '></d-code>');
-        dt_code.text(code.text());
-        pre.replaceWith(dt_code);
-      } else {
-        code.addClass('text-output').unwrap().changeElementType('pre');
-      }
-    });
   
     // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
@@ -673,7 +1143,7 @@
       var layout = $(this).attr('data-layout');
   
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('d-code, pre.text-output, script');
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -690,6 +1160,13 @@
       $(this).children().unwrap();
     });
   
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+  
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+  
     // load distill framework
     load_distill_framework();
   
@@ -705,12 +1182,26 @@
       if (!have_authors)
         $('d-byline').addClass('hidden');
   
-      // table of contents
-      if (have_authors) // adjust border if we are in authors
-        $('.d-toc').parent().addClass('d-article-with-toc');
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
   
       // strip links that point to #
       $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
   
       // hide elements of author/affiliations grid that have no value
       function hide_byline_column(caption) {
@@ -760,18 +1251,30 @@
         grid.children('h3:contains("Affiliations")').text('Affiliation');
       }
   
-      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
-      $('d-code').each(function(i, val) {
-        var style = document.createElement('style');
-        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
-                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
-        if (this.shadowRoot)
-          this.shadowRoot.appendChild(style);
-      });
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
   
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
+  
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
   
       // clear polling timer
       clearInterval(tid);
@@ -803,9 +1306,7 @@
     $('.d-byline a').remove();
   
     // remove toc
-    $('.d-toc-header').remove();
-    $('.d-toc').remove();
-    $('.d-toc-separator').remove();
+    $('.d-contents').remove();
   
     // move appendix elements
     $('h1.appendix, h2.appendix').each(function(i, val) {
@@ -934,7 +1435,12 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="Population-models1_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="Population-models1_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="Population-models1_files/popper-2.6.0/popper.min.js"></script>
+  <link href="Population-models1_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="Population-models1_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="Population-models1_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="Population-models1_files/anchor-4.2.2/anchor.min.js"></script>
   <script src="Population-models1_files/bowser-1.9.3/bowser.min.js"></script>
   <script src="Population-models1_files/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="Population-models1_files/distill-2.2.21/template.v2.js"></script>
@@ -949,7 +1455,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Population models","authors":[{"author":"Matt Grainger","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-07-20T00:00:00.000+02:00","citationText":"Grainger, 2020"}
+{"title":"Population models","authors":[{"author":"Matt Grainger","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-06-12T00:00:00.000+02:00","citationText":"Grainger, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -960,6 +1466,8 @@
 
 <div class="d-title">
 <h1>Population models</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
 
 </div>
 
@@ -967,28 +1475,29 @@
   
   Matt Grainger
   
-<br/>07-20-2020
+<br/>06-12-2022
 </div>
 
 <div class="d-article">
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-#exponential growth model
-#initial population size
-N0&lt;-100
-#population growth rate
-r&lt;-0.1
-#years we are simulating
-T&lt;-10
-#method 1: use the explicit formula directly 
-#first generate a list of time indices
-t&lt;-0:T 
-#now calculate N at each time
-N&lt;-N0*exp(r*t)
-#make it pretty
-data.frame(t=t,N=N)</code></pre>
-<pre><code>
-    t        N
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#exponential growth model</span>
+<span class='co'>#initial population size</span>
+<span class='va'>N0</span><span class='op'>&lt;-</span><span class='fl'>100</span>
+<span class='co'>#population growth rate</span>
+<span class='va'>r</span><span class='op'>&lt;-</span><span class='fl'>0.1</span>
+<span class='co'>#years we are simulating</span>
+<span class='cn'>T</span><span class='op'>&lt;-</span><span class='fl'>10</span>
+<span class='co'>#method 1: use the explicit formula directly </span>
+<span class='co'>#first generate a list of time indices</span>
+<span class='va'>t</span><span class='op'>&lt;-</span><span class='fl'>0</span><span class='op'>:</span><span class='cn'>T</span> 
+<span class='co'>#now calculate N at each time</span>
+<span class='va'>N</span><span class='op'>&lt;-</span><span class='va'>N0</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='va'>r</span><span class='op'>*</span><span class='va'>t</span><span class='op'>)</span>
+<span class='co'>#make it pretty</span>
+<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>t<span class='op'>=</span><span class='va'>t</span>,N<span class='op'>=</span><span class='va'>N</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>    t        N
 1   0 100.0000
 2   1 110.5171
 3   2 122.1403
@@ -1000,128 +1509,142 @@ data.frame(t=t,N=N)</code></pre>
 9   8 222.5541
 10  9 245.9603
 11 10 271.8282</code></pre>
-<pre class="r"><code>
-plot(t,N,type=&quot;l&quot;)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>N</span>,type<span class='op'>=</span><span class='st'>"l"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="Population-models1_files/figure-html5/Exponential%20growth%20model-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-N0&lt;-100
-r.mean&lt;-0.10
-r.sd&lt;-0.30
-r&lt;-rnorm(T,r.mean,r.sd)
-plot(density(r))
-abline(v=r.mean,col=&quot;blue&quot;)
-abline(v=r.mean+r.sd,col=&quot;blue&quot;,lty=2)
-abline(v=r.mean-r.sd,col=&quot;blue&quot;,lty=2)</code></pre>
-<p><img src="Population-models1_files/figure-html5/Add%20stochastic%20term-1.png" width="624" /></p>
-<pre class="r"><code>
-#now use this in place of the constant r
-t&lt;-N&lt;-array(dim=T+1)
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>N0</span><span class='op'>&lt;-</span><span class='fl'>100</span>
+<span class='va'>r.mean</span><span class='op'>&lt;-</span><span class='fl'>0.10</span>
+<span class='va'>r.sd</span><span class='op'>&lt;-</span><span class='fl'>0.30</span>
+<span class='va'>r</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='cn'>T</span>,<span class='va'>r.mean</span>,<span class='va'>r.sd</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/density.html'>density</a></span><span class='op'>(</span><span class='va'>r</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>v<span class='op'>=</span><span class='va'>r.mean</span>,col<span class='op'>=</span><span class='st'>"blue"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>v<span class='op'>=</span><span class='va'>r.mean</span><span class='op'>+</span><span class='va'>r.sd</span>,col<span class='op'>=</span><span class='st'>"blue"</span>,lty<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>v<span class='op'>=</span><span class='va'>r.mean</span><span class='op'>-</span><span class='va'>r.sd</span>,col<span class='op'>=</span><span class='st'>"blue"</span>,lty<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="Population-models1_files/figure-html5/Add%20stochastic%20term-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#now use this in place of the constant r</span>
+<span class='va'>t</span><span class='op'>&lt;-</span><span class='va'>N</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span><span class='op'>(</span>dim<span class='op'>=</span><span class='cn'>T</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span>
 
-#first element is initial value
-N[1]&lt;-N0
-t[1]&lt;-0
-for (i in 1:T)
-{
-  N[i+1]&lt;-N[i]*exp(r[i])
-  t[i+1]=t[i]+1
-}
-#make it pretty
-data.frame(t=t,N=N)</code></pre>
-<pre><code>
-    t         N
-1   0  100.0000
-2   1  155.0462
-3   2  127.1783
-4   3  208.2462
-5   4  161.0638
-6   5  249.5616
-7   6  305.1056
-8   7  515.8803
-9   8  500.5317
-10  9  670.0368
-11 10 1096.1710</code></pre>
-<pre class="r"><code>
-plot(t,N,type=&quot;l&quot;)</code></pre>
+<span class='co'>#first element is initial value</span>
+<span class='va'>N</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='va'>N0</span>
+<span class='va'>t</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fl'>0</span>
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='cn'>T</span><span class='op'>)</span>
+<span class='op'>{</span>
+  <span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='va'>r</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>)</span>
+  <span class='va'>t</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>=</span><span class='va'>t</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>+</span><span class='fl'>1</span>
+<span class='op'>}</span>
+<span class='co'>#make it pretty</span>
+<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>t<span class='op'>=</span><span class='va'>t</span>,N<span class='op'>=</span><span class='va'>N</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>    t         N
+1   0 100.00000
+2   1  98.97056
+3   2 120.81510
+4   3  82.27828
+5   4  89.58124
+6   5  69.39486
+7   6  46.05355
+8   7  65.39417
+9   8  48.24032
+10  9  66.78249
+11 10  77.52468</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>N</span>,type<span class='op'>=</span><span class='st'>"l"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="Population-models1_files/figure-html5/Add%20stochastic%20term-2.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-# N to be integer if we want. 
-N0&lt;-10
-r.mean&lt;-0.0
-r.sd&lt;-0.8
-r&lt;-rnorm(T,r.mean,r.sd)
-plot(density(r))
-abline(v=r.mean,col=&quot;blue&quot;)
-abline(v=r.mean+r.sd,col=&quot;blue&quot;,lty=2)
-abline(v=r.mean-r.sd,col=&quot;blue&quot;,lty=2)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># N to be integer if we want. </span>
+<span class='va'>N0</span><span class='op'>&lt;-</span><span class='fl'>10</span>
+<span class='va'>r.mean</span><span class='op'>&lt;-</span><span class='fl'>0.0</span>
+<span class='va'>r.sd</span><span class='op'>&lt;-</span><span class='fl'>0.8</span>
+<span class='va'>r</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='cn'>T</span>,<span class='va'>r.mean</span>,<span class='va'>r.sd</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/density.html'>density</a></span><span class='op'>(</span><span class='va'>r</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>v<span class='op'>=</span><span class='va'>r.mean</span>,col<span class='op'>=</span><span class='st'>"blue"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>v<span class='op'>=</span><span class='va'>r.mean</span><span class='op'>+</span><span class='va'>r.sd</span>,col<span class='op'>=</span><span class='st'>"blue"</span>,lty<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>v<span class='op'>=</span><span class='va'>r.mean</span><span class='op'>-</span><span class='va'>r.sd</span>,col<span class='op'>=</span><span class='st'>"blue"</span>,lty<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="Population-models1_files/figure-html5/Make%20sure%20nothing%20silly%20happens-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-#now use this in place of the constant r
-t&lt;-N&lt;-array(dim=T+1)
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#now use this in place of the constant r</span>
+<span class='va'>t</span><span class='op'>&lt;-</span><span class='va'>N</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span><span class='op'>(</span>dim<span class='op'>=</span><span class='cn'>T</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span>
 
-#first element is initial value
-N[1]&lt;-N0
-t[1]&lt;-0
-for (i in 1:T)
-{
-  N[i+1]&lt;-round(N[i]*exp(r[i]),0)
-  print(N[i+1])
-  N[i+1]&lt;-(N[i+1]&gt;1)*N[i+1] #makes N= 0 if falls below 2
+<span class='co'>#first element is initial value</span>
+<span class='va'>N</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='va'>N0</span>
+<span class='va'>t</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fl'>0</span>
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='cn'>T</span><span class='op'>)</span>
+<span class='op'>{</span>
+  <span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='va'>r</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>)</span>,<span class='fl'>0</span><span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>)</span>
+  <span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='op'>(</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&gt;</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>*</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span> <span class='co'>#makes N= 0 if falls below 2</span>
   
-  t[i+1]=t[i]+1
-}</code></pre>
-<pre><code>
-[1] 28
-[1] 106
-[1] 47
-[1] 45
-[1] 81
-[1] 224
-[1] 78
-[1] 138
-[1] 167
-[1] 179</code></pre>
-<pre class="r"><code>
-#make it pretty
-data.frame(t=t,N=N)</code></pre>
-<pre><code>
-    t   N
-1   0  10
-2   1  28
-3   2 106
-4   3  47
-5   4  45
-6   5  81
-7   6 224
-8   7  78
-9   8 138
-10  9 167
-11 10 179</code></pre>
-<pre class="r"><code>
-plot(t,N,type=&quot;l&quot;)</code></pre>
+  <span class='va'>t</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>=</span><span class='va'>t</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>+</span><span class='fl'>1</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+<pre><code>[1] 8
+[1] 18
+[1] 7
+[1] 16
+[1] 15
+[1] 56
+[1] 12
+[1] 15
+[1] 21
+[1] 12</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#make it pretty</span>
+<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>t<span class='op'>=</span><span class='va'>t</span>,N<span class='op'>=</span><span class='va'>N</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>    t  N
+1   0 10
+2   1  8
+3   2 18
+4   3  7
+5   4 16
+6   5 15
+7   6 56
+8   7 12
+9   8 15
+10  9 21
+11 10 12</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>N</span>,type<span class='op'>=</span><span class='st'>"l"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="Population-models1_files/figure-html5/Stochastic-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-#continuous growth model
-#parameters
-T&lt;-50
-N0&lt;-100
-K&lt;-500
-rmax&lt;-0.2
-C&lt;-K/N0-1 
-#first generate a list of time indices
-t&lt;-0:T 
-N&lt;-K/(1+C*exp(-rmax*t))
-#make it pretty
-data.frame(t=t,N=N)</code></pre>
-<pre><code>
-    t        N
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#continuous growth model</span>
+<span class='co'>#parameters</span>
+<span class='cn'>T</span><span class='op'>&lt;-</span><span class='fl'>50</span>
+<span class='va'>N0</span><span class='op'>&lt;-</span><span class='fl'>100</span>
+<span class='va'>K</span><span class='op'>&lt;-</span><span class='fl'>500</span>
+<span class='va'>rmax</span><span class='op'>&lt;-</span><span class='fl'>0.2</span>
+<span class='va'>C</span><span class='op'>&lt;-</span><span class='va'>K</span><span class='op'>/</span><span class='va'>N0</span><span class='op'>-</span><span class='fl'>1</span> 
+<span class='co'>#first generate a list of time indices</span>
+<span class='va'>t</span><span class='op'>&lt;-</span><span class='fl'>0</span><span class='op'>:</span><span class='cn'>T</span> 
+<span class='va'>N</span><span class='op'>&lt;-</span><span class='va'>K</span><span class='op'>/</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>+</span><span class='va'>C</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='op'>-</span><span class='va'>rmax</span><span class='op'>*</span><span class='va'>t</span><span class='op'>)</span><span class='op'>)</span>
+<span class='co'>#make it pretty</span>
+<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>t<span class='op'>=</span><span class='va'>t</span>,N<span class='op'>=</span><span class='va'>N</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>    t        N
 1   0 100.0000
 2   1 116.9612
 3   2 135.8223
@@ -1173,32 +1696,35 @@ data.frame(t=t,N=N)</code></pre>
 49 48 499.8646
 50 49 499.8891
 51 50 499.9092</code></pre>
-<pre class="r"><code>
-plot(t,N,type=&quot;l&quot;)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>N</span>,type<span class='op'>=</span><span class='st'>"l"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="Population-models1_files/figure-html5/density%20dependent%20logistic%20growth-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-#### 
-T&lt;-50
-N0&lt;-100
-K&lt;-500
-rmax&lt;-0.2
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#### </span>
+<span class='cn'>T</span><span class='op'>&lt;-</span><span class='fl'>50</span>
+<span class='va'>N0</span><span class='op'>&lt;-</span><span class='fl'>100</span>
+<span class='va'>K</span><span class='op'>&lt;-</span><span class='fl'>500</span>
+<span class='va'>rmax</span><span class='op'>&lt;-</span><span class='fl'>0.2</span>
 
-t&lt;-N&lt;-array(dim=T+1)
+<span class='va'>t</span><span class='op'>&lt;-</span><span class='va'>N</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span><span class='op'>(</span>dim<span class='op'>=</span><span class='cn'>T</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span>
 
-#first element is initial value
-N[1]&lt;-N0
-t[1]&lt;-0
-for (i in 1:T)
-{
-  N[i+1]&lt;-N[i]+rmax*N[i]*(1-N[i]/K)
-  t[i+1]=t[i]+1
-}
-#make it pretty
-data.frame(t=t,N=N)</code></pre>
-<pre><code>
-    t        N
+<span class='co'>#first element is initial value</span>
+<span class='va'>N</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='va'>N0</span>
+<span class='va'>t</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fl'>0</span>
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='cn'>T</span><span class='op'>)</span>
+<span class='op'>{</span>
+  <span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>+</span><span class='va'>rmax</span><span class='op'>*</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>*</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>-</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>/</span><span class='va'>K</span><span class='op'>)</span>
+  <span class='va'>t</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>=</span><span class='va'>t</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>+</span><span class='fl'>1</span>
+<span class='op'>}</span>
+<span class='co'>#make it pretty</span>
+<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>t<span class='op'>=</span><span class='va'>t</span>,N<span class='op'>=</span><span class='va'>N</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>    t        N
 1   0 100.0000
 2   1 116.0000
 3   2 133.8176
@@ -1250,152 +1776,162 @@ data.frame(t=t,N=N)</code></pre>
 49 48 499.9349
 50 49 499.9479
 51 50 499.9583</code></pre>
-<pre class="r"><code>
-plot(t,N,type=&quot;l&quot;)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>N</span>,type<span class='op'>=</span><span class='st'>"l"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="Population-models1_files/figure-html5/Iterative%20approach%20using%20discrete%20model%20formulation-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-T&lt;-50
-N0&lt;-100
-K&lt;-500
-rmax.mean&lt;-0.2
-rmax.sd&lt;-0.2
-rmax&lt;-rnorm(T,rmax.mean,rmax.sd)
-t&lt;-N&lt;-array(dim=T+1)
-plot(density(rmax))
-abline(v=rmax.mean,col=&quot;blue&quot;)
-abline(v=rmax.mean+rmax.sd,col=&quot;blue&quot;,lty=2)
-abline(v=rmax.mean-rmax.sd,col=&quot;blue&quot;,lty=2)</code></pre>
-<p><img src="Population-models1_files/figure-html5/add%20a%20stochastic%20term%20eg%20rmax%20is%20stochastically%20influenced%20by%20environment-1.png" width="624" /></p>
-<pre class="r"><code>
-#first element is initial value
-N[1]&lt;-N0
-t[1]&lt;-0
-for (i in 1:T)
-{
-  N[i+1]&lt;-N[i]+rmax[i]*N[i]*(1-N[i]/K)
-  t[i+1]=t[i]+1
-}
-#make it pretty
-data.frame(t=t,N=N)</code></pre>
-<pre><code>
-    t        N
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='cn'>T</span><span class='op'>&lt;-</span><span class='fl'>50</span>
+<span class='va'>N0</span><span class='op'>&lt;-</span><span class='fl'>100</span>
+<span class='va'>K</span><span class='op'>&lt;-</span><span class='fl'>500</span>
+<span class='va'>rmax.mean</span><span class='op'>&lt;-</span><span class='fl'>0.2</span>
+<span class='va'>rmax.sd</span><span class='op'>&lt;-</span><span class='fl'>0.2</span>
+<span class='va'>rmax</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='cn'>T</span>,<span class='va'>rmax.mean</span>,<span class='va'>rmax.sd</span><span class='op'>)</span>
+<span class='va'>t</span><span class='op'>&lt;-</span><span class='va'>N</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span><span class='op'>(</span>dim<span class='op'>=</span><span class='cn'>T</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/density.html'>density</a></span><span class='op'>(</span><span class='va'>rmax</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>v<span class='op'>=</span><span class='va'>rmax.mean</span>,col<span class='op'>=</span><span class='st'>"blue"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>v<span class='op'>=</span><span class='va'>rmax.mean</span><span class='op'>+</span><span class='va'>rmax.sd</span>,col<span class='op'>=</span><span class='st'>"blue"</span>,lty<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>v<span class='op'>=</span><span class='va'>rmax.mean</span><span class='op'>-</span><span class='va'>rmax.sd</span>,col<span class='op'>=</span><span class='st'>"blue"</span>,lty<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="Population-models1_files/figure-html5/add%20a%20stochastic%20term%20eg%20rmax%20is%20stochastically%20influenced%20by%20environment-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#first element is initial value</span>
+<span class='va'>N</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='va'>N0</span>
+<span class='va'>t</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fl'>0</span>
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='cn'>T</span><span class='op'>)</span>
+<span class='op'>{</span>
+  <span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>+</span><span class='va'>rmax</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>*</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>*</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>-</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>/</span><span class='va'>K</span><span class='op'>)</span>
+  <span class='va'>t</span><span class='op'>[</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>=</span><span class='va'>t</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>+</span><span class='fl'>1</span>
+<span class='op'>}</span>
+<span class='co'>#make it pretty</span>
+<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>t<span class='op'>=</span><span class='va'>t</span>,N<span class='op'>=</span><span class='va'>N</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>    t        N
 1   0 100.0000
-2   1 124.7018
-3   2 121.5933
-4   3 121.9152
-5   4 148.2906
-6   5 178.6601
-7   6 179.3349
-8   7 188.4918
-9   8 209.1506
-10  9 187.2846
-11 10 186.6721
-12 11 225.5796
-13 12 229.3542
-14 13 267.9778
-15 14 263.6562
-16 15 309.3847
-17 16 328.6664
-18 17 358.4736
-19 18 359.8885
-20 19 378.2000
-21 20 424.8059
-22 21 415.5731
-23 22 425.7520
-24 23 451.8402
-25 24 461.3781
-26 25 467.1660
-27 26 475.4175
-28 27 483.9266
-29 28 487.2937
-30 29 489.0022
-31 30 490.9827
-32 31 495.0585
-33 32 497.8721
-34 33 498.8169
-35 34 499.1844
-36 35 499.3648
-37 36 499.2906
-38 37 499.2808
-39 38 499.2707
-40 39 499.5416
-41 40 499.5076
-42 41 499.3013
-43 42 499.3938
-44 43 499.5328
-45 44 499.5035
-46 45 499.6338
-47 46 499.7508
-48 47 499.8368
-49 48 499.8648
-50 49 499.8605
-51 50 499.9331</code></pre>
-<pre class="r"><code>
-plot(t,N,type=&quot;l&quot;)</code></pre>
+2   1 125.7340
+3   2 135.6726
+4   3 169.2375
+5   4 217.2832
+6   5 255.6880
+7   6 269.5613
+8   7 279.7227
+9   8 296.9798
+10  9 343.0231
+11 10 342.3500
+12 11 365.2257
+13 12 357.0781
+14 13 370.6510
+15 14 403.3302
+16 15 414.3525
+17 16 442.6717
+18 17 454.6964
+19 18 458.9378
+20 19 456.9395
+21 20 477.9136
+22 21 476.8591
+23 22 481.2143
+24 23 490.2041
+25 24 496.2115
+26 25 495.2265
+27 26 495.7427
+28 27 497.0835
+29 28 497.8445
+30 29 498.3193
+31 30 498.5395
+32 31 498.8723
+33 32 498.9316
+34 33 498.9800
+35 34 499.2149
+36 35 499.2131
+37 36 499.2494
+38 37 499.0991
+39 38 499.1768
+40 39 499.2424
+41 40 499.3818
+42 41 499.4779
+43 42 499.6742
+44 43 499.7668
+45 44 499.9106
+46 45 499.9348
+47 46 499.9564
+48 47 499.9591
+49 48 499.9649
+50 49 499.9721
+51 50 499.9714</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>N</span>,type<span class='op'>=</span><span class='st'>"l"</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="Population-models1_files/figure-html5/add%20a%20stochastic%20term%20eg%20rmax%20is%20stochastically%20influenced%20by%20environment-2.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-#instead of the above approaches we can model growth in terms of F and S directly
-#as Poisson and Binomial processes
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#instead of the above approaches we can model growth in terms of F and S directly</span>
+<span class='co'>#as Poisson and Binomial processes</span>
 
-#AGE STRUCTURE
-#Survival rates for four age classes
-S=c(0.5,0.65,0.85,0)
-#births for four age classes
-b=c(0,1,2,0)
-f=c(b[1]*S[1],b[2]*S[2],b[3]*S[3],b[4]*S[4])
-A1=c(S[1],0,0,0)
-A2=c(0,S[2],0,0)
-A3=c(0,0,S[3],S[4])
-A=rbind(f,A1,A2,A3)
-A</code></pre>
-<pre><code>
-   [,1] [,2] [,3] [,4]
+<span class='co'>#AGE STRUCTURE</span>
+<span class='co'>#Survival rates for four age classes</span>
+<span class='va'>S</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.5</span>,<span class='fl'>0.65</span>,<span class='fl'>0.85</span>,<span class='fl'>0</span><span class='op'>)</span>
+<span class='co'>#births for four age classes</span>
+<span class='va'>b</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>f</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>b</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>*</span><span class='va'>S</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span>,<span class='va'>b</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>*</span><span class='va'>S</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span>,<span class='va'>b</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span><span class='op'>*</span><span class='va'>S</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span>,<span class='va'>b</span><span class='op'>[</span><span class='fl'>4</span><span class='op'>]</span><span class='op'>*</span><span class='va'>S</span><span class='op'>[</span><span class='fl'>4</span><span class='op'>]</span><span class='op'>)</span>
+<span class='va'>A1</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>S</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span>,<span class='fl'>0</span>,<span class='fl'>0</span>,<span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>A2</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='va'>S</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span>,<span class='fl'>0</span>,<span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>A3</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>0</span>,<span class='va'>S</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span>,<span class='va'>S</span><span class='op'>[</span><span class='fl'>4</span><span class='op'>]</span><span class='op'>)</span>
+<span class='va'>A</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span><span class='op'>(</span><span class='va'>f</span>,<span class='va'>A1</span>,<span class='va'>A2</span>,<span class='va'>A3</span><span class='op'>)</span>
+<span class='va'>A</span>
+</code></pre>
+</div>
+<pre><code>   [,1] [,2] [,3] [,4]
 f   0.0 0.65 1.70    0
 A1  0.5 0.00 0.00    0
 A2  0.0 0.65 0.00    0
 A3  0.0 0.00 0.85    0</code></pre>
-<pre class="r"><code>
-years=50
-#initial abundance vector
-N=c(10,100,200,500)
-N</code></pre>
-<pre><code>
-[1]  10 100 200 500</code></pre>
-<pre class="r"><code>
-#create empty vectors for age vector, time, population, individual ages, and growth rate
-age=c()
-t=c()
-pop=c()
-age0=c()
-age1=c()
-age2=c()
-age3=c()
-grow=c()
-#for loop to simulate population under deterministic conditions
-for (y in 1:max(years)){
-  t=append(t,y)
-  abund=sum(N)
-  pop=append(pop,abund)
-  for (i in 1:4){age[i]=N[i]/abund}
-  age0=append(age0,age[1])
-  age1=append(age1,age[2])
-  age2=append(age2,age[3])
-  age3=append(age3,age[4])
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>years</span><span class='op'>=</span><span class='fl'>50</span>
+<span class='co'>#initial abundance vector</span>
+<span class='va'>N</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>10</span>,<span class='fl'>100</span>,<span class='fl'>200</span>,<span class='fl'>500</span><span class='op'>)</span>
+<span class='va'>N</span>
+</code></pre>
+</div>
+<pre><code>[1]  10 100 200 500</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#create empty vectors for age vector, time, population, individual ages, and growth rate</span>
+<span class='va'>age</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>t</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>pop</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>age0</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>age1</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>age2</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>age3</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>grow</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='co'>#for loop to simulate population under deterministic conditions</span>
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>y</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>years</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='va'>t</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/append.html'>append</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>y</span><span class='op'>)</span>
+  <span class='va'>abund</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>N</span><span class='op'>)</span>
+  <span class='va'>pop</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/append.html'>append</a></span><span class='op'>(</span><span class='va'>pop</span>,<span class='va'>abund</span><span class='op'>)</span>
+  <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span><span class='op'>)</span><span class='op'>{</span><span class='va'>age</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>=</span><span class='va'>N</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span><span class='op'>/</span><span class='va'>abund</span><span class='op'>}</span>
+  <span class='va'>age0</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/append.html'>append</a></span><span class='op'>(</span><span class='va'>age0</span>,<span class='va'>age</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>)</span>
+  <span class='va'>age1</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/append.html'>append</a></span><span class='op'>(</span><span class='va'>age1</span>,<span class='va'>age</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>)</span>
+  <span class='va'>age2</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/append.html'>append</a></span><span class='op'>(</span><span class='va'>age2</span>,<span class='va'>age</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span><span class='op'>)</span>
+  <span class='va'>age3</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/append.html'>append</a></span><span class='op'>(</span><span class='va'>age3</span>,<span class='va'>age</span><span class='op'>[</span><span class='fl'>4</span><span class='op'>]</span><span class='op'>)</span>
   
-  cat(&quot;year&quot;,y,&quot;\n&quot;);
-  cat(&quot;Population&quot;,N,&quot;\n&quot;);
-  cat(&quot;age structure&quot;,age,&quot;\n&quot;);
-  N=A%*%N
+  <span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='st'>"year"</span>,<span class='va'>y</span>,<span class='st'>"\n"</span><span class='op'>)</span>;
+  <span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='st'>"Population"</span>,<span class='va'>N</span>,<span class='st'>"\n"</span><span class='op'>)</span>;
+  <span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='st'>"age structure"</span>,<span class='va'>age</span>,<span class='st'>"\n"</span><span class='op'>)</span>;
+  <span class='va'>N</span><span class='op'>=</span><span class='va'>A</span><span class='op'><a href='https://rdrr.io/r/base/matmult.html'>%*%</a></span><span class='va'>N</span>
   
-  grow=append(grow,sum(N)/abund)
-  cat(&quot;lambda&quot;,grow[y],&quot;\n&quot;);
-}</code></pre>
-<pre><code>
-year 1 
+  <span class='va'>grow</span><span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/append.html'>append</a></span><span class='op'>(</span><span class='va'>grow</span>,<span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>N</span><span class='op'>)</span><span class='op'>/</span><span class='va'>abund</span><span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='st'>"lambda"</span>,<span class='va'>grow</span><span class='op'>[</span><span class='va'>y</span><span class='op'>]</span>,<span class='st'>"\n"</span><span class='op'>)</span>;
+<span class='op'>}</span>
+</code></pre>
+</div>
+<pre><code>year 1 
 Population 10 100 200 500 
 age structure 0.01234568 0.1234568 0.2469136 0.617284 
 lambda 0.7962963 
@@ -1595,32 +2131,45 @@ year 50
 Population 18.59248 9.768697 6.672208 5.960138 
 age structure 0.4535468 0.2382985 0.1627625 0.1453922 
 lambda 0.9516058 </code></pre>
-<pre class="r"><code>
-plot(t,pop,xlab=&quot;t&quot;,ylab=&quot;N&quot;,main=&quot;Popsize&quot;,type=&quot;l&quot;)</code></pre>
-<p><img src="Population-models1_files/figure-html5/STOCHASTIC%20PROCESS%20ORIENTED%20MODELS-1.png" width="624" /></p>
-<pre class="r"><code>
-#savePlot(filename=&quot;Popsize&quot;,type=&quot;png&quot;)
-#win.graph()</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>pop</span>,xlab<span class='op'>=</span><span class='st'>"t"</span>,ylab<span class='op'>=</span><span class='st'>"N"</span>,main<span class='op'>=</span><span class='st'>"Popsize"</span>,type<span class='op'>=</span><span class='st'>"l"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="Population-models1_files/figure-html5/STOCHASTIC%20PROCESS%20ORIENTED%20MODELS-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#savePlot(filename="Popsize",type="png")</span>
+<span class='co'>#win.graph()</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-plot(t,age0,xlab=&quot;t&quot;,ylab=&quot;age&quot;,main=&quot;age_structure&quot;,type=&quot;l&quot;)
-lines(t,age1,col=&quot;green&quot;)
-lines(t,age2,col=&quot;red&quot;)
-lines(t,age3,col=&quot;blue&quot;)
-legend(&quot;top&quot;,&quot;age0=black, age1=green, age2=red, age3=blue&quot;)</code></pre>
-<p><img src="Population-models1_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
-<pre class="r"><code>
-#savePlot(filename=&quot;age_structure&quot;,type=&quot;png&quot;)
-#win.graph()</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>age0</span>,xlab<span class='op'>=</span><span class='st'>"t"</span>,ylab<span class='op'>=</span><span class='st'>"age"</span>,main<span class='op'>=</span><span class='st'>"age_structure"</span>,type<span class='op'>=</span><span class='st'>"l"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/lines.html'>lines</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>age1</span>,col<span class='op'>=</span><span class='st'>"green"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/lines.html'>lines</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>age2</span>,col<span class='op'>=</span><span class='st'>"red"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/lines.html'>lines</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>age3</span>,col<span class='op'>=</span><span class='st'>"blue"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/legend.html'>legend</a></span><span class='op'>(</span><span class='st'>"top"</span>,<span class='st'>"age0=black, age1=green, age2=red, age3=blue"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="Population-models1_files/figure-html5/unnamed-chunk-1-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#savePlot(filename="age_structure",type="png")</span>
+<span class='co'>#win.graph()</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-plot(t,grow,xlab=&quot;t&quot;,ylab=&quot;lambda&quot;,main=&quot;popgrowth_age&quot;,type=&quot;l&quot;)</code></pre>
-<p><img src="Population-models1_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
-<pre class="r"><code>
-#savePlot(filename=&quot;popgrowth_age&quot;,type=&quot;png&quot;)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>t</span>,<span class='va'>grow</span>,xlab<span class='op'>=</span><span class='st'>"t"</span>,ylab<span class='op'>=</span><span class='st'>"lambda"</span>,main<span class='op'>=</span><span class='st'>"popgrowth_age"</span>,type<span class='op'>=</span><span class='st'>"l"</span><span class='op'>)</span>
+</code></pre>
 </div>
+<img src="Population-models1_files/figure-html5/unnamed-chunk-2-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#savePlot(filename="popgrowth_age",type="png")</span>
+</code></pre>
+</div>
+</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
