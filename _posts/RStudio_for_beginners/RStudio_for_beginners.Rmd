@@ -624,3 +624,10 @@ Other than those helpful resources here is a checklist of what to do if you are 
 
 
 * People trying to help you, particularly when it's someone that can't sit with you and actually see your computer (i.e. someone on the internet) often find it useful to have a reproducible example, creating one of these in itself can be quite challenging but have a look at the 'reprex' package, it helps you you create a reproducible example snippet of your code which might help you to better understand your error/ problem and will help those people trying to help you
+
+# Homework
+
+Watch [this](https://youtu.be/BvKETZ6kr9Q) on R programming
+
+Watch [this](https://youtu.be/UC0gAOlxVYg) on using GitHub and RStudio
+
