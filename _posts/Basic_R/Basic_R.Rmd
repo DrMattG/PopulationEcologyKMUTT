@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, eval=FALSE}
 # Working directory
 getwd()
-setwd("D:/PopEco/Day1") # note / instead of \ in windows
+#setwd("D:/PopEco/Day1") # note / instead of \ in windows
 
 ```
 
@@ -52,9 +52,9 @@ ls()
 
 # Save workspace
 # the work space is your current R working environment, includes any user-defined objects
-save.image("basic_R_scriptSOy.RData")
-q()
-load("D:\\PopEco\\Day1\\basic_R_script.RData")
+#save.image("basic_R_scriptSOy.RData")
+#q()
+#load("D:\\PopEco\\Day1\\basic_R_script.RData")
 
 #### Data type (or mode) 
 # Vectors = one-dimensional array, where element has the same mode (e.g. numeric, character, logical)
