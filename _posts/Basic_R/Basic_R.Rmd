@@ -17,7 +17,7 @@ setwd("D:/PopEco/Day1") # note / instead of \ in windows
 
 ```
 
-```{r}
+```{r eval=FALSE}
 
 # Use R like a calculator
 3+9+12-7 # comment
