@@ -1,0 +1,144 @@
+---
+title: "If you go down to the woods today...."
+author: "Matt Grainger"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Bear population challenge
+Apply your knowledge about population models to this grizzly bear dataset. Answer the questions and show your code (either in a new script file or in a new Rmarkdown file - you can adapt the original). Save the file and send it to me. 
+
+
+```{r load library}
+# a # sign means that R does not read this as code. 
+#install.packages("popbio") #remove the first hash if you do not have popbio installed as a package 
+library(popbio)
+```
+
+## Upload and explore the bears dataset
+
+
+
+```{r bears, echo=TRUE}
+data(grizzly)
+View(grizzly)
+#?grizzly# what is the grizzly data about?
+attach(grizzly) ## You need to attach the data so that 
+#you can use it in the functions that follow 
+#(otherwise you need to signal to R which data you are using)
+#plot(year, N, type='o', pch=16, las=1, xlab="Year", 
+     #ylab="Adult females", main="Yellowstone grizzly bears") 
+plot(grizzly$year, grizzly$N,
+  type = "o", pch = 16, las = 1, xlab = "Year",
+  ylab = "Adult females", main = "Yellowstone grizzly bears"
+)
+
+```
+
+
+
+## What is the grizzly data set all about
+
+Look up the grizzly dataset from the R help (see above ?grizzly will search for the dataset in the helpfiles).
+
+Provide a summary of the grizzly dataset
+
+```{r summary}
+summary(grizzly)
+```
+
+
+# started collect data in 1995 and stop in 1997. 
+#The number of bear female counted the min number was 33 and Max number was 99. 
+
+> Great - you could use lots of other packages  to make a summary for example this makes a summary output (better for more complex data frames):
+
+```{r package for summarys}
+#install.packages("summarytools")
+library(summarytools)
+view(summarytools::dfSummary(grizzly))
+
+```
+
+
+## Calculate the rate of population change 
+
+Their are only female bears in this count. What could you do to make this data more representative of the population?
+
+Do we need more data than just female bears?
+
+# we need more data than just female bears such as environmental. 
+
+> Great! Some environmental data would help us to correlate changes in the population (lambda for example). 
+
+# Because animal population dynamic depend on their environmental impact, 
+#Their impact of environmental data and their counted data, combine data can more representative of the population.
+
+> Combining data on the environment and population dynamics can help. You might also need data on other aspects of the population (males, cubs, survival, etc.)
+
+## Use the population models to assess the population change in bears 
+
+Make use of only the first 10 years of the bears dataset to predict the future 17 years.
+Plot this on the same graph (hint in base R you can add points to a plot using the "points()" fuction)
+
+#Extra credit:: Make the plots look pretty (look at ?ggplot2 for example and search on Google for ggplot2)
+
+###
+```{r}
+grizzly [1:10,]
+lam<- c(rep("NA",9))
+for (i in 1:10){
+lam[i]<-grizzly$N[i+1]/grizzly$N[i]}
+lam
+```
+
+###
+```{r}
+#mean(as.numeric(lam),na.rm=TRUE)
+#sd(as.numeric(lam),na.rm=TRUE)
+
+###
+mn<-mean(as.numeric(lam),na.rm=TRUE)
+s_d<-sd(as.numeric(lam),na.rm=TRUE)
+
+###
+dim(grizzly)
+N=NULL
+
+#ERROR HERE - You need the first element (i=1) here to be the popualtion size at 10 years in to the sample. So you can wrte N[1]
+N[i]=grizzly$N[10]
+#N[i]=grizzly$N[10]
+for (i in 1:16){
+N[i+1]<-rnorm(1,mn,s_d)*N[i]}
+N
+
+
+###
+#install.packages("tidyverse")
+#install.packages("ggthemes") # remember to put the "#" back to comment out the installation after you have installed a package
+
+library(tidyverse)
+bears<-data.frame(N=N,years=grizzly$year[10:26])
+bears %>%
+ggplot(aes(years,N))+
+geom_point(col="blue")+
+geom_line(col="blue")+
+geom_point(data=grizzly,aes(year,N),colour="brown")+
+geom_line(data=grizzly,aes(year,N),colour="brown")+
+ggthemes::theme_base()
+
+```
+
+> Your line has not plotted because it is just NA (not a number all the way through to the last value which is 39). You made an error by change 1 to i. Remember what Dr Dusit said about the confusing letters and numbers in R - this is one of them 1=/=i
+
+
+```{r detach}
+detach(grizzly)# remember to detach the data from the session
+rm(list=ls())# this cleans your environment - is useful but 
+#you might want to keep it sometimes - use caution
+```
+
+

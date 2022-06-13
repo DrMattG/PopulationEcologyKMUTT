@@ -87,4 +87,3 @@ These plots show the probability if unsustainable harvest. In grey is the non-ha
 Find vital rates for a real species and then show how different harvest levels could influence the probability of unsustainable harvest. Use code blocks and text (i.e. use a RMarkdown file - .rmd) to write a report about the species and show the effect of harvest. Explain what the most important variables are for determining sustainable harvest. What would happen if we increase/decrease annual survival and fecundancy through conservation measures? 
 
 Write at least 500 words. 
-

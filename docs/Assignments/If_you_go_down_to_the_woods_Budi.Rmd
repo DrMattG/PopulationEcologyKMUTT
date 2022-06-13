@@ -1,0 +1,149 @@
+---
+title: "If you go down to the woods today...."
+author: "Trifan Budi"
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Bear population challenge
+Apply your knowledge about population models to this grizzly bear dataset. Answer the questions and show your code (either in a new script file or in a new Rmarkdown file - you can adapt the original). Save the file and send it to me. 
+
+
+```{r load library}
+# a # sign means that R does not read this as code. 
+#install.packages("popbio") #remove the first hash if you do not have popbio installed as a package 
+library(popbio)
+```
+
+## Upload and explore the bears dataset
+
+
+
+```{r bears, echo=TRUE}
+data(grizzly)
+View(grizzly)
+#?grizzly# what is the grizzly data about?
+attach(grizzly) ## You need to attach the data so that 
+#you can use it in the functions that follow 
+#(otherwise you need to signal to R which data you are using)
+
+plot(year, N, type="o", pch=16, las=1, xlab="Year", 
+     ylab="Adult females", main="Yellowstone grizzly bears") 
+```
+
+## What is the grizzly data set all about
+
+Look up the grizzly dataset from the R help (see above ?grizzly will search for the dataset in the helpfiles).
+
+Provide a summary of the grizzly dataset
+
+#summary of the dataset
+from the dataset given we can know that grizzly bear population breeds seasonally in the time intervals of a year. 
+
+> You could have used the summary function and there are lots of other packages you could use to make a summary for example this makes a summary output (better for more complex data frames):
+
+
+```{r}
+summary(grizzly)
+```
+
+
+```{r package for summarys}
+#install.packages("summarytools")
+library(summarytools)
+view(summarytools::dfSummary(grizzly))
+
+```
+
+
+## Calculate the rate of population change 
+```{r}
+a<-(grizzly[39,2]) #using the first and last value 
+b<-grizzly[1,2]
+GR<-(a-b)/39
+GR#growing rate formula
+```
+
+
+```{r}
+#count growing rate year by year
+counts=grizzly$N
+l=counts[-1]/counts[-length(counts)]
+mean (l)
+sd(l)
+```
+
+Their are only female bears in this count. What could you do to make this data more representative of the population?
+
+We can standardize the data to make it more representative of the population. We can include the sd and mean of the data in the operations, or we can  make our date became integer. 
+
+> How would we standardise the data? Why would we make the data an integer? What about other data - enviromental covariates? 
+
+Do we need more data than just female bears?
+
+I think for the grizzly bear, the data came from female bears are enough. Because bears population survival trend more influenced by female than male. Using just data from the female can make us simplify the model that we will use. 
+
+> Often males add complications to the dataset so yes having females is probably okay!
+
+## Use the population models to assess the population change in bears 
+
+Make use of only the first 10 years of the bears dataset to predict the future 17 years.
+Plot this on the same graph (hint in base R you can add points to a plot using the "points()" fuction)
+```{r}
+```
+
+
+
+
+```{r}
+aa<-grizzly[1:10,]#use first ten years
+reco=aa$N
+rel=reco[-1]/reco[-length(reco)]
+rem<-mean (rel)
+resd<-sd(rel)
+N0<-grizzly[39,2]
+T<-17
+r.mean<-rem
+r.sd<-resd
+r<-rnorm(T,r.mean,r.sd)
+plot(density(r))
+abline(v=r.mean,col="yellow")
+abline(v=r.mean+r.sd,col="yellow",lty=2)
+abline(v=r.mean-r.sd,col="yellow",lty=2)
+
+#now use this in place of the constant r
+t<-N<-array(dim=T+1)
+
+#first element is initial value
+N[1]<-N0
+t[1]<-0
+for (i in 1:T)
+{
+  N[i+1]<-N[i]*exp(r[i])
+  t[i+1]=t[i]+1
+}
+#make it pretty
+data.frame(t=t,N=N)
+plot(t,N,type="l")
+```
+
+> Would you expect grizzly bear to grow exponentially? Make sure that you are aware of the differnt population models and when you use each one. 
+
+#Extra credit:: Make the plots look pretty (look at ?ggplot2 for example and search on Google for ggplot2)
+```{r}
+
+```
+
+
+```{r detach}
+detach(grizzly)# remember to detach the data from the session
+rm(list=ls())# this cleans your environment - is useful but 
+#you might want to keep it sometimes - use caution
+```
+
+

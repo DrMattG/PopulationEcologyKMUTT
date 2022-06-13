@@ -1,0 +1,155 @@
+---
+title: "If you go down to the woods today...."
+author: "Kitipat Phosri"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Bear population challenge
+Apply your knowledge about population models to this grizzly bear dataset. Answer the questions and show your code (either in a new script file or in a new Rmarkdown file - you can adapt the original). Save the file and send it to me. 
+
+
+```{r load library}
+# a # sign means that R does not read this as code. 
+#install.packages("popbio") #remove the first hash if you do not have popbio installed as a package 
+library(popbio)
+```
+
+## Upload and explore the bears dataset
+
+
+
+```{r bears, echo=TRUE}
+data(grizzly)
+#View(grizzly)
+#?grizzly# what is the grizzly data about?
+attach(grizzly) ## You need to attach the data so that 
+#you can use it in the functions that follow 
+#(otherwise you need to signal to R which data you are using)
+plot(grizzly$year, grizzly$N, type='o', pch=16, las=1, xlab="Year", 
+     ylab="Adult females", main="Yellowstone grizzly bears")
+```
+
+## What is the grizzly data set all about
+
+Look up the grizzly dataset from the R help (see above ?grizzly will search for the dataset in the helpfiles).
+
+Provide a summary of the grizzly dataset
+```{r}
+summary(grizzly)
+```
+
+> There are lots of other packages you could use to make a summary for example this makes a summary output (better for more complex data frames):
+
+```{r package for summarys}
+#install.packages("summarytools")
+library(summarytools)
+view(summarytools::dfSummary(grizzly))
+
+```
+
+## Calculate the rate of population change 
+
+Their are only female bears in this count. What could you do to make this data more representative of the population?
+
+> Remember that RMarkdown has both code blocks (shown by "```{r}") and free text. You can just use text here and type directly in any part of the document to give you text. RMarkdown uses the # symbol to denote headers - So # is title, ## is subtitle and so on
+
+\```{r}
+
+# Answer: 
+
+For the data set have to calculate the sex ratio to provide the number of entire population, some literature show the raio of male:female around 1:1. So that is the reproductive rate is 2 times of them. Thus, the population trend is tend to be increase in 2 times if not consider the influence fators. 
+
+\```
+
+> You could have more information on the structure of the population - males, females and young. The reproductive rate will not double as that is the rate of change in the population but I think I understand what you mean
+
+
+Do we need more data than just female bears?
+
+\```{r}
+# Answer: 
+
+For the data provide just only one sex which is make the number of population is not reliable even the female can provide the offspring but it's not the entire population. However, the addition of sex ratio is very importand to calculate the number of entire population. Moreover, the sex ratio canbe used to predict the rate of population change is  more accuracy.
+
+\```
+
+> There is some debate about this - males do not really do much in the population (in a model like this) because we do not model behaviour or interactions between sexes. A more detailed model could include males - but this might increase our uncertainty in the outcome (as we are adding extra uncertainity by adding another sex or stage)
+
+## Use the population models to assess the population change in bears 
+
+Make use of only the first 10 years of the bears dataset to predict the future 17 years.
+Plot this on the same graph (hint in base R you can add points to a plot using the "points()" fuction)
+
+> Be careful with using filter like this - at the moment you have a syntax (language) error so you get a strange output. See how I use tidyverse in the example workflow I made. 
+
+```{r}
+#make dataset with first 10 years worth of data
+Bear1<-filter(grizzly,year<=1969)
+tail(Bear1)
+summary(Bear1)
+Bear1
+View(Bear1)
+
+#create growth model
+#### 
+T<-11
+N0<-44
+rmax<-0.2 #MJG: Where did you get this value from? 
+rmax
+K<-((0.2*42)*((1-42))/-2)
+K  
+
+# use this in place of the constant r
+t<-N<-array(dim=T+1)
+
+# first element is initial value
+N[1]<-N0
+t[1]<-0
+for (i in 1:T)
+{
+  N[i+1]<-N[i]+rmax*N[i]*(1-N[i]/K)
+  t[i+1]=t[i]+1
+}
+
+#make it pretty
+data.frame(t=t,N=N)
+plot(t,N,type="l")
+```
+
+
+#Extra credit:: Make the plots look pretty (look at ?ggplot2 for example and search on Google for ggplot2)
+
+> Looks good!
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+BearG<-data.frame(t=t,N=N)
+plot(BearG)
+
+ggplot(BearG, aes(t, N)) +
+  geom_point(shape = 5) +  
+  geom_point(aes(y = N), data = BearG, size = 2, col = 'red')
+
+ggplot(BearG, aes( t, N,))+
+xlab("Time (Years)")+
+ylab("Number of Female Bears") +
+  geom_point(shape=1)+
+  geom_smooth(aes(t,N), method = loess, se=FALSE, col="blue")+
+  ggtitle("Predicted Growth of Grizzly Bear Population") +
+  theme(plot.title=element_text(colour = 'Black'))
+```
+
+
+```{r detach}
+detach(grizzly)# remember to detach the data from the session
+rm(list=ls())# this cleans your environment - is useful but 
+#you might want to keep it sometimes - use caution
+```
+
+
