@@ -15,17 +15,16 @@ library(kableExtra)
 
 ## Introduction to population ecology - the COVID-19 edition
 
-The course runs on 09.07.2020, 21.07.2020 to 31.09.2020. Here is the schedule: 
+The course runs on 13.06.2022 to 24.06.2022. Here is the schedule: 
 
 ```{r, echo=FALSE}
 
-Date=c("20.07.2020","21.07.2020", "23.07.2020", "24.07.2020","27.07.2020","28.07.2020","29.07.2020")
-Subject=c("Introduction to R & RStudio", "Introduction to population ecology", "'Classic' population ecology models", "Species interactions", "Population viability analysis","Introduction to Bayesian analysis","Structured decision making")
-Outline=c("Quick introduction to R and RStudio for ecological data analysis and plotting graphs", "What is population ecology? Why do we study it? Broad approaches to modelling population change. Discrete and continuous growth models. Limited populations. Carrying capacity. Allee effects", "Lotka-Volterra models. Leslie/Transition matrices-age/stage", "Competition. Predation & Herbivory. Symbiosis", "What is PVA? Hunting mortality - compensatory or additive", "Approximate Bayesian Computation. Components of a Bayesian model (Priors, Data, Generative models)", "Decision making under uncertainty. Adaptive management. Structure of decision making process. Dealing with uncertainty. Conflicting objective. Bayesian networks for decision making. Agent based simulations for decision making
-") 
-Leaders=c("Dusit & Matt","Matt","George & Wanlop","George & Wanlop","Niti", "Dusit", "Matt")
+Date=c("13.06.2022","14.06.2022", "15.06.2021", "16.06.2022","17.06.2022","20.06.2022","21.06.2022", "22.06.2022", "23.06.2022", "24.06.2022")
+Subject=c("Introduction to R & RStudio", "Introduction to population ecology1", "Introduction to population ecology2", "'Classic' population ecology models", "Competition, predation and herbivory, symbiosis", "Introduction to Bayesian analysis","Lab project development", "Follow up on projects", "Project presentations", "Population viability analysis")
+Outline=c("Quick introduction to R and RStudio for ecological data analysis and plotting graphs", "What is population ecology? Why do we study it? Broad approaches to modelling population change. Discrete and continuous growth models. Limited populations. Carrying capacity. Allee effects", "Lotka-Volterra models. Leslie/Transition matrices-age/stage", "Competition. Predation & Herbivory. Symbiosis",  "Approximate Bayesian Computation. Components of a Bayesian model (Priors, Data, Generative models)", "Decision making under uncertainty. Adaptive management. Structure of decision making process. Dealing with uncertainty. Conflicting objective. Bayesian networks for decision making.", "Lab projects", "Lab projects", "Lab projects", "What is PVA? Hunting mortality - compensatory or additive") 
+Leaders=c("Dusit & Matt","Matt", "Matt", "George","Wanlop","Matt", "Matt", "Matt", "Matt & Wanlop", "Niti")
 
-Link_to_resources=c("https://drmattg.github.io/PopulationEcologyKMUTT/posts/RStudio_for_beginners/",NA,NA,NA,NA,NA,NA)
+Link_to_resources=c("https://drmattg.github.io/PopulationEcologyKMUTT/posts/RStudio_for_beginners/",NA,NA,NA,NA,NA,NA,NA,NA,NA)
 
 table=data.frame(Date=Date, Subject=Subject, Outline=Outline, Leaders= Leaders, Link_to_resources=Link_to_resources)
 

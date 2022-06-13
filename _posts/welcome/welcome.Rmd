@@ -1,7 +1,6 @@
 ---
 title: "Welcome"
 author: "Matt"
-date: "7 1 2020"
 output:
   distill::distill_article:
     self_contained: false
@@ -13,6 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Welcome to the Population Ecology Course at KMUTT
 
-Due to COVID restrictions we have made some rapid changes to our usual running of this course this year. You will be required to attend lectures online and this website serves as a site for information and resources. As Matt is in Norway and unable to travel to Thailand he will record some of his sessions which will make things easier with unstable or unpredictable internet access. However, we plan for the worst and hope for the best and expect you to attend the live sessions (especially as it will be very very early in the morning for Matt and he will be grumpy - be nice to him). 
+You will be required to attend lectures online and this website serves as a site for information and resources. As Matt is in Norway and unable to travel to Thailand he will record some of his sessions which will make things easier with unstable or unpredictable internet access. However, we plan for the worst and hope for the best and expect you to attend the live sessions. 
 
 Throughout the course we expect you to be curious, to ask questions and to read outside of the lectures. What this last one means is that you will be introduced to topics in the lectures and practicals, but we expect that you will, after the formal teaching times, read academic papers, blogs, textbooks, watch youtube videos, and so on so that you get a better understanding.
