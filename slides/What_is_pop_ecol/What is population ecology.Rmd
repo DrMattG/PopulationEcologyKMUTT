@@ -246,6 +246,5 @@ r = instantaneous population growth rate
 - Low populations: problems of finding mates, inbreeding etc.
 
 ## Examples
-<center>
-![](pp.png){width=50%}
-<center>
+
+![](pp.png){width=25%} ![](Alee.png){width=80%}
