@@ -13,7 +13,7 @@ library(kableExtra)
 
 ```
 
-## Introduction to population ecology - the COVID-19 edition
+## Introduction to population ecology 
 
 The course runs on 13.06.2022 to 24.06.2022. Here is the schedule: 
 
