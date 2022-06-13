@@ -230,6 +230,10 @@ r = instantaneous population growth rate
 
 ## Example
 
+<center>
+![](gulliemot.png){width=50%}
+<center>
+
 ## Allee effect
 
 * Why did this happen in guillemots?  
@@ -242,4 +246,6 @@ r = instantaneous population growth rate
 - Low populations: problems of finding mates, inbreeding etc.
 
 ## Examples
-
+<center>
+![](pp.png){width=50%}
+<center>
