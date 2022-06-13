@@ -1,8 +1,9 @@
 ---
 title: "Basic R Introduction"
 author: "Dusit"
-date: "13 6 2022"
-output: html_document
+output:
+  distill::distill_article:
+    self_contained: false
 ---
 
 ```{r setup, include=FALSE}
