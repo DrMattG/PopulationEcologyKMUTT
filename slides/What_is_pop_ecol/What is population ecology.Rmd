@@ -231,7 +231,7 @@ r = instantaneous population growth rate
 ## Example
 
 <center>
-![](gulliemot.png){width=50%}
+![](gullieplot.png){width=50%}
 <center>
 
 ## Allee effect
