@@ -1,6 +1,5 @@
 ---
 title: "Population models"
-author: "Matt Grainger"
 output:
   distill::distill_article:
     self_contained: false
@@ -8,6 +7,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(rjags)
 ```
 
 
@@ -171,7 +172,7 @@ plot(t,N,type="l")
 
 #AGE STRUCTURE
 #Survival rates for four age classes
-S=c(0.5,0.65,0.85,0)
+S=c(0.5,0.75,0.85,0.65)
 #births for four age classes
 b=c(0,1,2,0)
 f=c(b[1]*S[1],b[2]*S[2],b[3]*S[3],b[4]*S[4])
@@ -234,5 +235,140 @@ legend("top","age0=black, age1=green, age2=red, age3=blue")
 plot(t,grow,xlab="t",ylab="lambda",main="popgrowth_age",type="l")
 #savePlot(filename="popgrowth_age",type="png")
 
+```
+
+```{r state spaced model}
+nt   <- 200                      # no. time intervals
+time <- c(1:nt)                  # sample times
+nm   <- 20                       # number of missing values
+wm   <- sort(sample(c(2:nt),nm)) # which are missing
+sig  <- 5                        # process err variance
+tau  <- 20                       # obs error variance
+x    <- rep(10,nt)
+for(t in 2:nt)x[t] <- x[t-1] + rnorm(1,0,sqrt(sig))
+
+y     <- rnorm(nt,x,sqrt(tau))   # simulate observations
+y[wm] <- NA                      # some are missing
+
+plot(time, y, col='grey')
+lines(time, x)
+points( time[wm], x[wm], pch=16)
+```
+
+
+State-Space Models
+
+```{r simulate data}
+nYears <- 25      # Number of years
+N1 <- 30           # Initial population size
+mu.lambda <- 1.02  # Mean annual population growth rate
+sigma.lambda <- 0.15   # Process (temporal) variation of the growth rate
+sigma.obs <- 20        # SD of the observation error
+```
+
+```{r}
+## Empty vectors to store the data
+ssm_sim1 <- data.frame(Year = 1:nYears, 
+                       y = numeric(nYears),
+                       N = numeric(nYears))
+
+## Fill in initial abundance
+ssm_sim1$N[1] <- N1
+
+## Randomly generate annual lambda values
+lambda <- rnorm(nYears-1, mu.lambda, sigma.lambda)
+```
+
+```{r}
+## Loop over years 1:nYears - 1 to generate true abundance
+for (t in 1:(nYears-1)){
+   ssm_sim1$N[t+1] <- ssm_sim1$N[t] * lambda[t]
+}
+
+## Loop over all years to generate counts
+for (t in 1:nYears){
+   ssm_sim1$y[t] <- rnorm(1, ssm_sim1$N[t], sigma.obs)
+}
+
+ggplot(ssm_sim1, aes(x = Year)) +
+  geom_line(aes(y = N), color = "grey30") +
+  geom_point(aes(y = y), color = "red")+
+  theme_classic()
+```
+
+
+```{r, eval=FALSE}
+sink("ssm.jags")
+cat("
+model { 
+    # Priors and constraints
+    N.est[1] ~ dunif(0, 500)  # Initial population size
+
+    for (t in 1:(nYears-1)){
+      lambda[t] ~ dnorm(mu.lambda, tau.lambda) 
+    }
+
+    mu.lambda ~ dnorm(0, 0.1)          # Mean growth rate
+    sigma.lambda ~ dgamma(0.25, 0.25)  # SD of state process
+    tau.lambda <- pow(sigma.lambda, -2)
+    
+    sigma.obs ~ dgamma(0.25, 0.25)     # SD of observation process
+    tau.obs <- pow(sigma.obs, -2)
+  
+    # Likelihood
+    # State process
+    for (t in 1:(nYears-1)){
+      N.est[t+1] <- N.est[t] * lambda[t] 
+    }
+    # Observation process
+    for (t in 1:nYears) {
+      y[t] ~ dnorm(N.est[t], tau.obs)
+    }
+    }
+    ", fill = TRUE)
+sink()
+```
+
+
+```{r}
+## Bundle data
+jags.data <- list(y = ssm_sim1$y, nYears = nYears)
+
+# Initial values
+inits <- function(){list(sigma.lambda = runif(1, 0, 5), 
+                         mu.lambda = runif(1, 0.1, 2), 
+                         sigma.obs = runif(1, 0, 10), 
+                         N.est = c(runif(1, 20, 40), rep(NA, (nYears-1))))} 
+```
+
+```{r}
+# Parameters monitored
+parameters <- c("lambda", "mu.lambda", "sigma.obs", "sigma.lambda", "N.est")
+
+# MCMC settings
+ni <- 25000
+nt <- 3
+nb <- 10000
+nc <- 3
+
+# Call WinBUGS from R (BRT <1 min)
+ssm <- jagsUI::jags(data = jags.data, inits = inits, parameters.to.save = parameters, 
+                    model.file = "ssm.jags", n.chains = nc, n.thin = nt, 
+                    n.iter = ni, n.burnin = nb)
+
+print(ssm)
+```
+```{r}
+ssm_sim1 <- dplyr::mutate(ssm_sim1, 
+                          Estimated = ssm$mean$N.est, 
+                          LCI = ssm$q2.5$N.est, 
+                          UCI = ssm$q97.5$N.est)
+
+ggplot(ssm_sim1, aes(x = Year)) +
+  geom_ribbon(aes(ymin = LCI, ymax = UCI), fill = "grey80") +
+  geom_line(aes(y = Estimated), color = "grey50") +
+  geom_line(aes(y = N), color = "grey20") +
+  geom_point(aes(y = y), color = "red")+
+  theme_classic()
 ```
 
