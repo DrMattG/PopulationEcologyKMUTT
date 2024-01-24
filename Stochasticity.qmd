@@ -1,8 +1,9 @@
 ---
 title: "Stochasticity"
 author: "Dusit"
-format: html
-editor: visual
+toc: true
+number-sections: true
+toc-depth: 5
 ---
 
 ## Quarto

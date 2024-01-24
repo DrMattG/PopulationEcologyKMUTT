@@ -19,6 +19,7 @@ ul.task-list{list-style: none;}
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -28,16 +29,16 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -56,11 +57,64 @@ ul.task-list{list-style: none;}
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">NRM616: Population Ecology</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./listing.html">Index of posts</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Intro.html">Introduction</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Exponential.html">Exponential growth models</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./geometric.html">Geometric population growth</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Harvest.html">Harvest models</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Stochasticity.html">Stochastic models</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Competition.html">Competition</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Extinction.html">Extinction</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./predation.html">predation</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Age_structure.html">Age structured models</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./population_viability.html">PVA models</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -105,8 +159,8 @@ ul.task-list{list-style: none;}
 <p>Pre-required – R and Rstudio, R Markdown/ R Quarto (self-learning with online materials)</p>
 <table class="table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 76%">
+<col style="width: 8%">
+<col style="width: 91%">
 </colgroup>
 <thead>
 <tr class="header">

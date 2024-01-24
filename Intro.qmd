@@ -1,8 +1,11 @@
 ---
 title: "Introduction to population ecology"
 author: "Matt"
-format: html
-editor: visual
+toc: true
+number-sections: true
+toc-depth: 5
 ---
 
 ## 
+
+TEST

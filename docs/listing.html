@@ -19,6 +19,7 @@ ul.task-list{list-style: none;}
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -31,16 +32,16 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -89,11 +90,64 @@ ul.task-list{list-style: none;}
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">NRM616: Population Ecology</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./listing.html" aria-current="page">Index of posts</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Intro.html">Introduction</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Exponential.html">Exponential growth models</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./geometric.html">Geometric population growth</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Harvest.html">Harvest models</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Stochasticity.html">Stochastic models</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Competition.html">Competition</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Extinction.html">Extinction</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./predation.html">predation</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Age_structure.html">Age structured models</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./population_viability.html">PVA models</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -145,7 +199,7 @@ ul.task-list{list-style: none;}
   </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1706091817241" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1706101291716" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
 <a href="./Age_structure.html">
 <div class="thumbnail-image">
@@ -162,7 +216,7 @@ Age-stage Structure
 
 </div>
 <div class="listing-description">
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
 </div>
 </a>
 </div>
@@ -174,7 +228,7 @@ Matt
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1706091840415" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1706101180083" data-listing-reading-time-sort="0.375">
 <div class="thumbnail">
 <a href="./Competition.html">
 <div class="thumbnail-image">
@@ -203,7 +257,7 @@ Matt
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1706091877321" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1706101176915" data-listing-reading-time-sort="0.375">
 <div class="thumbnail">
 <a href="./Exponential.html">
 <div class="thumbnail-image">
@@ -232,7 +286,7 @@ Dusit
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1706091833391" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1706101174428" data-listing-reading-time-sort="0.375">
 <div class="thumbnail">
 <a href="./Extinction.html">
 <div class="thumbnail-image">
@@ -261,7 +315,7 @@ Dusit
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1706091868666" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1706101171221" data-listing-reading-time-sort="0.375">
 <div class="thumbnail">
 <a href="./geometric.html">
 <div class="thumbnail-image">
@@ -290,7 +344,7 @@ Matt
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1706091861196" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1706101168766" data-listing-reading-time-sort="0.375">
 <div class="thumbnail">
 <a href="./Harvest.html">
 <div class="thumbnail-image">
@@ -319,7 +373,7 @@ Matt
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1706098221494" data-listing-reading-time-sort="0.005">
+<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1706101408478" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
 <a href="./Intro.html">
 <div class="thumbnail-image">
@@ -336,7 +390,7 @@ Introduction to population ecology
 
 </div>
 <div class="listing-description">
-
+TEST
 </div>
 </a>
 </div>
@@ -348,7 +402,7 @@ Matt
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-listing-file-modified-sort="1706100062255" data-listing-reading-time-sort="3.08">
+<div class="quarto-post image-right" data-index="7" data-listing-file-modified-sort="1706101166351" data-listing-reading-time-sort="3.08">
 <div class="thumbnail">
 <p><a href="./index.html"> <img src="./images/panel-multi-activity.jpg" class="thumnail-image"> </a></p>
 </div>
@@ -369,7 +423,7 @@ Matt Grainger
 <a href="./index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1706091807445" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1706101159675" data-listing-reading-time-sort="0.375">
 <div class="thumbnail">
 <a href="./population_viability.html">
 <div class="thumbnail-image">
@@ -398,7 +452,7 @@ Matt
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1706091826550" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1706101155049" data-listing-reading-time-sort="0.375">
 <div class="thumbnail">
 <a href="./predation.html">
 <div class="thumbnail-image">
@@ -427,7 +481,7 @@ Dusit
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1706091853253" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1706101152844" data-listing-reading-time-sort="0.375">
 <div class="thumbnail">
 <a href="./Stochasticity.html">
 <div class="thumbnail-image">

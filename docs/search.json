@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "Age_structure.html",
-    "href": "Age_structure.html",
-    "title": "Age-stage Structure",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "Age_structure.html#running-code",
-    "href": "Age_structure.html#running-code",
-    "title": "Age-stage Structure",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
-  },
-  {
     "objectID": "Competition.html",
     "href": "Competition.html",
     "title": "Competition",
@@ -24,8 +10,8 @@
     "objectID": "Competition.html#running-code",
     "href": "Competition.html#running-code",
     "title": "Competition",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "2 Running Code",
+    "text": "2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
   {
     "objectID": "Exponential.html",
@@ -38,8 +24,8 @@
     "objectID": "Exponential.html#running-code",
     "href": "Exponential.html#running-code",
     "title": "Exponential growth models",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "2 Running Code",
+    "text": "2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
   {
     "objectID": "Extinction.html",
@@ -52,8 +38,8 @@
     "objectID": "Extinction.html#running-code",
     "href": "Extinction.html#running-code",
     "title": "Extinction",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "2 Running Code",
+    "text": "2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
   {
     "objectID": "geometric.html",
@@ -66,8 +52,8 @@
     "objectID": "geometric.html#running-code",
     "href": "geometric.html#running-code",
     "title": "Geometric and logistic growth models",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "2 Running Code",
+    "text": "2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
   {
     "objectID": "Harvest.html",
@@ -80,8 +66,8 @@
     "objectID": "Harvest.html#running-code",
     "href": "Harvest.html#running-code",
     "title": "Harvest models",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "2 Running Code",
+    "text": "2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
   {
     "objectID": "index.html",
@@ -112,6 +98,13 @@
     "text": "Lab time:\n16:00-17:00 Thai time\nThe course will be taught online\nLecture end times will vary; we assume not every day will go to 18:00, but plan on most of the afternoon for pop. eco!\nGrading: Lab assignment (60%), and Class project (40%)\nPre-required – R and Rstudio, R Markdown/ R Quarto (self-learning with online materials)\n\n\n\n\n\n\n\nDate\nLecture Topic (Lecturer)\n\n\n\n\nAug 26\nIntroduction to population ecology (MG), BIDE model (DN) and project assignment briefing (MG & DN)\n\n\nAug 27\nExponential (DN), Geometric and logistic growth (MG)\n\n\nAug 28\nHarvest models (MG), and Stochasticity (DN)\n\n\nAug 29\nExtinction (DN) and Competition (MG)\n\n\nAug 30\nPredation (DN) and Age-stage structure (MG), Follow up about projects (MG & DN)\n\n\nSep 2\nPopulation Viability Analysis (MG)\n\n\nSep 3-5\nProject development (MG & DN)\n\n\nSep 6\nProject presentations and discussion (MG & DN)"
   },
   {
+    "objectID": "Intro.html",
+    "href": "Intro.html",
+    "title": "Introduction to population ecology",
+    "section": "",
+    "text": "TEST"
+  },
+  {
     "objectID": "listing.html",
     "href": "listing.html",
     "title": "Lecture slides",
@@ -129,8 +122,8 @@
     "objectID": "population_viability.html#running-code",
     "href": "population_viability.html#running-code",
     "title": "Population Viability Analysis",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "2 Running Code",
+    "text": "2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
   {
     "objectID": "predation.html",
@@ -143,8 +136,8 @@
     "objectID": "predation.html#running-code",
     "href": "predation.html#running-code",
     "title": "Predation",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "2 Running Code",
+    "text": "2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
   {
     "objectID": "Stochasticity.html",
@@ -157,7 +150,7 @@
     "objectID": "Stochasticity.html#running-code",
     "href": "Stochasticity.html#running-code",
     "title": "Stochasticity",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "2 Running Code",
+    "text": "2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   }
 ]

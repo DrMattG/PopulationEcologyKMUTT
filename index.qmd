@@ -35,7 +35,7 @@ Grading: Lab assignment (60%), and Class project (40%)
 Pre-required – R and Rstudio, R Markdown/ R Quarto (self-learning with online materials)
 
 | Date    | Lecture Topic (Lecturer)                                                                           |
-|-----------------|-------------------------------------------------------|
+|---------|----------------------------------------------------------------------------------------------------|
 | Aug 26  | Introduction to population ecology (MG), BIDE model (DN) and project assignment briefing (MG & DN) |
 | Aug 27  | Exponential (DN), Geometric and logistic growth (MG)                                               |
 | Aug 28  | Harvest models (MG), and Stochasticity (DN)                                                        |

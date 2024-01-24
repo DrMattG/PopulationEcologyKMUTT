@@ -1,8 +1,9 @@
 ---
 title: "Population Viability Analysis"
 author: "Matt"
-format: html
-editor: visual
+toc: true
+number-sections: true
+toc-depth: 5
 ---
 
 ## Quarto
