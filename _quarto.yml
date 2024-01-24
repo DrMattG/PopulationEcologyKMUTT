@@ -1,41 +1,57 @@
 project:
   type: website
   output-dir: docs
+  render: 
+    - index.qmd
+    - listing.qmd
+    - lectures/Intro.qmd
+    - lectures/Exponential.qmd
+    - lectures/geometric.qmd
+    - lectures/Harvest.qmd
+    - lectures/Stochasticity.qmd
+    - lectures/Extinction.qmd
+    - lectures/Competition.qmd
+    - lectures/predation.qmd
+    - lectures/Age_structure.qmd
+    - lectures/population_viability.qmd
 
 website:
   title: "NRM616: Population Ecology"
+  site-url: https://drmattg.github.io/PopulationEcologyKMUTT/
+  repo-url: https://github.com/DrMattG/PopulationEcologyKMUTT
+  repo-actions: [edit, issue]
+  page-navigation: true
+  search: false
   navbar:
+    background: '#BC0031'
     left:
-      - href: index.qmd
-        text: Home
-      - href: listing.qmd
-        text: Index of posts
-      - href: Intro.qmd
-        text: Introduction
-      - href: Exponential.qmd
-        text: Exponential growth models
-      - href: geometric.qmd
-        text: Geometric population growth
-      - href: Harvest.qmd
-        text: Harvest models
-      - href: Stochasticity.qmd
-        text: Stochastic models
-      - href: Competition.qmd
-        text: Competition
-      - href: Extinction.qmd
-        text: Extinction
-      - href: predation.qmd
-        text: predation
-      - href: Age_structure.qmd
-        text: Age structured models
-      - href: population_viability.qmd
-        text: PVA models
-        
+      - text: Lectures
+        menu:
+          - sidebar:LE
+          
+    right:
+      - icon: github
+        href: https://github.com/DrMattG/PopulationEcologyKMUTT
+        aria-label: Quarto GitHub
+
+  sidebar:
+    - id: LE
+      title: "Lectures"
+      style: "docked"
+      # foreground: '#BC0031'
+      background: light
+      collapse-level: 2
+      contents:
+        - listing.qmd
+       
 format:
   html:
-    theme: darkly
-    css: styles.css
+    theme: cosmo
     toc: true
+    df-print: kable
+    smooth-scroll: true
+    link-external-newwindow: true
+    linkcolor: '#BC0031'
 
 editor: visual
 

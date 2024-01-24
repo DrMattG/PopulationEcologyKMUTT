@@ -2,17 +2,17 @@
   {
     "listing": "/listing.html",
     "items": [
-      "/Age_structure.html",
-      "/Competition.html",
-      "/Exponential.html",
-      "/Extinction.html",
-      "/geometric.html",
-      "/Harvest.html",
-      "/Intro.html",
+      "/lectures/Age_structure.html",
+      "/lectures/Competition.html",
+      "/lectures/Exponential.html",
+      "/lectures/Extinction.html",
+      "/lectures/geometric.html",
+      "/lectures/Harvest.html",
+      "/lectures/Intro.html",
       "/index.html",
-      "/population_viability.html",
-      "/predation.html",
-      "/Stochasticity.html"
+      "/lectures/population_viability.html",
+      "/lectures/predation.html",
+      "/lectures/Stochasticity.html"
     ]
   }
 ]

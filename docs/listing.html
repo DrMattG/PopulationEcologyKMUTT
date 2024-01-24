@@ -20,29 +20,19 @@ ul.task-list{list-style: none;}
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -84,13 +74,13 @@ ul.task-list{list-style: none;}
     }
   })
   </script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -104,51 +94,49 @@ ul.task-list{list-style: none;}
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lectures</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
+        <li>
+    <a class="dropdown-item" href="./listing.html">
+ <span class="dropdown-text">Lectures</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./listing.html" aria-current="page">Index of posts</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Intro.html">Introduction</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Exponential.html">Exponential growth models</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./geometric.html">Geometric population growth</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Harvest.html">Harvest models</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Stochasticity.html">Stochastic models</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Competition.html">Competition</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Extinction.html">Extinction</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./predation.html">predation</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Age_structure.html">Age structured models</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./population_viability.html">PVA models</a>
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/DrMattG/PopulationEcologyKMUTT"><i class="bi bi-github" role="img" aria-label="Quarto GitHub">
+</i> 
+ </a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Lecture slides</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listing.html" class="sidebar-item-text sidebar-link active">Lecture slides</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc">
@@ -157,14 +145,14 @@ ul.task-list{list-style: none;}
   <ul>
   <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/DrMattG/PopulationEcologyKMUTT/edit/main/listing.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/DrMattG/PopulationEcologyKMUTT/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture slides</h1>
+<h1 class="title d-none d-lg-block">Lecture slides</h1>
 </div>
 
 
@@ -201,14 +189,14 @@ ul.task-list{list-style: none;}
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1706101291716" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./Age_structure.html">
+<a href="./lectures/Age_structure.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./Age_structure.html"></a></p>
+</a><p><a href="./lectures/Age_structure.html"></a></p>
 </div>
 <div class="body">
-<a href="./Age_structure.html">
+<a href="./lectures/Age_structure.html">
 <h3 class="no-anchor listing-title">
 Age-stage Structure
 </h3>
@@ -221,23 +209,23 @@ Age-stage Structure
 </a>
 </div>
 <div class="metadata">
-<a href="./Age_structure.html">
+<a href="./lectures/Age_structure.html">
 <div class="listing-author">
 Matt
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1706101180083" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1706102138348" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./Competition.html">
+<a href="./lectures/Competition.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./Competition.html"></a></p>
+</a><p><a href="./lectures/Competition.html"></a></p>
 </div>
 <div class="body">
-<a href="./Competition.html">
+<a href="./lectures/Competition.html">
 <h3 class="no-anchor listing-title">
 Competition
 </h3>
@@ -245,28 +233,28 @@ Competition
 
 </div>
 <div class="listing-description">
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./Competition.html">
+<a href="./lectures/Competition.html">
 <div class="listing-author">
 Matt
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1706101176915" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1706102146565" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./Exponential.html">
+<a href="./lectures/Exponential.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./Exponential.html"></a></p>
+</a><p><a href="./lectures/Exponential.html"></a></p>
 </div>
 <div class="body">
-<a href="./Exponential.html">
+<a href="./lectures/Exponential.html">
 <h3 class="no-anchor listing-title">
 Exponential growth models
 </h3>
@@ -274,28 +262,28 @@ Exponential growth models
 
 </div>
 <div class="listing-description">
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./Exponential.html">
+<a href="./lectures/Exponential.html">
 <div class="listing-author">
 Dusit
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1706101174428" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1706102212778" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./Extinction.html">
+<a href="./lectures/Extinction.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./Extinction.html"></a></p>
+</a><p><a href="./lectures/Extinction.html"></a></p>
 </div>
 <div class="body">
-<a href="./Extinction.html">
+<a href="./lectures/Extinction.html">
 <h3 class="no-anchor listing-title">
 Extinction
 </h3>
@@ -303,28 +291,28 @@ Extinction
 
 </div>
 <div class="listing-description">
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./Extinction.html">
+<a href="./lectures/Extinction.html">
 <div class="listing-author">
 Dusit
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1706101171221" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1706102210931" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./geometric.html">
+<a href="./lectures/geometric.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./geometric.html"></a></p>
+</a><p><a href="./lectures/geometric.html"></a></p>
 </div>
 <div class="body">
-<a href="./geometric.html">
+<a href="./lectures/geometric.html">
 <h3 class="no-anchor listing-title">
 Geometric and logistic growth models
 </h3>
@@ -332,28 +320,28 @@ Geometric and logistic growth models
 
 </div>
 <div class="listing-description">
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./geometric.html">
+<a href="./lectures/geometric.html">
 <div class="listing-author">
 Matt
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1706101168766" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1706102208571" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./Harvest.html">
+<a href="./lectures/Harvest.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./Harvest.html"></a></p>
+</a><p><a href="./lectures/Harvest.html"></a></p>
 </div>
 <div class="body">
-<a href="./Harvest.html">
+<a href="./lectures/Harvest.html">
 <h3 class="no-anchor listing-title">
 Harvest models
 </h3>
@@ -361,28 +349,28 @@ Harvest models
 
 </div>
 <div class="listing-description">
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./Harvest.html">
+<a href="./lectures/Harvest.html">
 <div class="listing-author">
 Matt
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1706101408478" data-listing-reading-time-sort="0.005">
+<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1706102119819" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./Intro.html">
+<a href="./lectures/Intro.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./Intro.html"></a></p>
+</a><p><a href="./lectures/Intro.html"></a></p>
 </div>
 <div class="body">
-<a href="./Intro.html">
+<a href="./lectures/Intro.html">
 <h3 class="no-anchor listing-title">
 Introduction to population ecology
 </h3>
@@ -390,12 +378,12 @@ Introduction to population ecology
 
 </div>
 <div class="listing-description">
-TEST
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./Intro.html">
+<a href="./lectures/Intro.html">
 <div class="listing-author">
 Matt
 </div>
@@ -423,16 +411,16 @@ Matt Grainger
 <a href="./index.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1706101159675" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1706102205840" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./population_viability.html">
+<a href="./lectures/population_viability.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./population_viability.html"></a></p>
+</a><p><a href="./lectures/population_viability.html"></a></p>
 </div>
 <div class="body">
-<a href="./population_viability.html">
+<a href="./lectures/population_viability.html">
 <h3 class="no-anchor listing-title">
 Population Viability Analysis
 </h3>
@@ -440,28 +428,28 @@ Population Viability Analysis
 
 </div>
 <div class="listing-description">
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./population_viability.html">
+<a href="./lectures/population_viability.html">
 <div class="listing-author">
 Matt
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1706101155049" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1706102203759" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./predation.html">
+<a href="./lectures/predation.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./predation.html"></a></p>
+</a><p><a href="./lectures/predation.html"></a></p>
 </div>
 <div class="body">
-<a href="./predation.html">
+<a href="./lectures/predation.html">
 <h3 class="no-anchor listing-title">
 Predation
 </h3>
@@ -469,28 +457,28 @@ Predation
 
 </div>
 <div class="listing-description">
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./predation.html">
+<a href="./lectures/predation.html">
 <div class="listing-author">
 Dusit
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1706101152844" data-listing-reading-time-sort="0.375">
+<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1706102203576" data-listing-reading-time-sort="0.005">
 <div class="thumbnail">
-<a href="./Stochasticity.html">
+<a href="./lectures/Stochasticity.html">
 <div class="thumbnail-image">
 
 </div>
-</a><p><a href="./Stochasticity.html"></a></p>
+</a><p><a href="./lectures/Stochasticity.html"></a></p>
 </div>
 <div class="body">
-<a href="./Stochasticity.html">
+<a href="./lectures/Stochasticity.html">
 <h3 class="no-anchor listing-title">
 Stochasticity
 </h3>
@@ -498,12 +486,12 @@ Stochasticity
 
 </div>
 <div class="listing-description">
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./Stochasticity.html">
+<a href="./lectures/Stochasticity.html">
 <div class="listing-author">
 Dusit
 </div>
@@ -610,10 +598,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return popup.innerHTML;
     });
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/drmattg\.github\.io\/PopulationEcologyKMUTT\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
