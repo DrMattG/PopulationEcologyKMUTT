@@ -1,5 +1,0 @@
----
-title: "Pop_Ecol_KMUTT"
-site: distill::distill_website
-listing: posts
----

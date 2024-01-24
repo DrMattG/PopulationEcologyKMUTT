@@ -1,0 +1,9 @@
+---
+title: "Lecture slides"
+listing:
+  sort-ui: [title, date]
+  
+reading-time: true
+---
+
+## 

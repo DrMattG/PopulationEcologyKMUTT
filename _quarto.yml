@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "NRM616: Population Ecology"
+navbar:
+  left:
+  - href: index.qmd
+    text: Welcome
+  - href: listing.qmd
+    text: Index of lecture slides
+  - href: intro.qmd
+    text: Introduction to population ecology
+  - href: Exponential.qmd
+    text: Exponential growth models
+  - href: geometric.qmd
+    text: Geometric population growth
+  - href: Harvest.qmd
+    text: Harvest models
+  - href: Stochasticity.qmd
+    text: Stochastic models
+  - href: Competition.qmd
+    text: Competition
+  - href: Extinction.qmd
+    text: Extinction
+  - href: predation.qmd
+    text: predation
+  - href: Age_structure.qmd
+    text: Age structured models
+  - href: population_viability.qmd
+    text: PVA models
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
