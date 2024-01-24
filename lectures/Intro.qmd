@@ -6,4 +6,16 @@ number-sections: true
 toc-depth: 5
 ---
 
-## 
+::: callout-important
+## Link to slides
+:::
+
+## What is population ecology
+
+“…the dynamics of species populations and how these populations interact with the environment”
+
+A population is all of the individuals of the same species within an ecological community
+
+Growth, fluctuations, spread, interactions (within and between populations)
+
+## Why do we study it?
